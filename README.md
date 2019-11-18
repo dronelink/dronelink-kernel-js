@@ -1,4 +1,4 @@
-# DronelinkKernelJS
+# DronelinkKernel - JS
 
 ## Usage
 
@@ -12,4 +12,4 @@ Dronelink, dev@dronelink.com
 
 ## License
 
-DronelinkCore is available under the DRONELINK license. See the LICENSE file for more info.
+DronelinkKernelJS is available under the DRONELINK license. See the LICENSE file for more info.
