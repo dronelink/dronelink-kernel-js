@@ -1,0 +1,32 @@
+import { Serializable } from "./Serializable";
+import { TypeName, OrientationZReference, OrientationXReference } from "./Enums";
+import { Orientation3Optional } from "./Orientation3Optional";
+import { Velocity3 } from "./Velocity3";
+import { OrientationReferenceSources } from "./OrientationReferenceSources";
+import { OrientationReferenceTargets } from "./OrientationReferenceTargets";
+export declare class Orientation3 implements Serializable {
+    readonly type = TypeName.Orientation3;
+    x: number;
+    xReference: OrientationXReference;
+    y: number;
+    z: number;
+    zReference: OrientationZReference;
+    constructor(x?: number, xReference?: OrientationXReference, y?: number, z?: number, zReference?: OrientationZReference);
+    applyJSON(json: any): void;
+    applyVelocity(velocity: Velocity3, time: number): void;
+    interpolate(orientation: Orientation3, referenceSources: OrientationReferenceSources, referenceTargets: OrientationReferenceTargets, interpolate: (start: number, finish: number) => number): Orientation3;
+    convertReferences(sources: OrientationReferenceSources, targets?: OrientationReferenceTargets): void;
+    toString: () => string;
+    apply(orientation: Orientation3Optional): Orientation3;
+    get pitch(): number;
+    set pitch(x: number);
+    get pitchReference(): OrientationXReference;
+    set pitchReference(xReference: OrientationXReference);
+    get roll(): number;
+    set roll(y: number);
+    get yaw(): number;
+    set yaw(z: number);
+    get yawReference(): OrientationZReference;
+    set yawReference(zReference: OrientationZReference);
+    asOptional(): Orientation3Optional;
+}

@@ -1,0 +1,31 @@
+import { Serializable } from "./Serializable";
+import { Identifiable } from "./Identifiable";
+import { TypeName } from "./Enums";
+import { Datetime } from "./Datetime";
+import { GeoSpatial } from "./GeoSpatial";
+import { Drone } from "./Drone";
+import { Mission } from "./Mission";
+import { Disengagement } from "./Disengagement";
+import { User } from "./User";
+import { Device } from "./Device";
+import { Message } from "./Message";
+export declare class Engagement extends Identifiable implements Serializable {
+    readonly type = TypeName.Engagement;
+    engaged: Datetime;
+    reengagement: Mission | null;
+    lastUserSnapshot: User;
+    startDeviceSpatial: GeoSpatial;
+    lastDeviceSnapshot: Device;
+    startDroneSpatial: GeoSpatial;
+    lastDroneSnapshot: Drone;
+    lastExecuted: Datetime | null;
+    timeSinceLastExecution: number;
+    totalExecutes: number;
+    disengagement: Disengagement | null;
+    applyJSON(json: any): void;
+    constructor(engaged?: Datetime | null, user?: User, device?: Device, drone?: Drone, reengagement?: Mission | null);
+    execute(datetime: Datetime, user: User, device: Device | undefined, drone: Drone): void;
+    disengage(drone: Drone, reason: Message): void;
+    get currentDatetime(): Datetime;
+    get timeElapsed(): number;
+}

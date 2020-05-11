@@ -1,0 +1,37 @@
+import { SourcedGeoSpatial } from "../core/SourcedGeoSpatial";
+import { Component } from "./Component";
+import { SerializableAbstract } from "../core/SerializableAbstract";
+import { PointOfInterest, PointOfInterestReference } from "../core/PointOfInterest";
+import { ComponentNode } from "./ComponentNode";
+import { Vector2 } from "../core/Vector2";
+import { Node } from "../core/Node";
+import { Context } from "../core/Context";
+import { GeoCoordinate } from "../core/GeoCoordinate";
+import { GeoSpatial } from "../core/GeoSpatial";
+import { ReferencedAltitude } from "../core/ReferencedAltitude";
+import { ComponentExecuteContext } from "./ComponentExecuteContext";
+import { ComponentEstimate } from "./ComponentEstimate";
+export declare abstract class SubComponent extends Component implements SerializableAbstract {
+    required: boolean;
+    exclusive: boolean;
+    reference: SourcedGeoSpatial;
+    pointsOfInterest: PointOfInterest[];
+    applyJSON(json: any): void;
+    get pointsOfInterestEnabled(): boolean;
+    get pointsOfInterestReferences(): PointOfInterestReference[];
+    get exclusiveReadonly(): boolean;
+    get exclusiveExecution(): boolean;
+    get repositionIfIncluded(): boolean;
+    reposition(coordinate: GeoCoordinate, context: Context | null): void;
+    get referenceOffsets(): Vector2[];
+    referenceSpatial(context: Context): GeoSpatial;
+    referenceCoordinate(context: Context, offset?: Vector2 | null): GeoCoordinate;
+    elevationCoordinates(context: Context): GeoCoordinate[];
+    pointOfInterestCoordinate(context: Context, index: number): GeoCoordinate;
+    pointsOfInterestCoordinates(context: Context): GeoCoordinate[];
+    pointOfInterestByID(pointOfInterestID: String): PointOfInterest | undefined;
+    pointOfInterestCoordinateByID(context: Context, id: String): GeoCoordinate | null;
+    pointOfInterestReferencedAltitudeByID(context: Context, id: String): ReferencedAltitude | null;
+    node(parent?: Node | null): ComponentNode;
+    engaging(context: ComponentExecuteContext, estimate: ComponentEstimate): void;
+}
