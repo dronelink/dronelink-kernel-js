@@ -16,6 +16,7 @@ import { GeoCoordinate } from "../core/GeoCoordinate";
 import { Context } from "../core/Context";
 import { PlanRestrictionZone } from "./PlanRestrictionZone";
 import { PlanReengagementRules } from "./PlanReengagementRules";
+import { UserInterfaceSettings } from "../core/UserInterfaceSettings";
 export declare class PlanComponent extends Component implements Serializable {
     readonly type = TypeName.PlanComponent;
     takeoffOffset: Vector2 | null;
@@ -24,8 +25,10 @@ export declare class PlanComponent extends Component implements Serializable {
     droneMotionErrorTolerance: DistanceTolerance;
     rootComponent: SubComponent;
     restrictionZones: PlanRestrictionZone[];
+    altitudeContinuity: Boolean;
     reengagementRules: PlanReengagementRules;
     completeAction: PlanCompleteAction;
+    userInterfaceSettings: UserInterfaceSettings | null;
     applyJSON(json: any): void;
     verification(context: Context): Component | null;
     get referenceOffsets(): Vector2[];

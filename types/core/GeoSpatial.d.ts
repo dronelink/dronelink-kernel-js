@@ -22,6 +22,6 @@ export declare class GeoSpatial implements Serializable {
     projectAltitude(time: number): Altitude;
     projectOrientation(time: number): Orientation3;
     distance(to: GeoSpatial): number;
-    groundCoordinate(pitch: number, yawOffset?: number, maxPitch?: number): GeoCoordinate;
-    groundCoordinates(fieldOfView: FieldOfView, pitch: number, maxPitch?: number): GeoCoordinate[];
+    groundCoordinate(pitch: number, yaw?: number | null, maxPitch?: number): GeoCoordinate;
+    groundCoordinates(fieldOfView: FieldOfView, pitch: number, yaw?: number | null, maxPitch?: number): GeoCoordinate[];
 }

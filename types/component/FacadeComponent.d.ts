@@ -23,6 +23,7 @@ import { Dictionary } from "../core/Dictionary";
 import { ComponentExecuteContext } from "./ComponentExecuteContext";
 import { ComponentExecutionState } from "./ComponentExecutionState";
 import { ReferencedAltitude } from "../core/ReferencedAltitude";
+import { ListComponent } from "./ListComponent";
 import { SubComponent } from "./SubComponent";
 export declare class FacadeComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.FacadeComponent;
@@ -91,7 +92,7 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     private pathOffsets;
 }
 export declare class FacadeComponentModelData extends DroneMotionComponentModelData<FacadeComponentModelSample> {
-    setupComponents: SubComponent[];
+    setupComponent: ListComponent | null;
     addedInitialFocus: boolean;
     sampleComponents: SubComponent[];
     captureInterval: number | null;

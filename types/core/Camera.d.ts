@@ -6,6 +6,7 @@ import { CameraSpecification } from "./CameraSpecification";
 export declare class Camera extends Payload implements Serializable {
     readonly type = TypeName.Camera;
     model: string | null;
+    lensDetails: string | null;
     updated: Datetime;
     capturing: boolean;
     settings: {

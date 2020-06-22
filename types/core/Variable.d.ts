@@ -20,4 +20,5 @@ export declare class Variable implements Serializable {
     get valueFormatted(): string;
     get valueNumberMeasurementTypeDisplay(): string;
     defaultValue(drone?: Drone | null): any | null;
+    compatible(variable: Variable): boolean;
 }

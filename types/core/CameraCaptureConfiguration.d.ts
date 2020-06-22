@@ -6,5 +6,6 @@ export declare class CameraCaptureConfiguration implements Serializable {
     channel: number;
     captureType: CameraCaptureType;
     applyJSON(json: any): void;
-    get commandComponents(): CommandComponent[];
+    get startComponents(): CommandComponent[];
+    get stopComponents(): CommandComponent[];
 }

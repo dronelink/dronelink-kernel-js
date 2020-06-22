@@ -6,5 +6,6 @@ export declare class Device extends Identifiable implements Serializable {
     readonly type = TypeName.Device;
     spatial: GeoSpatial;
     os: String | null;
+    model: String | null;
     applyJSON(json: any): void;
 }

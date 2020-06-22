@@ -1812,6 +1812,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     ListComponent: {
         name: string;
         description: string;
+        subtitle: string;
         messages: {
             running: {
                 title: {
@@ -2567,6 +2568,14 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     User: {
         name: string;
         multiple: string;
+    };
+    UserInterfaceSettings: {
+        name: string;
+        values: {
+            reticalImageUrl: string;
+            droneOffsetsVisible: string;
+            missionDetailsExpanded: string;
+        };
     };
     Variable: {
         name: string;

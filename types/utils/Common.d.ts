@@ -1,7 +1,7 @@
 export declare class Common {
     static sleep(millis: number): Promise<unknown>;
     static uuid(): string;
-    static parseBoolean(value: any, defaultValue?: boolean): any;
+    static parseBoolean(value: any, defaultValue?: boolean | null): any;
     static parseFloat(value: any, defaultValue?: number | null): any;
     static parseInt(value: any, defaultValue?: number | null): any;
     static parseString(value: any, defaultValue?: string | null): any;

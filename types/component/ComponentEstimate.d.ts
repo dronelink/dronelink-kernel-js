@@ -4,6 +4,8 @@ import { Component } from "./Component";
 import { Limits } from "../core/Limits";
 import { Dictionary } from "../core/Dictionary";
 import { GeoCoordinate } from "../core/GeoCoordinate";
+import { CameraCaptureConfiguration } from "../core/CameraCaptureConfiguration";
+import { ComponentEstimateContext } from "./ComponentEstimateContext";
 export declare class ComponentEstimateCameraCapture {
     channel: number;
     photos: number;
@@ -27,6 +29,7 @@ export declare class ComponentEstimate extends Identifiable {
     segmentSpatials(level?: number | null): GeoSpatial[][];
     segmentCoordinates(level?: number | null): GeoCoordinate[][];
     cameraCapture(channel?: number): ComponentEstimateCameraCapture;
+    updateWithCameraCaptureConfigurations(context: ComponentEstimateContext, cameraCaptureConfigurations: CameraCaptureConfiguration[] | null, time?: number | null): void;
     get totalTime(): number;
     get totalPhotos(): number;
     get totalVideos(): number;

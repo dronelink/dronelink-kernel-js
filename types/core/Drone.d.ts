@@ -22,6 +22,7 @@ export declare class Drone extends Identifiable implements Serializable {
     takeoffCoordinate: GeoCoordinate;
     takeoffAltitude: Altitude | null;
     spatial: GeoSpatial;
+    batteryPercent: number | null;
     obstacleDistance: number | null;
     cameras: Dictionary<Camera>;
     gimbals: Dictionary<Gimbal>;
@@ -37,6 +38,7 @@ export declare class Drone extends Identifiable implements Serializable {
     projectGimbalOrientation(channel: number, datetime: Datetime): Orientation3;
     camera(channel?: number): Camera;
     gimbal(channel?: number): Gimbal;
+    gimbalOrientation(channel?: number): Orientation3;
     createCameraFile(channel: number, name: string, size: number, created: Datetime): CameraFile;
     addStatelessCommand(command: Command): void;
     addStatefulCommand(command: Command): void;
