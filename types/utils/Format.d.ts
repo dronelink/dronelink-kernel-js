@@ -16,7 +16,8 @@ export declare class Format {
         minutes: FormattedValue;
         seconds: FormattedValue;
     };
-    static distance(value?: number): FormattedValue;
+    static distance(value?: number, threshold?: number): FormattedValue;
+    static distanceOffset(value: any): string;
     static altitude(value?: number): FormattedValue;
     static angle(value?: number, mod?: boolean): FormattedValue;
     static area(value?: number): FormattedValue;
@@ -32,10 +33,11 @@ export declare class Format {
         plural: string;
     } | null): string;
     private static degreesMinutesAndSeconds;
-    static geoCoordinate(value: GeoCoordinate): {
+    static geoCoordinate(value: GeoCoordinate, numeric?: boolean): {
         latitude: FormattedValue;
         longitude: FormattedValue;
     };
+    static geoCoordinatePair(value: GeoCoordinate, numeric?: boolean): string;
     static enum(name: string, value: any, abbreviation?: boolean): string;
     static fileSize(bytes: number, decimals?: number): FormattedValue;
     private static icaoAlphabet;

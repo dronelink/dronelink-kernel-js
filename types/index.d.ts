@@ -188,6 +188,7 @@ export { SpotMeteringTargetCameraCommand } from "./command/camera/SpotMeteringTa
 export { StartCaptureCameraCommand } from "./command/camera/StartCaptureCameraCommand";
 export { StopCaptureCameraCommand } from "./command/camera/StopCaptureCameraCommand";
 export { StorageLocationCameraCommand } from "./command/camera/StorageLocationCameraCommand";
+export { VideoCaptionCameraCommand } from "./command/camera/VideoCaptionCameraCommand";
 export { VideoFileCompressionStandardCameraCommand } from "./command/camera/VideoFileCompressionStandardCameraCommand";
 export { VideoFileFormatCameraCommand } from "./command/camera/VideoFileFormatCameraCommand";
 export { VideoResolutionFrameRateCameraCommand } from "./command/camera/VideoResolutionFrameRateCameraCommand";
@@ -197,6 +198,7 @@ export { WhiteBalancePresetCameraCommand } from "./command/camera/WhiteBalancePr
 export { ModeGimbalCommand } from "./command/gimbal/ModeGimbalCommand";
 export { OrientationGimbalCommand } from "./command/gimbal/OrientationGimbalCommand";
 export { VelocityGimbalCommand } from "./command/gimbal/VelocityGimbalCommand";
+export { YawSimultaneousFollowGimbalCommand } from "./command/gimbal/YawSimultaneousFollowGimbalCommand";
 export { Component } from "./component/Component";
 export { ComponentEstimate } from "./component/ComponentEstimate";
 export { ComponentEstimateContext } from "./component/ComponentEstimateContext";

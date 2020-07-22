@@ -2581,6 +2581,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         multiple: string;
         nullValue: string;
+        viewed: string;
         values: {
             variableType: string;
             valueArray: string;
@@ -2649,6 +2650,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             };
         };
     };
+    VideoCaptionCameraCommand: {
+        name: string;
+        values: {
+            enabled: string;
+        };
+    };
     VideoFileCompressionStandardCameraCommand: {
         name: string;
         values: {
@@ -2703,6 +2710,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         values: {
             whiteBalancePreset: string;
+        };
+    };
+    YawSimultaneousFollowGimbalCommand: {
+        name: string;
+        values: {
+            enabled: string;
         };
     };
     Zone: {

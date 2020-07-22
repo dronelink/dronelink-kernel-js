@@ -15,9 +15,10 @@ export declare class Variable implements Serializable {
     get subtitle(): string;
     get valueModelToUser(): any | null;
     set valueUserToModel(value: any | null);
-    clearValue(arrayFull?: boolean): void;
-    clearArrayValue(full?: boolean): void;
+    clearValue(arrayFull?: boolean, arrayIndex?: number | null): void;
+    clearArrayValue(full?: boolean, index?: number | null): void;
     get valueFormatted(): string;
+    valueFormattedArray(index: number): string;
     get valueNumberMeasurementTypeDisplay(): string;
     defaultValue(drone?: Drone | null): any | null;
     compatible(variable: Variable): boolean;

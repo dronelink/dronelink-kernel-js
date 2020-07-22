@@ -18,6 +18,7 @@ import { DistanceTolerance } from "../core/DistanceTolerance";
 export declare abstract class DroneMotionComponent extends SubComponent implements SerializableAbstract {
     droneMotionLimits: MotionLimits6Optional;
     droneMotionErrorTolerance: DistanceTolerance | null;
+    droneMotionErrorLimits: MotionLimits6Optional | null;
     restrictionZonesEnabled: boolean;
     applyJSON(json: any): void;
     get exclusiveReadonly(): boolean;
@@ -26,6 +27,7 @@ export declare abstract class DroneMotionComponent extends SubComponent implemen
     descendantAllowed(component: Component): boolean;
     resolveDroneMotionLimits(context: Context, droneMotionLimits?: MotionLimits6Optional | null): MotionLimits6;
     resolveDroneMotionErrorTolerance(context: Context, droneMotionErrorTolerance?: DistanceTolerance | null): DistanceTolerance;
+    resolveDroneMotionErrorLimits(context: Context, droneMotionLimits: MotionLimits6): MotionLimits6;
     addVelocityCommandsFromModel(context: ComponentExecuteContext, model: DroneMotionComponentModelData<DroneMotionComponentModelSample>, headingRotation: boolean | null): void;
     addDroneVelocityCommand(context: ComponentExecuteContext, velocity: Velocity6, heading?: number | null): VelocityDroneCommand;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;

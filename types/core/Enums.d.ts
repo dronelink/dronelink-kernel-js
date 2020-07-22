@@ -667,6 +667,7 @@ export declare enum TypeName {
     Velocity6 = "Velocity6",
     VelocityDroneCommand = "VelocityDroneCommand",
     VelocityGimbalCommand = "VelocityGimbalCommand",
+    VideoCaptionCameraCommand = "VideoCaptionCameraCommand",
     VideoFileCompressionStandardCameraCommand = "VideoFileCompressionStandardCameraCommand",
     VideoFileFormatCameraCommand = "VideoFileFormatCameraCommand",
     VideoResolutionFrameRateCameraCommand = "VideoResolutionFrameRateCameraCommand",
@@ -675,6 +676,7 @@ export declare enum TypeName {
     WaitComponent = "WaitComponent",
     WhiteBalancePresetCameraCommand = "WhiteBalancePresetCameraCommand",
     WhiteBalanceCustomCameraCommand = "WhiteBalanceCustomCameraCommand",
+    YawSimultaneousFollowGimbalCommand = "YawSimultaneousFollowGimbalCommand",
     Zone = "Zone",
     ZoneBoundaryPoint = "ZoneBoundaryPoint"
 }

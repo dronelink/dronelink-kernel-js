@@ -23,13 +23,15 @@ export declare class Func extends Identifiable implements Serializable {
     applyJSON(json: any): void;
     get title(): string;
     get subtitle(): string;
+    private get inputsVariableValuesNamed();
     private evaluate;
-    validateSyntax(dronelink?: any | null, drone?: Drone | null): void;
+    validateSyntax(dronelink: any, drone?: Drone | null): void;
     private nextDynamicInput;
-    addNextDynamicInput(dronelink?: any | null, drone?: Drone | null, device?: Device | null, syntaxValidation?: boolean): FuncInput | null;
+    addNextDynamicInput(dronelink: any, drone?: Drone | null, device?: Device | null, syntaxValidation?: boolean): FuncInput | null;
     removeLastDynamicInput(): boolean;
     addCachedInputs(func: Func): void;
-    execute(dronelink?: any | null, drone?: Drone | null, device?: Device | null): PlanComponent;
+    execute(dronelink: any, drone?: Drone | null, device?: Device | null): PlanComponent;
+    inputFormatted(dronelink: any, inputIndex: number, variableValueIndex?: number | null): string;
 }
 export declare class FuncInput implements Serializable {
     readonly type = TypeName.FuncInput;
@@ -40,6 +42,7 @@ export declare class FuncInput implements Serializable {
     enumValues: any[] | null;
     dynamic: boolean;
     extensions: FuncInputExtensions | null;
+    formatter: string | null;
     applyJSON(json: any): void;
     get title(): string;
     get subtitle(): string;

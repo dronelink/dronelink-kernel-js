@@ -17,12 +17,14 @@ import { Context } from "../core/Context";
 import { PlanRestrictionZone } from "./PlanRestrictionZone";
 import { PlanReengagementRules } from "./PlanReengagementRules";
 import { UserInterfaceSettings } from "../core/UserInterfaceSettings";
+import { MotionLimits6Optional } from "../core/MotionLimits6Optional";
 export declare class PlanComponent extends Component implements Serializable {
     readonly type = TypeName.PlanComponent;
     takeoffOffset: Vector2 | null;
     takeoffDistance: DistanceTolerance;
     droneMotionLimits: MotionLimits6;
     droneMotionErrorTolerance: DistanceTolerance;
+    droneMotionErrorLimits: MotionLimits6Optional | null;
     rootComponent: SubComponent;
     restrictionZones: PlanRestrictionZone[];
     altitudeContinuity: Boolean;
