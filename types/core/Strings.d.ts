@@ -730,6 +730,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             zenmuseXT2Thermal: string;
             zenmuseZ30Min: string;
             zenmuseZ30Max: string;
+            mavicMini: string;
             mavic2Pro: string;
             mavic2ProHQ: string;
             mavic2ZoomMin: string;
@@ -1926,6 +1927,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             complete: string;
             engageDisallowed: {
                 complete: string;
+                requiredTakeoffUnavailable: {
+                    title: string;
+                };
                 requiredTakeoffInvalid: {
                     title: string;
                     details: string;
