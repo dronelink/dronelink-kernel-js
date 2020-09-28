@@ -4,7 +4,7 @@ import { CameraSpecification } from "./CameraSpecification";
 import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 export declare class Constants {
-    static readonly Version = "1.6.3";
+    static readonly Version = "1.7.0";
     static readonly MissionExecuteIntervalTarget: number;
     static readonly MissionExecuteIntervalMax: number;
     static readonly MissionExecuteDelayStrikesMax = 5;

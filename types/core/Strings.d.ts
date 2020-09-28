@@ -114,13 +114,13 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     CameraAEBCount: {
         name: string;
         values: {
-            "3": {
+            3: {
                 name: string;
             };
-            "5": {
+            5: {
                 name: string;
             };
-            "7": {
+            7: {
                 name: string;
             };
             unknown: {
@@ -541,31 +541,31 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             auto: {
                 name: string;
             };
-            "100": {
+            100: {
                 name: string;
             };
-            "200": {
+            200: {
                 name: string;
             };
-            "400": {
+            400: {
                 name: string;
             };
-            "800": {
+            800: {
                 name: string;
             };
-            "1600": {
+            1600: {
                 name: string;
             };
-            "3200": {
+            3200: {
                 name: string;
             };
-            "6400": {
+            6400: {
                 name: string;
             };
-            "12800": {
+            12800: {
                 name: string;
             };
-            "25600": {
+            25600: {
                 name: string;
             };
             fixed: {
@@ -916,7 +916,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "0dot7": {
                 name: string;
             };
-            "1": {
+            1: {
                 name: string;
             };
             "1dot3": {
@@ -928,61 +928,61 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "1dot6": {
                 name: string;
             };
-            "2": {
+            2: {
                 name: string;
             };
             "2dot5": {
                 name: string;
             };
-            "3": {
+            3: {
                 name: string;
             };
             "3dot2": {
                 name: string;
             };
-            "4": {
+            4: {
                 name: string;
             };
-            "5": {
+            5: {
                 name: string;
             };
-            "6": {
+            6: {
                 name: string;
             };
-            "7": {
+            7: {
                 name: string;
             };
-            "8": {
+            8: {
                 name: string;
             };
-            "9": {
+            9: {
                 name: string;
             };
-            "10": {
+            10: {
                 name: string;
             };
-            "11": {
+            11: {
                 name: string;
             };
-            "13": {
+            13: {
                 name: string;
             };
-            "15": {
+            15: {
                 name: string;
             };
-            "16": {
+            16: {
                 name: string;
             };
-            "20": {
+            20: {
                 name: string;
             };
-            "23": {
+            23: {
                 name: string;
             };
-            "25": {
+            25: {
                 name: string;
             };
-            "30": {
+            30: {
                 name: string;
             };
             unknown: {
@@ -1061,43 +1061,43 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "23dot976": {
                 name: string;
             };
-            "24": {
+            24: {
                 name: string;
             };
-            "25": {
+            25: {
                 name: string;
             };
             "29dot970": {
                 name: string;
             };
-            "30": {
+            30: {
                 name: string;
             };
             "47dot950": {
                 name: string;
             };
-            "48": {
+            48: {
                 name: string;
             };
-            "50": {
+            50: {
                 name: string;
             };
             "59dot940": {
                 name: string;
             };
-            "60": {
+            60: {
                 name: string;
             };
-            "90": {
+            90: {
                 name: string;
             };
-            "96": {
+            96: {
                 name: string;
             };
-            "100": {
+            100: {
                 name: string;
             };
-            "120": {
+            120: {
                 name: string;
             };
             "8dot7": {
@@ -1575,6 +1575,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             boundaryPoints: string;
             surfaceSampleDistance: string;
             sampleDistanceGimbalAngleEnabled: string;
+            droneOrientation: string;
         };
         messages: {
             setup: {

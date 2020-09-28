@@ -27,10 +27,10 @@ export declare class Func extends Identifiable implements Serializable {
     private evaluate;
     validateSyntax(dronelink: any, drone?: Drone | null): void;
     private nextDynamicInput;
-    addNextDynamicInput(dronelink: any, drone?: Drone | null, device?: Device | null, syntaxValidation?: boolean): FuncInput | null;
+    addNextDynamicInput(dronelink: any, drone?: Drone | null, device?: Device | null, metadata?: any, syntaxValidation?: boolean): FuncInput | null;
     removeLastDynamicInput(): boolean;
     addCachedInputs(func: Func): void;
-    execute(dronelink: any, drone?: Drone | null, device?: Device | null): PlanComponent;
+    execute(dronelink: any, drone?: Drone | null, device?: Device | null, metadata?: any): PlanComponent;
     inputFormatted(dronelink: any, inputIndex: number, variableValueIndex?: number | null): string;
 }
 export declare class FuncInput implements Serializable {
