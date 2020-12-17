@@ -5,7 +5,6 @@ import { Component } from "./Component";
 import { Orientation3 } from "../core/Orientation3";
 import { MapComponentBoundaryPoint } from "./MapComponentBoundaryPoint";
 import { ComponentNode } from "./ComponentNode";
-import { Context } from "../core/Context";
 import { Node } from "../core/Node";
 import { GeoCoordinate } from "../core/GeoCoordinate";
 import { Vector2 } from "../core/Vector2";
@@ -23,6 +22,7 @@ import { CommandComponent } from "./CommandComponent";
 import { MotionLimits6 } from "../core/MotionLimits6";
 import { Dictionary } from "../core/Dictionary";
 import { Orientation3Optional } from "../core/Orientation3Optional";
+import { ComponentContext } from "./ComponentContext";
 export declare class MapComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.MapComponent;
     cameraSpecification: CameraSpecification;
@@ -38,41 +38,45 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     boundaryPoints: MapComponentBoundaryPoint[];
     applyJSON(json: any): void;
     get subtitle(): string;
-    verification(context: Context): Component | null;
+    area(): number;
+    verification(context: ComponentContext): Component | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
-    alignment(context: Context): {
+    alignment(context: ComponentContext): {
         droneOrientation: Orientation3Optional | null;
         gimbalOrientations: Dictionary<Orientation3Optional> | null;
     } | null;
     get referenceOffsets(): Vector2[];
-    referenceOffsetsHandleCoordinate(context: Context): GeoCoordinate;
-    elevationCoordinates(context: Context): GeoCoordinate[];
+    referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate;
+    elevationCoordinates(context: ComponentContext): GeoCoordinate[];
     node(parent?: Node | null): ComponentNode;
-    centerCoordinate(context: Context): GeoCoordinate;
-    targetDistanceResolved(context: Context): number;
-    groundSampleDistance(context: Context): GroundSampleDistance;
-    resetApproachDestinationOffset(context: Context): void;
-    addBoundaryPoint(boundaryPoint: MapComponentBoundaryPoint, context?: Context | null, index?: number | null): MapComponentBoundaryPoint;
-    updateBoundaryPointCoordinate(index: number, coordinate: GeoCoordinate, context: Context): void;
-    removeBoundaryPoint(boundaryPoint: MapComponentBoundaryPoint, context: Context | null): MapComponentBoundaryPoint;
+    centerCoordinate(context: ComponentContext): GeoCoordinate;
+    targetDistanceResolved(context: ComponentContext): number;
+    groundSampleDistance(context: ComponentContext): GroundSampleDistance;
+    resetApproachDestinationOffset(context: ComponentContext): void;
+    addBoundaryPoint(boundaryPoint: MapComponentBoundaryPoint, context?: ComponentContext | null, index?: number | null): MapComponentBoundaryPoint;
+    updateBoundaryPointCoordinate(index: number, coordinate: GeoCoordinate, context: ComponentContext): void;
+    removeBoundaryPoint(boundaryPoint: MapComponentBoundaryPoint, context: ComponentContext | null): MapComponentBoundaryPoint;
     get boundaryPointOffsets(): Vector2[];
     get boundarySegments(): Line2[];
     boundaryBoundingBox(rotation?: number): BoundingBox2;
-    boundaryPointCoordinates(context: Context): GeoCoordinate[];
-    boundaryPointCoordinate(context: Context, index: number): GeoCoordinate;
+    boundaryPointCoordinates(context: ComponentContext): GeoCoordinate[];
+    boundaryPointCoordinate(context: ComponentContext, index: number): GeoCoordinate;
+    endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     cachedData(context: ComponentExecuteContext): MapComponentModelData | null;
-    engaging(context: ComponentExecuteContext, estimate: ComponentEstimate): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
-    resolveDroneMotionLimitsCaptureInterval(context: Context): {
+    resolveDroneMotionLimitsCaptureInterval(context: ComponentContext): {
         motionLimits: MotionLimits6;
         captureInterval: number;
     };
-    model(context: Context, altitudeRequired?: boolean, timeRequired?: boolean, pathingRequired?: boolean): MapComponentModel | null;
+    model(context: ComponentContext, altitudeRequired?: boolean, timeRequired?: boolean, pathingRequired?: boolean): MapComponentModel | null;
     private segments;
 }
 export declare class MapComponentModelData extends DroneMotionComponentModelData<MapComponentModelSample> {
+    setupComponents: CommandComponent[];
+    addedInitialFocus: boolean;
     commandComponents: CommandComponent[];
     captureInterval: number;
     constructor(modelSample: LinkedValue<MapComponentModelSample>, captureInterval: number);

@@ -9,12 +9,12 @@ import { DroneMotionComponentModelSample, DroneMotionComponentModel } from "./Dr
 import { TypeName } from "../core/Enums";
 import { Serializable } from "../core/Serializable";
 import { Velocity3 } from "../core/Velocity3";
-import { Context } from "../core/Context";
 import { Path } from "../core/Path";
 import { OrientationReferenceSources } from "../core/OrientationReferenceSources";
 import { GeoLocation } from "../core/GeoLocation";
+import { ComponentContext } from "./ComponentContext";
 export declare class PathComponentModel extends DroneMotionComponentModel<PathComponentModelSample> {
-    static generate(context: Context, parameters: PathComponentModelParameters, positionOnly: boolean, alignmentOrientationOnly: boolean): PathComponentModel | null;
+    static generate(context: ComponentContext, parameters: PathComponentModelParameters, positionOnly: boolean, alignmentOrientationOnly: boolean): PathComponentModel | null;
     static createSamples(parameters: PathComponentModelParameters, positionOnly: boolean, alignmentOrientationOnly: boolean): LinkedValue<PathComponentModelSample> | null;
     private static insertSamplesAltitudeChanges;
 }

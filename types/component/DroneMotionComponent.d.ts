@@ -4,7 +4,6 @@ import { VelocityDroneCommand } from "../command/drone/VelocityDroneCommand";
 import { MotionLimits6Optional } from "../core/MotionLimits6Optional";
 import { Velocity6 } from "../core/Velocity6";
 import { MotionLimits6 } from "../core/MotionLimits6";
-import { Context } from "../core/Context";
 import { SerializableAbstract } from "../core/SerializableAbstract";
 import { Component } from "./Component";
 import { GeoSpatial } from "../core/GeoSpatial";
@@ -15,6 +14,7 @@ import { Velocity3 } from "../core/Velocity3";
 import { ComponentEstimate } from "./ComponentEstimate";
 import { OrientationReferenceSources } from "../core/OrientationReferenceSources";
 import { DistanceTolerance } from "../core/DistanceTolerance";
+import { ComponentContext } from "./ComponentContext";
 export declare abstract class DroneMotionComponent extends SubComponent implements SerializableAbstract {
     droneMotionLimits: MotionLimits6Optional;
     droneMotionErrorTolerance: DistanceTolerance | null;
@@ -25,18 +25,19 @@ export declare abstract class DroneMotionComponent extends SubComponent implemen
     get exclusiveExecution(): boolean;
     get repositionIfIncluded(): boolean;
     descendantAllowed(component: Component): boolean;
-    resolveDroneMotionLimits(context: Context, droneMotionLimits?: MotionLimits6Optional | null): MotionLimits6;
-    resolveDroneMotionErrorTolerance(context: Context, droneMotionErrorTolerance?: DistanceTolerance | null): DistanceTolerance;
-    resolveDroneMotionErrorLimits(context: Context, droneMotionLimits: MotionLimits6): MotionLimits6;
+    resolveDroneMotionLimits(context: ComponentContext, droneMotionLimits?: MotionLimits6Optional | null): MotionLimits6;
+    resolveDroneMotionErrorTolerance(context: ComponentContext, droneMotionErrorTolerance?: DistanceTolerance | null): DistanceTolerance;
+    resolveDroneMotionErrorLimits(context: ComponentContext, droneMotionLimits: MotionLimits6): MotionLimits6;
     addVelocityCommandsFromModel(context: ComponentExecuteContext, model: DroneMotionComponentModelData<DroneMotionComponentModelSample>, headingRotation: boolean | null): void;
     addDroneVelocityCommand(context: ComponentExecuteContext, velocity: Velocity6, heading?: number | null): VelocityDroneCommand;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
-    engaging(context: ComponentExecuteContext, estimate: ComponentEstimate): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
 }
 export declare class DroneMotionComponentModelData<S extends DroneMotionComponentModelSample> {
     private _sample;
     private currentTime;
     readonly totalTime: number;
+    filters: any;
     constructor(modelSample: LinkedValue<S>);
     updateProgress(progress: number): void;
     updateTime(time: number): void;
@@ -51,6 +52,7 @@ export declare class DroneMotionComponentModel<S extends DroneMotionComponentMod
     constructor(sample: LinkedValue<S>);
     addToEstimate(estimate: ComponentEstimate): void;
     static updateSamplesContrainVelocities(sample: LinkedValue<DroneMotionComponentModelSample>, maxSampleDistance: number): void;
+    private static updateSamplesSmooth;
     private static updateSamplesContrainHorizontalVelocitiesByAcceleration;
     private static updateSamplesContrainVerticalVelocitiesByAcceleration;
     private static updateSamplesContrainHorizontalVelocitiesByTime;

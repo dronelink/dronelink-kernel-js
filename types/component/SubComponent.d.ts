@@ -5,12 +5,11 @@ import { PointOfInterest, PointOfInterestReference } from "../core/PointOfIntere
 import { ComponentNode } from "./ComponentNode";
 import { Vector2 } from "../core/Vector2";
 import { Node } from "../core/Node";
-import { Context } from "../core/Context";
 import { GeoCoordinate } from "../core/GeoCoordinate";
 import { GeoSpatial } from "../core/GeoSpatial";
 import { ReferencedAltitude } from "../core/ReferencedAltitude";
 import { ComponentExecuteContext } from "./ComponentExecuteContext";
-import { ComponentEstimate } from "./ComponentEstimate";
+import { ComponentContext } from "./ComponentContext";
 export declare abstract class SubComponent extends Component implements SerializableAbstract {
     required: boolean;
     exclusive: boolean;
@@ -22,16 +21,16 @@ export declare abstract class SubComponent extends Component implements Serializ
     get exclusiveReadonly(): boolean;
     get exclusiveExecution(): boolean;
     get repositionIfIncluded(): boolean;
-    reposition(coordinate: GeoCoordinate, context: Context | null): void;
+    reposition(coordinate: GeoCoordinate, context: ComponentContext | null): void;
     get referenceOffsets(): Vector2[];
-    referenceSpatial(context: Context): GeoSpatial;
-    referenceCoordinate(context: Context, offset?: Vector2 | null): GeoCoordinate;
-    elevationCoordinates(context: Context): GeoCoordinate[];
-    pointOfInterestCoordinate(context: Context, index: number): GeoCoordinate;
-    pointsOfInterestCoordinates(context: Context): GeoCoordinate[];
+    referenceSpatial(context: ComponentContext): GeoSpatial;
+    referenceCoordinate(context: ComponentContext, offset?: Vector2 | null): GeoCoordinate;
+    elevationCoordinates(context: ComponentContext): GeoCoordinate[];
+    pointOfInterestCoordinate(context: ComponentContext, index: number): GeoCoordinate;
+    pointsOfInterestCoordinates(context: ComponentContext): GeoCoordinate[];
     pointOfInterestByID(pointOfInterestID: String): PointOfInterest | undefined;
-    pointOfInterestCoordinateByID(context: Context, id: String): GeoCoordinate | null;
-    pointOfInterestReferencedAltitudeByID(context: Context, id: String): ReferencedAltitude | null;
+    pointOfInterestCoordinateByID(context: ComponentContext, id: String): GeoCoordinate | null;
+    pointOfInterestReferencedAltitudeByID(context: ComponentContext, id: String): ReferencedAltitude | null;
     node(parent?: Node | null): ComponentNode;
-    engaging(context: ComponentExecuteContext, estimate: ComponentEstimate): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
 }

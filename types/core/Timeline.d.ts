@@ -1,6 +1,5 @@
 import { Serializable } from "./Serializable";
 import { TypeName, CameraMode, CameraPhotoMode } from "./Enums";
-import { ComponentExecuteContext } from "../component/ComponentExecuteContext";
 import { Dictionary } from "./Dictionary";
 import { Command } from "../command/Command";
 import { CommandExecutionState } from "../command/CommandExecutionState";
@@ -11,13 +10,15 @@ import { ComponentExecutionState } from "../component/ComponentExecutionState";
 import { Descriptors } from "./Descriptors";
 import { CameraFile } from "./CameraFile";
 import { Camera } from "./Camera";
+import { Context } from "./Context";
+import { Executable } from "./Executable";
 export declare class Timeline implements Serializable {
     readonly type = TypeName.Timeline;
     frames: TimelineFrame[];
     commands: Dictionary<TimelineCommand>;
     captures: TimelineCameraCapture[];
     applyJSON(json: any): void;
-    addFrame(context: ComponentExecuteContext, elapsedTime: number): TimelineFrame;
+    addFrame(executable: Executable, context: Context, elapsedTime: number): TimelineFrame;
     get firstFrame(): TimelineFrame | null;
     get lastFrame(): TimelineFrame | null;
     getFrame(progress: number): TimelineFrame | null;

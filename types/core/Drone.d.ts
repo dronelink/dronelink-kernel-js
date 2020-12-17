@@ -34,8 +34,8 @@ export declare class Drone extends Identifiable implements Serializable {
         x: number;
         z: number;
     }): OrientationReferenceSources;
-    projectSpatial(datetime: Datetime): GeoSpatial;
-    projectGimbalOrientation(channel: number, datetime: Datetime): Orientation3;
+    projectSpatial(datetime: Datetime, additionalMillis?: number): GeoSpatial;
+    projectGimbalOrientation(channel: number, datetime: Datetime, additionalMillis?: number): Orientation3;
     camera(channel?: number): Camera;
     gimbal(channel?: number): Gimbal;
     gimbalOrientation(channel?: number): Orientation3;

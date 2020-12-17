@@ -3,7 +3,6 @@ import { ComponentExecuteContext } from "./ComponentExecuteContext";
 import { OrbitDirection, TypeName } from "../core/Enums";
 import { Vector2 } from "../core/Vector2";
 import { Serializable } from "../core/Serializable";
-import { Context } from "../core/Context";
 import { ComponentEstimate } from "./ComponentEstimate";
 import { ApproachableComponent } from "./ApproachableComponent";
 import { GeoCoordinate } from "../core/GeoCoordinate";
@@ -15,6 +14,7 @@ import { Dictionary } from "../core/Dictionary";
 import { Component } from "./Component";
 import { Altitude } from "../core/Altitude";
 import { ReferencedAltitude } from "../core/ReferencedAltitude";
+import { ComponentContext } from "./ComponentContext";
 export declare class OrbitComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.OrbitComponent;
     centerOffset: Vector2;
@@ -26,24 +26,25 @@ export declare class OrbitComponent extends ApproachableComponent implements Ser
     gimbalOrientations: Dictionary<Orientation3Optional> | null;
     applyJSON(json: any): void;
     get subtitle(): string;
-    verification(context: Context): Component | null;
+    verification(context: ComponentContext): Component | null;
     get pointsOfInterestEnabled(): boolean;
     get referenceOffsets(): Vector2[];
     get radius(): number;
     set radius(value: number);
-    referenceOffsetsHandleCoordinate(context: Context): GeoCoordinate | null;
-    elevationCoordinates(context: Context): GeoCoordinate[];
-    centerCoordinate(context: Context): GeoCoordinate;
-    finalCoordinate(context: Context): GeoCoordinate;
-    finalReferencedAltitude(context: Context): ReferencedAltitude | null;
-    alignment(context: Context): {
+    referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate | null;
+    elevationCoordinates(context: ComponentContext): GeoCoordinate[];
+    centerCoordinate(context: ComponentContext): GeoCoordinate;
+    finalCoordinate(context: ComponentContext): GeoCoordinate;
+    finalReferencedAltitude(context: ComponentContext): ReferencedAltitude | null;
+    alignment(context: ComponentContext): {
         droneOrientation: Orientation3Optional | null;
         gimbalOrientations: Dictionary<Orientation3Optional> | null;
     } | null;
+    endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     cachedData(context: ComponentExecuteContext): DroneMotionComponentModelData<DroneMotionComponentModelSample> | null;
-    engaging(context: ComponentExecuteContext, estimate: ComponentEstimate): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
-    model(context: Context, positionOnly?: boolean, alignmentOrientationOnly?: boolean): DroneMotionComponentModel<DroneMotionComponentModelSample> | null;
+    model(context: ComponentContext, positionOnly?: boolean, alignmentOrientationOnly?: boolean): DroneMotionComponentModel<DroneMotionComponentModelSample> | null;
 }

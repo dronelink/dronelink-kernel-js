@@ -2,6 +2,7 @@ import { Serializable } from "./Serializable";
 import { Vector2 } from "./Vector2";
 import { TypeName } from "./Enums";
 import { GeoSpatial } from "./GeoSpatial";
+import { GeoCoordinateFilter } from "./GeoCoordinateFilter";
 export declare class GeoCoordinate implements Serializable {
     readonly type = TypeName.GeoCoordinate;
     private static GeoRadius;
@@ -20,6 +21,7 @@ export declare class GeoCoordinate implements Serializable {
     toRadians(): GeoCoordinate;
     toLngLat(): number[];
     toGeoSpatial(): GeoSpatial;
+    toFilter(settings: any): GeoCoordinateFilter;
     toString(): string;
     closest(coordinates: GeoCoordinate[]): GeoCoordinate;
     static convexHull(coordinates: GeoCoordinate[]): GeoCoordinate[] | null;

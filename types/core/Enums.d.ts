@@ -195,6 +195,9 @@ export declare enum CameraPhotoMode {
     Panorama = "panorama",
     HyperLight = "hyperLight",
     TimeLapse = "timeLapse",
+    HighResolution = "highResolution",
+    Smart = "smart",
+    InternalAISpotChecking = "internalAISpotChecking",
     Unknown = "unknown"
 }
 export declare enum CameraShutterSpeed {
@@ -315,6 +318,12 @@ export declare enum CameraVideoFrameRate {
     _100 = "100",
     _120 = "120",
     _8dot7 = "8dot7",
+    Unknown = "unknown"
+}
+export declare enum CameraVideoMode {
+    Normal = "normal",
+    HDR = "hdr",
+    SlowMotion = "slowMotion",
     Unknown = "unknown"
 }
 export declare enum CameraVideoResolution {
@@ -586,6 +595,7 @@ export declare enum TypeName {
     GimbalCommand = "GimbalCommand",
     HeadingDroneCommand = "HeadingDroneCommand",
     HeadingComponent = "HeadingComponent",
+    HomeLocationDroneCommand = "HomeLocationDroneCommand",
     Interpolation = "Interpolation",
     ISOCameraCommand = "ISOCameraCommand",
     LandingGearAutomaticMovementDroneCommand = "LandingGearAutomaticMovementDroneCommand",
@@ -609,6 +619,9 @@ export declare enum TypeName {
     MessageGroup = "MessageGroup",
     MeteringModeCameraCommand = "MeteringModeCameraCommand",
     Mission = "Mission",
+    Mode = "Mode",
+    ModeInput = "ModeInput",
+    ModeSession = "ModeSession",
     ModeCameraCommand = "ModeCameraCommand",
     ModeGimbalCommand = "ModeGimbalCommand",
     MotionLimits = "MotionLimits",
@@ -639,6 +652,11 @@ export declare enum TypeName {
     PhotoFileFormatCameraCommand = "PhotoFileFormatCameraCommand",
     Point2 = "Point2",
     PrecisionLandingDroneCommand = "PrecisionLandingDroneCommand",
+    RemoteController = "RemoteController",
+    RemoteControllerButton = "RemoteControllerButton",
+    RemoteControllerStick = "RemoteControllerStick",
+    RemoteControllerSticksDroneCommand = "RemoteControllerSticksDroneCommand",
+    RemoteControllerWheel = "RemoteControllerWheel",
     ReturnHomeAltitudeDroneCommand = "ReturnHomeAltitudeDroneCommand",
     ReturnHomeObstacleAvoidanceDroneCommand = "ReturnHomeObstacleAvoidanceDroneCommand",
     ReturnHomeRemoteObstacleAvoidanceDroneCommand = "ReturnHomeRemoteObstacleAvoidanceDroneCommand",
@@ -670,6 +688,7 @@ export declare enum TypeName {
     VideoCaptionCameraCommand = "VideoCaptionCameraCommand",
     VideoFileCompressionStandardCameraCommand = "VideoFileCompressionStandardCameraCommand",
     VideoFileFormatCameraCommand = "VideoFileFormatCameraCommand",
+    VideoModeCameraCommand = "VideoModeCameraCommand",
     VideoResolutionFrameRateCameraCommand = "VideoResolutionFrameRateCameraCommand",
     VideoStandardCameraCommand = "VideoStandardCameraCommand",
     VisionAssistedPositioningDroneCommand = "VisionAssistedPositioningDroneCommand",

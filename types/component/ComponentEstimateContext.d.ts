@@ -1,7 +1,7 @@
-import { Context } from "../core/Context";
 import { Dictionary } from "../core/Dictionary";
 import { Camera } from "../core/Camera";
-export declare class ComponentEstimateContext extends Context {
+import { ComponentContext } from "./ComponentContext";
+export declare class ComponentEstimateContext extends ComponentContext {
     pathRequired: boolean;
     altitudeRequired: boolean;
     timeRequired: boolean;

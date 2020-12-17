@@ -7,5 +7,6 @@ export declare class MessageGroup implements Serializable {
     descriptors: Descriptors;
     messages: Message[];
     applyJSON(json: any): void;
+    constructor(descriptors?: Descriptors, messages?: Message[]);
     toString: () => string;
 }

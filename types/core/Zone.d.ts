@@ -4,11 +4,11 @@ import { TypeName, ZoneShape, ZoneMotionPriority } from "./Enums";
 import { Altitude } from "./Altitude";
 import { GeoCoordinate } from "./GeoCoordinate";
 import { SourcedGeoSpatial } from "./SourcedGeoSpatial";
-import { Context } from "./Context";
 import { Line2 } from "./Line2";
 import { Vector2 } from "./Vector2";
 import { ZoneBoundaryPoint } from "./ZoneBoundaryPoint";
 import { GeoSpatial } from "./GeoSpatial";
+import { ComponentContext } from "../component/ComponentContext";
 export declare class Zone extends Identifiable implements Serializable {
     readonly type = TypeName.Zone;
     reference: SourcedGeoSpatial;
@@ -19,23 +19,23 @@ export declare class Zone extends Identifiable implements Serializable {
     minHorizontalExitAltitude: Altitude | null;
     boundaryPoints: ZoneBoundaryPoint[];
     applyJSON(json: any): void;
-    referenceSpatial(context: Context): GeoSpatial;
-    referenceCoordinate(context: Context, offset?: Vector2 | null): GeoCoordinate;
+    referenceSpatial(context: ComponentContext): GeoSpatial;
+    referenceCoordinate(context: ComponentContext, offset?: Vector2 | null): GeoCoordinate;
     get boundaryPointOffsets(): Vector2[];
     get boundarySegments(): Line2[];
-    addBoundaryPoint(boundaryPoint: ZoneBoundaryPoint, context?: Context | null, index?: number | null): ZoneBoundaryPoint;
-    updateBoundaryPointCoordinate(index: number, coordinate: GeoCoordinate, context: Context): void;
-    removeBoundaryPoint(boundaryPoint: ZoneBoundaryPoint, context: Context | null): ZoneBoundaryPoint;
-    boundaryPointCoordinates(context: Context): GeoCoordinate[];
-    boundaryPointCoordinate(context: Context, index: number): GeoCoordinate;
-    updateShape(context: Context, shape: ZoneShape, coordinate: GeoCoordinate, size: number): void;
-    centerCoordinate(context: Context): GeoCoordinate;
+    addBoundaryPoint(boundaryPoint: ZoneBoundaryPoint, context?: ComponentContext | null, index?: number | null): ZoneBoundaryPoint;
+    updateBoundaryPointCoordinate(index: number, coordinate: GeoCoordinate, context: ComponentContext): void;
+    removeBoundaryPoint(boundaryPoint: ZoneBoundaryPoint, context: ComponentContext | null): ZoneBoundaryPoint;
+    boundaryPointCoordinates(context: ComponentContext): GeoCoordinate[];
+    boundaryPointCoordinate(context: ComponentContext, index: number): GeoCoordinate;
+    updateShape(context: ComponentContext, shape: ZoneShape, coordinate: GeoCoordinate, size: number): void;
+    centerCoordinate(context: ComponentContext): GeoCoordinate;
     private get radius();
     private altitudeInRange;
     private altitudesInRange;
     private edgeSpatial;
     private intersections;
-    static path(zones: Zone[], context: Context, start: GeoSpatial, finish: GeoSpatial): ZonePath | null;
+    static path(zones: Zone[], context: ComponentContext, start: GeoSpatial, finish: GeoSpatial): ZonePath | null;
 }
 export declare class ZonePath {
     segments: ZonePathSegment[];

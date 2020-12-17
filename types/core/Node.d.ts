@@ -17,6 +17,7 @@ export declare abstract class Node extends Identifiable {
     get root(): Node;
     get ancestors(): Node[];
     get descendants(): Node[];
+    get descendantsDepthFirst(): Node[];
     find(id: string): Node | null;
     findDescendant(id: string): Node | null;
     descendantAllowed(descendant: any): boolean;

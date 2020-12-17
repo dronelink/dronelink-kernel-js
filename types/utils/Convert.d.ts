@@ -8,8 +8,10 @@ export declare class Convert {
     static metersPerSecondToMilesPerHour(value: number): number;
     static metersPerSecondToKilometersPerHour(value: number): number;
     static kilometersPerHourToMetersPerSecond(value: number): number;
+    static acresToSquareMeters(value: number): number;
     static squareMetersToAcres(value: number): number;
     static squareMetersToHectares(value: number): number;
+    static radiansMod(value: number): number;
     static radiansToDegrees(value: number, mod?: boolean): number;
     static degreesToRadians(value: number, mod?: boolean): number;
     static distance(): Converters;
@@ -22,6 +24,7 @@ export declare class Convert {
     static accelerationVertical(): Converters;
     static accelerationRotational(): Converters;
     static converters(measurementType: MeasurementType): Converters;
+    static findStrings(source: string, condition: (value: string) => boolean): string[];
 }
 declare type ConverterValueUnit = {
     name: string;

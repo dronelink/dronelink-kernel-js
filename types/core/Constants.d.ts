@@ -4,10 +4,10 @@ import { CameraSpecification } from "./CameraSpecification";
 import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 export declare class Constants {
-    static readonly Version = "1.7.0";
-    static readonly MissionExecuteIntervalTarget: number;
-    static readonly MissionExecuteIntervalMax: number;
-    static readonly MissionExecuteDelayStrikesMax = 5;
+    static readonly Version = "2.0.0";
+    static readonly ExecuteIntervalTarget: number;
+    static readonly ExecuteIntervalMax: number;
+    static readonly ExecuteDelayStrikesMax = 5;
     static readonly SimulationUpdateInterval: number;
     static readonly DroneConnectionLatency: number;
     static DroneMotionLimits: {
@@ -33,7 +33,6 @@ export declare class Constants {
     static readonly PlanComponentTakeoffDistanceHorizontal: number;
     static readonly DroneMotionComponentGimbalOrientation: Orientation3Optional;
     static readonly DroneMotionComponentModelSampleTimeMax = 2;
-    static readonly DroneMotionComponentRotationalSmoothingTolerance: number;
     static readonly DroneMotionComponentErrorK: number;
     static readonly DroneMotionErrorToleranceHorizontal: number;
     static readonly DroneMotionErrorToleranceVertical: number;
@@ -83,6 +82,7 @@ export declare class Constants {
     static readonly PlanRestrictionZoneMinApplicableProximityVertical: number;
     static readonly RotationComponentVelocity: number;
     static readonly RotationComponentDistance: number;
+    static readonly RotationComponentVelocityMin: number;
     static readonly RotationAchievementDistance: number;
     static readonly WaitComponentTime = 1;
     static readonly VelocityHorizontalDampenThreshold = 2;

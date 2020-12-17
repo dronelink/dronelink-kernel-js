@@ -1,6 +1,6 @@
 import { Payload } from "./Payload";
 import { Serializable } from "./Serializable";
-import { TypeName, CameraMode, CameraPhotoMode, CameraPhotoFileFormat, CameraVideoFileFormat } from "./Enums";
+import { TypeName, CameraMode, CameraPhotoMode, CameraPhotoFileFormat, CameraVideoFileFormat, CameraVideoMode } from "./Enums";
 import { Datetime } from "./Datetime";
 import { CameraSpecification } from "./CameraSpecification";
 export declare class Camera extends Payload implements Serializable {
@@ -14,6 +14,7 @@ export declare class Camera extends Payload implements Serializable {
         photoMode: CameraPhotoMode;
         photoFileFormat: CameraPhotoFileFormat;
         photoInterval: number;
+        videoMode: CameraVideoMode;
         videoFileFormat: CameraVideoFileFormat;
     };
     applyJSON(json: any): void;

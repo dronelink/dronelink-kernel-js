@@ -9,12 +9,12 @@ import { ComponentEstimateContext } from "./ComponentEstimateContext";
 import { GeoSpatial } from "../core/GeoSpatial";
 import { ComponentEstimate } from "./ComponentEstimate";
 import { Component } from "./Component";
-import { Context } from "../core/Context";
+import { ComponentContext } from "./ComponentContext";
 export declare abstract class AchievableDroneMotionComponent extends DroneMotionComponent implements SerializableAbstract {
     immediateComponent: SubComponent | null;
     achievedComponent: SubComponent | null;
     applyJSON(json: any): void;
-    verification(context: Context): Component | null;
+    verification(context: ComponentContext): Component | null;
     node(parent?: Node | null): ComponentNode;
     achieved(context: ComponentExecuteContext): boolean;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;

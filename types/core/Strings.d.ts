@@ -698,6 +698,15 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             timeLapse: {
                 name: string;
             };
+            highResolution: {
+                name: string;
+            };
+            smart: {
+                name: string;
+            };
+            internalAISpotChecking: {
+                name: string;
+            };
             unknown: {
                 name: string;
             };
@@ -728,6 +737,10 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             zenmuseXT: string;
             zenmuseXT2RGB: string;
             zenmuseXT2Thermal: string;
+            zenmuseH20Thermal: string;
+            zenmuseH20Wide: string;
+            zenmuseH20ZoomMin: string;
+            zenmuseH20ZoomMax: string;
             zenmuseZ30Min: string;
             zenmuseZ30Max: string;
             mavicMini: string;
@@ -739,6 +752,8 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             mavic2EnterpriseMax: string;
             mavic2EnterpriseDualRGB: string;
             mavic2EnterpriseDualThermal: string;
+            mavicAir2: string;
+            mavicAir248MP: string;
             mavicAir: string;
             mavicPro: string;
             mavicProPlatinum: string;
@@ -752,6 +767,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             phantom3Advanced: string;
             phantom3Standard: string;
             spark: string;
+            anafi4k: string;
         };
     };
     CameraShutterSpeed: {
@@ -1101,6 +1117,23 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             "8dot7": {
+                name: string;
+            };
+            unknown: {
+                name: string;
+            };
+        };
+    };
+    CameraVideoMode: {
+        name: string;
+        values: {
+            normal: {
+                name: string;
+            };
+            hdr: {
+                name: string;
+            };
+            slowMotion: {
                 name: string;
             };
             unknown: {
@@ -1654,6 +1687,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         multiple: string;
         values: {
             coordinate: string;
+            introImageUrl: string;
             components: string;
             inputs: string;
             dynamicInputs: string;
@@ -1733,6 +1767,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             waiting: {
                 title: string;
             };
+        };
+    };
+    HomeLocationDroneCommand: {
+        name: string;
+        values: {
+            coordinate: string;
         };
     };
     InterpolationFunction: {
@@ -1845,6 +1885,11 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             droneOrientation: string;
             gimbalOrientation: string;
         };
+        messages: {
+            setup: {
+                title: string;
+            };
+        };
     };
     MapComponentBoundaryPoint: {
         name: string;
@@ -1951,6 +1996,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     details: string;
                 };
             };
+            map: {
+                largeTerrainFollow: {
+                    title: string;
+                    details: string;
+                };
+            };
             cameraCommand: {
                 requiredNotCapturingUnknown: {
                     title: string;
@@ -2046,6 +2097,18 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         values: {
             meteringMode: string;
+        };
+    };
+    Mode: {
+        name: string;
+        multiple: string;
+        messages: {
+            reengaging: string;
+        };
+        values: {
+            coordinate: string;
+            inputs: string;
+            executable: string;
         };
     };
     ModeCameraCommand: {
@@ -2286,6 +2349,25 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         values: {
             enabled: string;
+        };
+    };
+    RemoteControllerSticksDroneCommand: {
+        name: string;
+        values: {
+            leftStick: string;
+            rightStick: string;
+        };
+        messages: {
+            controls: {
+                title: string;
+                details: {
+                    pitch: string;
+                    roll: string;
+                    yaw: string;
+                    vertical: string;
+                    heading: string;
+                };
+            };
         };
     };
     ReturnHomeAltitudeDroneCommand: {
@@ -2637,6 +2719,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     horizontal: string;
                     vertical: string;
                     rotational: string;
+                    yaw: string;
                     heading: string;
                 };
             };
@@ -2671,6 +2754,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         values: {
             videoFileFormat: string;
+        };
+    };
+    VideoModeCameraCommand: {
+        name: string;
+        values: {
+            videoMode: string;
         };
     };
     VideoResolutionFrameRateCameraCommand: {

@@ -16,6 +16,7 @@ export declare class ComponentExecutionState extends Identifiable implements Ser
     toJSON(): any;
     applyJSON(json: any): void;
     constructor(id?: string | null);
+    get complete(): boolean;
     cachedData(key: string, defaultValue?: (() => any) | null): any;
     clearCachedData(key: string): void;
     update(status: ComponentExecutionStatus, error?: string | null, datetime?: Datetime | null, timeSinceLastExecution?: number): ComponentExecutionState;

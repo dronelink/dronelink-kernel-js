@@ -6,7 +6,6 @@ import { CameraSpecification, GroundSampleDistance } from "../core/CameraSpecifi
 import { FacadeComponentBoundaryPoint } from "./FacadeComponentBoundaryPoint";
 import { Altitude } from "../core/Altitude";
 import { Vector2 } from "../core/Vector2";
-import { Context } from "../core/Context";
 import { GeoCoordinate } from "../core/GeoCoordinate";
 import { Line2 } from "../core/Line2";
 import { Path } from "../core/Path";
@@ -24,6 +23,7 @@ import { ComponentExecuteContext } from "./ComponentExecuteContext";
 import { ComponentExecutionState } from "./ComponentExecutionState";
 import { ReferencedAltitude } from "../core/ReferencedAltitude";
 import { SubComponent } from "./SubComponent";
+import { ComponentContext } from "./ComponentContext";
 export declare class FacadeComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.FacadeComponent;
     initialAltitude: Altitude;
@@ -45,37 +45,38 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     boundaryPoints: FacadeComponentBoundaryPoint[];
     applyJSON(json: any): void;
     get subtitle(): string;
-    verification(context: Context): Component | null;
+    verification(context: ComponentContext): Component | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
-    alignment(context: Context): {
+    alignment(context: ComponentContext): {
         droneOrientation: Orientation3Optional | null;
         gimbalOrientations: Dictionary<Orientation3Optional> | null;
     } | null;
     get referenceOffsets(): Vector2[];
-    referenceOffsetsHandleCoordinate(context: Context): GeoCoordinate;
-    elevationCoordinates(context: Context): GeoCoordinate[];
+    referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate;
+    elevationCoordinates(context: ComponentContext): GeoCoordinate[];
     node(parent?: Node | null): ComponentNode;
-    centerCoordinate(context: Context): GeoCoordinate;
-    initialReferencedAltitude(context: Context): ReferencedAltitude;
-    finalReferencedAltitude(context: Context): ReferencedAltitude;
+    centerCoordinate(context: ComponentContext): GeoCoordinate;
+    initialReferencedAltitude(context: ComponentContext): ReferencedAltitude;
+    finalReferencedAltitude(context: ComponentContext): ReferencedAltitude;
     get surfaceSampleDistance(): GroundSampleDistance;
-    resetApproachDestinationOffset(context: Context): void;
-    reverseBoundaryPoints(context: Context): void;
-    addBoundaryPoint(boundaryPoint: FacadeComponentBoundaryPoint, context?: Context | null, index?: number | null): FacadeComponentBoundaryPoint;
+    resetApproachDestinationOffset(context: ComponentContext): void;
+    reverseBoundaryPoints(context: ComponentContext): void;
+    addBoundaryPoint(boundaryPoint: FacadeComponentBoundaryPoint, context?: ComponentContext | null, index?: number | null): FacadeComponentBoundaryPoint;
     get boundaryClosed(): boolean;
-    updateBoundaryPointCoordinate(index: number, coordinate: GeoCoordinate, context: Context): void;
-    removeBoundaryPoint(boundaryPoint: FacadeComponentBoundaryPoint, context: Context): FacadeComponentBoundaryPoint;
+    updateBoundaryPointCoordinate(index: number, coordinate: GeoCoordinate, context: ComponentContext): void;
+    removeBoundaryPoint(boundaryPoint: FacadeComponentBoundaryPoint, context: ComponentContext): FacadeComponentBoundaryPoint;
     get boundaryPointOffsets(): Vector2[];
     get maxBoundaryPoints(): number;
     get boundarySegments(): Line2[];
-    boundaryPointCoordinates(context: Context): GeoCoordinate[];
-    boundaryPointCoordinate(context: Context, index: number): GeoCoordinate;
+    boundaryPointCoordinates(context: ComponentContext): GeoCoordinate[];
+    boundaryPointCoordinate(context: ComponentContext, index: number): GeoCoordinate;
     get boundaryFaceOrientation(): number;
+    endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     cachedData(context: ComponentExecuteContext): FacadeComponentModelData | null;
-    engaging(context: ComponentExecuteContext, estimate: ComponentEstimate): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
-    modelParameters(context: Context, path?: Path | null): {
+    modelParameters(context: ComponentContext, paths?: Path[] | null): {
         approachAltitude: Altitude;
         initialAltitude: Altitude;
         finalAltitude: Altitude;
@@ -83,12 +84,12 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
         columns: number;
     } | null;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
-    model(context: Context, timeRequired?: boolean): FacadeComponentModel | null;
-    path(context: Context): Path | null;
+    model(context: ComponentContext, timeRequired?: boolean): FacadeComponentModel | null;
+    paths(context: ComponentContext): Path[] | null;
     get pathCorneringEnabled(): boolean;
     get patternEnabled(): boolean;
     get patternResolved(): FacadePattern;
-    private pathOffsets;
+    private pathsOffsets;
 }
 export declare class FacadeComponentModelData extends DroneMotionComponentModelData<FacadeComponentModelSample> {
     setupComponents: SubComponent[];
