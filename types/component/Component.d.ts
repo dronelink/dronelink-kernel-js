@@ -20,6 +20,7 @@ import { Altitude } from "../core/Altitude";
 import { ReferencedAltitude } from "../core/ReferencedAltitude";
 import { CameraCaptureConfiguration } from "../core/CameraCaptureConfiguration";
 import { ComponentContext } from "./ComponentContext";
+import { PlanRestrictionZone } from "./PlanRestrictionZone";
 export declare abstract class Component extends Identifiable implements SerializableAbstract {
     coordinate: GeoCoordinate;
     descriptors: Descriptors;
@@ -55,4 +56,5 @@ export declare abstract class Component extends Identifiable implements Serializ
         z: number;
     }, baseVelocity?: Velocity3): VelocityGimbalCommand;
     toString: () => string;
+    activeRestrictionZones(context: ComponentContext): PlanRestrictionZone[];
 }

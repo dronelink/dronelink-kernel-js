@@ -17,6 +17,7 @@ export declare class Zone extends Identifiable implements Serializable {
     minAltitude: Altitude;
     maxAltitude: Altitude;
     minHorizontalExitAltitude: Altitude | null;
+    excludedComponentTypes: String[];
     boundaryPoints: ZoneBoundaryPoint[];
     applyJSON(json: any): void;
     referenceSpatial(context: ComponentContext): GeoSpatial;
@@ -33,8 +34,12 @@ export declare class Zone extends Identifiable implements Serializable {
     private get radius();
     private altitudeInRange;
     private altitudesInRange;
+    coordinateInside(context: ComponentContext, coordinate: GeoCoordinate): boolean;
     private edgeSpatial;
-    private intersections;
+    intersections(context: ComponentContext, start: GeoSpatial, end: GeoSpatial, includeAltitudes: boolean): {
+        coordinate: GeoCoordinate;
+        segmentIndex: number;
+    }[] | null;
     static path(zones: Zone[], context: ComponentContext, start: GeoSpatial, finish: GeoSpatial): ZonePath | null;
 }
 export declare class ZonePath {

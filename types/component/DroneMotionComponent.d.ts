@@ -15,6 +15,7 @@ import { ComponentEstimate } from "./ComponentEstimate";
 import { OrientationReferenceSources } from "../core/OrientationReferenceSources";
 import { DistanceTolerance } from "../core/DistanceTolerance";
 import { ComponentContext } from "./ComponentContext";
+import { PlanRestrictionZone } from "./PlanRestrictionZone";
 export declare abstract class DroneMotionComponent extends SubComponent implements SerializableAbstract {
     droneMotionLimits: MotionLimits6Optional;
     droneMotionErrorTolerance: DistanceTolerance | null;
@@ -32,6 +33,7 @@ export declare abstract class DroneMotionComponent extends SubComponent implemen
     addDroneVelocityCommand(context: ComponentExecuteContext, velocity: Velocity6, heading?: number | null): VelocityDroneCommand;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
     engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
+    activeRestrictionZones(context: ComponentContext): PlanRestrictionZone[];
 }
 export declare class DroneMotionComponentModelData<S extends DroneMotionComponentModelSample> {
     private _sample;
@@ -51,7 +53,8 @@ export declare class DroneMotionComponentModel<S extends DroneMotionComponentMod
     readonly samples: LinkedValue<S>[];
     constructor(sample: LinkedValue<S>);
     addToEstimate(estimate: ComponentEstimate): void;
-    static updateSamplesContrainVelocities(sample: LinkedValue<DroneMotionComponentModelSample>, maxSampleDistance: number): void;
+    static insertSamplesAltitudeChanges(context: ComponentContext, modelSample: LinkedValue<DroneMotionComponentModelSample>, maxSampleDistance: number, approachAltitudeATL: number): void;
+    static updateSamplesContrainVelocities(sample: LinkedValue<DroneMotionComponentModelSample>, maxSampleDistance: number, smoothing: boolean): void;
     private static updateSamplesSmooth;
     private static updateSamplesContrainHorizontalVelocitiesByAcceleration;
     private static updateSamplesContrainVerticalVelocitiesByAcceleration;

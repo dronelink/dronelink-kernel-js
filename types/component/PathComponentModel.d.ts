@@ -16,7 +16,6 @@ import { ComponentContext } from "./ComponentContext";
 export declare class PathComponentModel extends DroneMotionComponentModel<PathComponentModelSample> {
     static generate(context: ComponentContext, parameters: PathComponentModelParameters, positionOnly: boolean, alignmentOrientationOnly: boolean): PathComponentModel | null;
     static createSamples(parameters: PathComponentModelParameters, positionOnly: boolean, alignmentOrientationOnly: boolean): LinkedValue<PathComponentModelSample> | null;
-    private static insertSamplesAltitudeChanges;
 }
 export declare class PathComponentModelSample extends DroneMotionComponentModelSample implements Serializable {
     readonly type = TypeName.PathComponentModelSample;

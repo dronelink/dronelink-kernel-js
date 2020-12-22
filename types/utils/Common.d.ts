@@ -5,6 +5,7 @@ export declare class Common {
     static parseFloat(value: any, defaultValue?: number | null): any;
     static parseInt(value: any, defaultValue?: number | null): any;
     static parseString(value: any, defaultValue?: string | null): any;
+    static parseArray(value: any, defaultValue?: any): any;
     static kalmanFilter(settings: any): any;
     private static sigmoidBase;
     static sigmoid(percent: number, k?: number): number;
