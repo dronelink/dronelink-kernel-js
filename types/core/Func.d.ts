@@ -27,13 +27,13 @@ export declare class Func extends Identifiable implements Serializable {
     get urls(): string[];
     private get inputsVariableValuesNamed();
     private evaluate;
-    validateSyntax(dronelink: any, drone?: Drone | null): void;
+    validateSyntax(drone?: Drone | null): void;
     private nextDynamicInput;
-    addNextDynamicInput(dronelink: any, drone?: Drone | null, device?: Device | null, metadata?: any, syntaxValidation?: boolean): FuncInput | null;
+    addNextDynamicInput(drone?: Drone | null, device?: Device | null, metadata?: any, syntaxValidation?: boolean): FuncInput | null;
     removeLastDynamicInput(): boolean;
     addCachedInputs(func: Func): void;
-    execute(dronelink: any, drone?: Drone | null, device?: Device | null, metadata?: any): PlanComponent;
-    inputFormatted(dronelink: any, inputIndex: number, variableValueIndex?: number | null): string;
+    execute(drone?: Drone | null, device?: Device | null, metadata?: any): PlanComponent;
+    inputFormatted(inputIndex: number, variableValueIndex?: number | null): string;
 }
 export declare class FuncInput extends Input implements Serializable {
     readonly type = TypeName.FuncInput;

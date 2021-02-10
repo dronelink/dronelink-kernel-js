@@ -8,10 +8,13 @@ import { Node } from "../core/Node";
 import { GeoCoordinate } from "../core/GeoCoordinate";
 import { GeoSpatial } from "../core/GeoSpatial";
 import { ReferencedAltitude } from "../core/ReferencedAltitude";
+import { SubComponentRequiredFailureMode } from "../core/Enums";
 import { ComponentExecuteContext } from "./ComponentExecuteContext";
 import { ComponentContext } from "./ComponentContext";
+import { ComponentExecutionState } from "./ComponentExecutionState";
 export declare abstract class SubComponent extends Component implements SerializableAbstract {
     required: boolean;
+    requiredFailureMode: SubComponentRequiredFailureMode;
     exclusive: boolean;
     reference: SourcedGeoSpatial;
     pointsOfInterest: PointOfInterest[];
@@ -33,4 +36,5 @@ export declare abstract class SubComponent extends Component implements Serializ
     pointOfInterestReferencedAltitudeByID(context: ComponentContext, id: String): ReferencedAltitude | null;
     node(parent?: Node | null): ComponentNode;
     engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
+    failed(context: ComponentExecuteContext, error?: string | null): ComponentExecutionState;
 }

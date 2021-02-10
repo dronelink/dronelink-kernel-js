@@ -529,6 +529,10 @@ export declare enum RotationDirection {
     Clockwise = "clockwise",
     Counterclockwise = "counterclockwise"
 }
+export declare enum SubComponentRequiredFailureMode {
+    Disengage = "disengage",
+    Propagate = "propagate"
+}
 export declare enum TypeName {
     AEBCountCameraCommand = "AEBCountCameraCommand",
     Altitude = "Altitude",
@@ -596,6 +600,9 @@ export declare enum TypeName {
     HeadingDroneCommand = "HeadingDroneCommand",
     HeadingComponent = "HeadingComponent",
     HomeLocationDroneCommand = "HomeLocationDroneCommand",
+    InspectionComponent = "InspectionComponent",
+    InspectionComponentAction = "InspectionComponentAction",
+    InspectionComponentInspectionPoint = "InspectionComponentInspectionPoint",
     Interpolation = "Interpolation",
     ISOCameraCommand = "ISOCameraCommand",
     LandingGearAutomaticMovementDroneCommand = "LandingGearAutomaticMovementDroneCommand",

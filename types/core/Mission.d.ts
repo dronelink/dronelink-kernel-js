@@ -48,10 +48,10 @@ export declare class Mission extends Executable implements Serializable {
     estimate(altitudeRequired?: boolean, timeRequired?: boolean, drone?: Drone | null): ComponentEstimate;
     engageDisallowedReasons(context: Context): Message[];
     engage(context: Context, datetime?: Datetime | null): Engagement | null;
-    execute(dronelink: any, context: Context, datetime?: Datetime | null, timeline?: Timeline | null): any;
+    execute(context: Context, datetime?: Datetime | null, timeline?: Timeline | null): any;
     get executionDuration(): number;
     addCameraFile(channel: number, cameraFile: CameraFile): void;
     reengagement(drone: Drone): Mission | null;
     get assetManifest(): AssetManifest;
-    simulate(dronelink: any, metadata: any, progress: (mission: Mission, timeline: Timeline) => boolean): void;
+    simulate(metadata: any, progress: (mission: Mission, timeline: Timeline) => boolean): void;
 }

@@ -24,6 +24,7 @@ export declare class GeoCoordinate implements Serializable {
     toFilter(settings: any): GeoCoordinateFilter;
     toString(): string;
     closest(coordinates: GeoCoordinate[]): GeoCoordinate;
+    static center(coordinates: GeoCoordinate[]): GeoCoordinate | null;
     static convexHull(coordinates: GeoCoordinate[]): GeoCoordinate[] | null;
     static totalDistance(coordinates: GeoCoordinate[]): number;
 }

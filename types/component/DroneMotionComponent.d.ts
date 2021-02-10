@@ -13,6 +13,7 @@ import { LinkedValue } from "../core/LinkedValue";
 import { Velocity3 } from "../core/Velocity3";
 import { ComponentEstimate } from "./ComponentEstimate";
 import { OrientationReferenceSources } from "../core/OrientationReferenceSources";
+import { Message } from "../core/Message";
 import { DistanceTolerance } from "../core/DistanceTolerance";
 import { ComponentContext } from "./ComponentContext";
 import { PlanRestrictionZone } from "./PlanRestrictionZone";
@@ -72,7 +73,8 @@ export declare class DroneMotionComponentModelSample {
     droneMotionErrorTolerance: DistanceTolerance | null;
     gimbalOrientations: Dictionary<Orientation3Optional>;
     gimbalVelocities: Dictionary<Velocity3>;
+    message: Message | null;
     applyJSON(json: any): void;
-    constructor(droneSpatial: GeoSpatial, droneMotionLimits: MotionLimits6, gimbalOrientations: Dictionary<Orientation3Optional>, gimbalVelocities: Dictionary<Velocity3>);
+    constructor(droneSpatial: GeoSpatial, droneMotionLimits: MotionLimits6, gimbalOrientations: Dictionary<Orientation3Optional>, gimbalVelocities: Dictionary<Velocity3>, message?: Message | null);
     interpolate(next: DroneMotionComponentModelSample, percent: number, referenceSources?: OrientationReferenceSources): DroneMotionComponentModelSample;
 }

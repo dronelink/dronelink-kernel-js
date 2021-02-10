@@ -4,7 +4,7 @@ import { CameraSpecification } from "./CameraSpecification";
 import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 export declare class Constants {
-    static readonly Version = "2.0.1";
+    static readonly Version = "2.1.0";
     static readonly ExecuteIntervalTarget: number;
     static readonly ExecuteIntervalMax: number;
     static readonly ExecuteDelayStrikesMax = 5;
@@ -61,6 +61,16 @@ export declare class Constants {
     static readonly FacadeGimbalPitchLimits: Limits;
     static readonly HeadingComponentAchievementTime = 1;
     static readonly HeadingComponentAchievementDistance: number;
+    static readonly InspectionComponentAchievementTime = 3;
+    static readonly InspectionComponentAchievementDistanceHorizontal: number;
+    static readonly InspectionComponentAchievementDistanceVertical: number;
+    static readonly InspectionComponentOrientationDistanceHorizontal: number;
+    static readonly InspectionComponentOrientationDistanceVertical: number;
+    static readonly InspectionComponentOrientationTimeMax = 3;
+    static readonly InspectionComponentActionDroneOrientationCompatibilityThreshold: number;
+    static readonly InspectionComponentOrientationDroneThreshold: number;
+    static readonly InspectionComponentOrientationGimbalThreshold: number;
+    static readonly InspectionComponentAltitudeRange: number;
     static readonly MapComponentMaxHorizontalVelocity: number;
     static readonly MapComponentMinCaptureInterval = 2;
     static readonly MapComponentFrontOverlap = 0.8;

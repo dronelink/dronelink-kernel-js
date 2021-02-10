@@ -7,4 +7,5 @@ export declare class MeteringModeCameraCommand extends CameraCommand implements 
     applyJSON(json: any): void;
     get subtitle(): string;
     get reengagementTiming(): CommandReengagementTiming;
+    get reengagementReplaceable(): boolean;
 }

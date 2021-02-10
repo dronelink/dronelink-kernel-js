@@ -21,6 +21,9 @@ export declare class Engagement extends Identifiable implements Serializable {
     lastExecuted: Datetime | null;
     timeSinceLastExecution: number;
     totalExecutes: number;
+    executeIntervalTarget: number;
+    executeIntervalMax: number;
+    executeDelayStrikesMax: number;
     disengagement: Disengagement | null;
     applyJSON(json: any): void;
     constructor(engaged?: Datetime | null, user?: User, device?: Device, drone?: Drone, reengagement?: Mission | null);

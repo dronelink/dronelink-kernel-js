@@ -14,6 +14,7 @@ export declare class Zone extends Identifiable implements Serializable {
     reference: SourcedGeoSpatial;
     shape: ZoneShape;
     motionPriority: ZoneMotionPriority;
+    avoidanceMotionPriority: ZoneMotionPriority;
     minAltitude: Altitude;
     maxAltitude: Altitude;
     minHorizontalExitAltitude: Altitude | null;
@@ -41,6 +42,9 @@ export declare class Zone extends Identifiable implements Serializable {
         segmentIndex: number;
     }[] | null;
     static path(zones: Zone[], context: ComponentContext, start: GeoSpatial, finish: GeoSpatial): ZonePath | null;
+    static addCruiseSegment(context: ComponentContext, zones: Zone[], departure: ZonePath, approach: ZonePath): boolean;
+    static shortestPath(context: ComponentContext, zones: Zone[], start: GeoCoordinate, finish: GeoCoordinate): GeoCoordinate[] | null;
+    static addCruisePathOriginal(zones: Zone[], context: ComponentContext, departure: ZonePath, approach: ZonePath, finishAltitude: Altitude): boolean;
 }
 export declare class ZonePath {
     segments: ZonePathSegment[];

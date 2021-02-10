@@ -11,6 +11,7 @@ export declare class Execution implements Serializable {
     reengagementCommands: Command[];
     cameraFiles: Dictionary<CameraFile[]>;
     applyJSON(json: any): void;
+    removeComponentStateByID(componentID: string): void;
     getComponentStateByID(componentID: string): ComponentExecutionState;
     getComponentState(component: Component): ComponentExecutionState;
     addReengagementCommand(command: Command): void;

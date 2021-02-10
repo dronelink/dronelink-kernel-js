@@ -28,4 +28,5 @@ export declare class Orientation3Optional implements Serializable {
     set yawReference(zReference: OrientationZReference);
     toString: () => string;
     apply(orientation: Orientation3): Orientation3Optional;
+    achieved(orientation: Orientation3Optional, threshold: number): boolean;
 }

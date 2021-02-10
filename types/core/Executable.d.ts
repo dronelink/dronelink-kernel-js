@@ -13,7 +13,7 @@ export declare abstract class Executable extends Identifiable {
     get engaged(): boolean;
     get reengaging(): boolean;
     engage(context: Context, datetime?: Datetime | null): Engagement | null;
-    execute(dronelink: any, context: Context, datetime?: Datetime | null, timeline?: Timeline | null): any;
+    execute(context: Context, datetime?: Datetime | null, timeline?: Timeline | null): any;
     disengage(context: Context, reason: Message): void;
     get disengagement(): Disengagement | null;
     addCameraFile(channel: number, cameraFile: CameraFile): void;

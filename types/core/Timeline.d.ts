@@ -21,6 +21,7 @@ export declare class Timeline implements Serializable {
     addFrame(executable: Executable, context: Context, elapsedTime: number): TimelineFrame;
     get firstFrame(): TimelineFrame | null;
     get lastFrame(): TimelineFrame | null;
+    get duration(): number;
     getFrame(progress: number): TimelineFrame | null;
     getFrameIndex(progress: number): number | null;
     addCapture(camera: Camera, cameraFile: CameraFile, duration?: number): TimelineCameraCapture;

@@ -21,10 +21,10 @@ export declare class Simulation {
     private executionListeners;
     constructor(takeoffCoordinate?: GeoCoordinate, executionListener?: (simulation: Simulation) => void, preview?: boolean, metadata?: any);
     get currentDatetime(): Datetime;
-    start(dronelink: any): void;
+    start(): void;
     load(executable: Executable, timeline?: Timeline | null): void;
     addExecutionListener(callback: (simulation: Simulation) => void): void;
-    engage(dronelink: any, executable?: Executable | null, timeline?: Timeline | null): void;
+    engage(executable?: Executable | null, timeline?: Timeline | null): void;
     disengage(reason: Message): void;
     stop(): void;
     private generateCameraFile;

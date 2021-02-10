@@ -1,7 +1,7 @@
 import { ApproachableComponent } from "./ApproachableComponent";
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
-import { TypeName, FacadeCapturePriority, FacadeBoundaryFace, FacadePattern, CameraMode, PathCornering } from "../core/Enums";
+import { TypeName, FacadeCapturePriority, FacadeBoundaryFace, FacadePattern, CameraMode, PathCornering, CameraPhotoMode } from "../core/Enums";
 import { CameraSpecification, GroundSampleDistance } from "../core/CameraSpecification";
 import { FacadeComponentBoundaryPoint } from "./FacadeComponentBoundaryPoint";
 import { Altitude } from "../core/Altitude";
@@ -13,17 +13,14 @@ import { ComponentNode } from "./ComponentNode";
 import { Node } from "../core/Node";
 import { ComponentEstimateContext } from "./ComponentEstimateContext";
 import { GeoSpatial } from "../core/GeoSpatial";
-import { ComponentEstimate, ComponentEstimateCameraCapture } from "./ComponentEstimate";
-import { LinkedValue } from "../core/LinkedValue";
-import { DroneMotionComponentModelData, DroneMotionComponentModelSample, DroneMotionComponentModel } from "./DroneMotionComponent";
+import { ComponentEstimate } from "./ComponentEstimate";
 import { Orientation3Optional } from "../core/Orientation3Optional";
-import { MotionLimits6 } from "../core/MotionLimits6";
 import { Dictionary } from "../core/Dictionary";
 import { ComponentExecuteContext } from "./ComponentExecuteContext";
 import { ComponentExecutionState } from "./ComponentExecutionState";
 import { ReferencedAltitude } from "../core/ReferencedAltitude";
-import { SubComponent } from "./SubComponent";
 import { ComponentContext } from "./ComponentContext";
+import { FacadeComponentModel, FacadeComponentModelData, FacadeComponentModelParameters } from "./FacadeComponentModel";
 export declare class FacadeComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.FacadeComponent;
     initialAltitude: Altitude;
@@ -32,6 +29,7 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     gimbalOrientations: Dictionary<Orientation3Optional>;
     droneOrientation: Orientation3Optional | null;
     cameraMode: CameraMode;
+    cameraPhotoMode: CameraPhotoMode;
     capturePriority: FacadeCapturePriority;
     minCaptureInterval: number;
     targetDistance: number;
@@ -76,36 +74,12 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     cachedData(context: ComponentExecuteContext): FacadeComponentModelData | null;
     engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
-    modelParameters(context: ComponentContext, paths?: Path[] | null): {
-        approachAltitude: Altitude;
-        initialAltitude: Altitude;
-        finalAltitude: Altitude;
-        rows: number;
-        columns: number;
-    } | null;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
-    model(context: ComponentContext, timeRequired?: boolean): FacadeComponentModel | null;
     paths(context: ComponentContext): Path[] | null;
     get pathCorneringEnabled(): boolean;
     get patternEnabled(): boolean;
     get patternResolved(): FacadePattern;
     private pathsOffsets;
-}
-export declare class FacadeComponentModelData extends DroneMotionComponentModelData<FacadeComponentModelSample> {
-    setupComponents: SubComponent[];
-    addedInitialFocus: boolean;
-    sampleComponents: SubComponent[];
-    captureInterval: number | null;
-    constructor(modelSample: LinkedValue<FacadeComponentModelSample>, captureInterval: number | null);
-    addSampleComponents(newSampleComponents: SubComponent[]): void;
-}
-export declare class FacadeComponentModel extends DroneMotionComponentModel<FacadeComponentModelSample> {
-    captureInterval: number | null;
-    cameraCaptures: Dictionary<ComponentEstimateCameraCapture>;
-    constructor(sample: LinkedValue<FacadeComponentModelSample>, captureInterval: number | null, cameraCaptures: Dictionary<ComponentEstimateCameraCapture>);
-    cameraCapture(channel?: number): ComponentEstimateCameraCapture;
-}
-export declare class FacadeComponentModelSample extends DroneMotionComponentModelSample {
-    component: SubComponent | null;
-    constructor(droneSpatial: GeoSpatial, droneMotionLimits: MotionLimits6, gimbalOrientations: Dictionary<Orientation3Optional>);
+    modelParameters(context: ComponentContext, paths?: Path[] | null): FacadeComponentModelParameters | null;
+    model(context: ComponentContext, timeRequired?: boolean): FacadeComponentModel | null;
 }

@@ -21,6 +21,7 @@ import { MotionLimits6 } from "../core/MotionLimits6";
 import { Dictionary } from "../core/Dictionary";
 import { Component } from "./Component";
 import { ComponentContext } from "./ComponentContext";
+import { CommandComponent } from "./CommandComponent";
 export declare class DestinationComponent extends AchievableDroneMotionComponent implements Serializable {
     readonly type = TypeName.DestinationComponent;
     destinationOffset: Vector2;
@@ -56,6 +57,8 @@ declare class DestinationData {
     totalDistance: number;
     achievementDistanceValidSince: Datetime | null;
     model: DroneMotionComponentModelData<DestinationComponentModelSample> | null;
+    modelExecuted: boolean;
+    gimbalOrientationComponents: CommandComponent[];
     constructor(startCoordinate: GeoCoordinate, totalDistance: number);
     progress(remainingDistance: number): number;
 }

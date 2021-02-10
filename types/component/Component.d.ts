@@ -28,6 +28,7 @@ export declare abstract class Component extends Identifiable implements Serializ
     source: ComponentSource | null;
     assetSource: AssetSource | null;
     elevations: GeoLocation[] | null;
+    script: string | null;
     applyJSON(json: any): void;
     get title(): string;
     get subtitle(): string;

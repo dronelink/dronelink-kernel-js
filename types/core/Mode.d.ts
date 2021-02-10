@@ -21,6 +21,7 @@ import { MotionLimits6 } from "./MotionLimits6";
 import { Velocity6 } from "./Velocity6";
 import { Func, FuncInput } from "./Func";
 import { Input } from "./Input";
+import * as Dronelink from "../index";
 export declare class Mode extends Executable implements Serializable {
     readonly type = TypeName.Mode;
     func: Func | null;
@@ -41,10 +42,10 @@ export declare class Mode extends Executable implements Serializable {
     get title(): string;
     private get inputsVariableValuesNamed();
     private evaluate;
-    validateSyntax(dronelink: any): void;
+    validateSyntax(): void;
     modeExecuteContext(context?: Context, engagement?: Engagement): ModeExecuteContext;
     engage(context: Context, datetime?: Datetime | null): Engagement | null;
-    execute(dronelink: any, context: Context, datetime?: Datetime | null, timeline?: Timeline | null): any;
+    execute(context: Context, datetime?: Datetime | null, timeline?: Timeline | null): any;
     addDroneVelocityCommand(context: ModeExecuteContext, limits: MotionLimits6, velocity: Velocity6, heading?: number | null): VelocityDroneCommand;
     addGimbalVelocityCommand(context: ModeExecuteContext, channel: number, orientationTarget: Orientation3Optional, referencePath: {
         x: number;
@@ -54,7 +55,7 @@ export declare class Mode extends Executable implements Serializable {
 }
 export declare class ModeInput extends Input implements Serializable {
     readonly type = TypeName.ModeInput;
-    static from(funcInput: FuncInput): ModeInput;
+    static from(funcInput: FuncInput): Dronelink.ModeInput;
     applyJSON(json: any): void;
 }
 declare class ModeExecuteContext extends Context {
