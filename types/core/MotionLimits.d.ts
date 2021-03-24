@@ -4,8 +4,8 @@ import { TypeName } from "./Enums";
 import { MotionLimitsOptional } from "./MotionLimitsOptional";
 export declare class MotionLimits implements Serializable {
     readonly type = TypeName.MotionLimits;
-    readonly velocity: Limits;
-    readonly acceleration: Limits;
+    velocity: Limits;
+    acceleration: Limits;
     applyJSON(json: any): void;
     constructor(velocity?: Limits, acceleration?: Limits);
     currentVelocityLimits(currentVelocity: number, time: number): Limits;

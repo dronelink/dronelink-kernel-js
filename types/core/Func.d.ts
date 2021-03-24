@@ -9,6 +9,11 @@ import { Device } from "./Device";
 import { SubComponent } from "../component/SubComponent";
 import { UserInterfaceSettings } from "./UserInterfaceSettings";
 import { Input } from "./Input";
+export declare class FuncMapOverlay {
+    coordinates: GeoCoordinate[];
+    color: string;
+    constructor(coordinates: GeoCoordinate[], color?: string);
+}
 export declare class Func extends Identifiable implements Serializable {
     readonly type = TypeName.Func;
     coordinate: GeoCoordinate;
@@ -16,7 +21,9 @@ export declare class Func extends Identifiable implements Serializable {
     introImageUrl: string | null;
     components: SubComponent[];
     inputs: FuncInput[];
+    common: string | null;
     dynamicInputs: string | null;
+    mapOverlays: string | null;
     executable: string;
     userInterfaceSettings: UserInterfaceSettings | null;
     private cachedDynamicInputs;
@@ -32,6 +39,7 @@ export declare class Func extends Identifiable implements Serializable {
     addNextDynamicInput(drone?: Drone | null, device?: Device | null, metadata?: any, syntaxValidation?: boolean): FuncInput | null;
     removeLastDynamicInput(): boolean;
     addCachedInputs(func: Func): void;
+    generateMapOverlays(drone?: Drone | null, device?: Device | null, metadata?: any, syntaxValidation?: boolean): FuncMapOverlay[] | null;
     execute(drone?: Drone | null, device?: Device | null, metadata?: any): PlanComponent;
     inputFormatted(inputIndex: number, variableValueIndex?: number | null): string;
 }

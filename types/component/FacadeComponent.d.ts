@@ -1,7 +1,7 @@
 import { ApproachableComponent } from "./ApproachableComponent";
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
-import { TypeName, FacadeCapturePriority, FacadeBoundaryFace, FacadePattern, CameraMode, PathCornering, CameraPhotoMode } from "../core/Enums";
+import { TypeName, FacadeCapturePriority, FacadeBoundaryFace, FacadePattern, CameraMode, PathCornering, CameraPhotoMode, FacadeSegmentParity } from "../core/Enums";
 import { CameraSpecification, GroundSampleDistance } from "../core/CameraSpecification";
 import { FacadeComponentBoundaryPoint } from "./FacadeComponentBoundaryPoint";
 import { Altitude } from "../core/Altitude";
@@ -30,6 +30,7 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     droneOrientation: Orientation3Optional | null;
     cameraMode: CameraMode;
     cameraPhotoMode: CameraPhotoMode;
+    captureVerifyFileCreated: boolean;
     capturePriority: FacadeCapturePriority;
     minCaptureInterval: number;
     targetDistance: number;
@@ -39,6 +40,7 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     cornerRadius: number;
     verticalOverlap: number;
     horizontalOverlap: number;
+    segmentParity: FacadeSegmentParity;
     boundaryFace: FacadeBoundaryFace;
     boundaryPoints: FacadeComponentBoundaryPoint[];
     applyJSON(json: any): void;

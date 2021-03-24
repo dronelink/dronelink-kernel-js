@@ -21,14 +21,17 @@ import { ReferencedAltitude } from "../core/ReferencedAltitude";
 import { CameraCaptureConfiguration } from "../core/CameraCaptureConfiguration";
 import { ComponentContext } from "./ComponentContext";
 import { PlanRestrictionZone } from "./PlanRestrictionZone";
+import { MessageGroup } from "../core/MessageGroup";
 export declare abstract class Component extends Identifiable implements SerializableAbstract {
     coordinate: GeoCoordinate;
     descriptors: Descriptors;
+    dynamicHomeLocation: boolean;
     cameraCaptureConfigurations: CameraCaptureConfiguration[] | null;
     source: ComponentSource | null;
     assetSource: AssetSource | null;
     elevations: GeoLocation[] | null;
     script: string | null;
+    customExecutingMessageGroup: string | null;
     applyJSON(json: any): void;
     get title(): string;
     get subtitle(): string;
@@ -48,6 +51,7 @@ export declare abstract class Component extends Identifiable implements Serializ
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
+    executingMessageGroup(state: ComponentExecutionState, messageGroup: MessageGroup): MessageGroup | null;
     executing(context: ComponentExecuteContext): ComponentExecutionState;
     succeeded(context: ComponentExecuteContext): ComponentExecutionState;
     failed(context: ComponentExecuteContext, error?: string | null): ComponentExecutionState;

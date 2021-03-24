@@ -317,6 +317,7 @@ export declare enum CameraVideoFrameRate {
     _96 = "96",
     _100 = "100",
     _120 = "120",
+    _240 = "240",
     _8dot7 = "8dot7",
     Unknown = "unknown"
 }
@@ -455,6 +456,11 @@ export declare enum FacadeCapturePriority {
     Time = "time",
     Distance = "distance"
 }
+export declare enum FacadeSegmentParity {
+    Any = "any",
+    Even = "even",
+    Odd = "odd"
+}
 export declare enum FacadePattern {
     Horizontal = "horizontal",
     Vertical = "vertical"
@@ -586,6 +592,7 @@ export declare enum TypeName {
     FacadeComponentModelSample = "FacadeComponentModelSample",
     FocusCameraCommand = "FocusCameraCommand",
     FocusModeCameraCommand = "FocusModeCameraCommand",
+    FocusRingCameraCommand = "FocusRingCameraCommand",
     FieldOfView = "FieldOfView",
     FileIndexModeCameraCommand = "FileIndexModeCameraCommand",
     Func = "Func",

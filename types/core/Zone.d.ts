@@ -13,6 +13,7 @@ export declare class Zone extends Identifiable implements Serializable {
     readonly type = TypeName.Zone;
     reference: SourcedGeoSpatial;
     shape: ZoneShape;
+    color: string | null;
     motionPriority: ZoneMotionPriority;
     avoidanceMotionPriority: ZoneMotionPriority;
     minAltitude: Altitude;
@@ -33,8 +34,11 @@ export declare class Zone extends Identifiable implements Serializable {
     updateShape(context: ComponentContext, shape: ZoneShape, coordinate: GeoCoordinate, size: number): void;
     centerCoordinate(context: ComponentContext): GeoCoordinate;
     private get radius();
-    private altitudeInRange;
-    private altitudesInRange;
+    altitudeInRange(altitude: number): boolean;
+    altitudesInRange(altitudes: {
+        start: number;
+        end: number;
+    }): boolean;
     coordinateInside(context: ComponentContext, coordinate: GeoCoordinate): boolean;
     private edgeSpatial;
     intersections(context: ComponentContext, start: GeoSpatial, end: GeoSpatial, includeAltitudes: boolean): {

@@ -1116,6 +1116,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "120": {
                 name: string;
             };
+            "240": {
+                name: string;
+            };
             "8dot7": {
                 name: string;
             };
@@ -1284,8 +1287,15 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             coordinate: string;
             referenceOffsetsHandleCoordinate: string;
             descriptors: string;
+            dynamicHomeLocation: string;
             cameraCaptureConfiguration: string;
             script: string;
+        };
+        messages: {
+            dynamicHomeLocationFailure: {
+                title: string;
+                details: string;
+            };
         };
     };
     Command: {
@@ -1606,6 +1616,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             pattern: string;
             verticalOverlap: string;
             horizontalOverlap: string;
+            segmentParity: string;
             boundaryFace: string;
             boundaryPoints: string;
             surfaceSampleDistance: string;
@@ -1627,6 +1638,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 title: string;
                 detailsUp: string;
                 detailsDown: string;
+                defailsRestricted: string;
             };
             verticalTraverse: {
                 title: string;
@@ -1645,6 +1657,20 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             distance: {
+                name: string;
+            };
+        };
+    };
+    FacadeSegmentParity: {
+        name: string;
+        values: {
+            any: {
+                name: string;
+            };
+            even: {
+                name: string;
+            };
+            odd: {
                 name: string;
             };
         };
@@ -1680,6 +1706,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             focusMode: string;
         };
     };
+    FocusRingCameraCommand: {
+        name: string;
+        values: {
+            focusRingPercent: string;
+        };
+    };
     Gimbal: {
         name: string;
     };
@@ -1708,7 +1740,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            common: string;
             dynamicInputs: string;
+            mapOverlays: string;
             executable: string;
         };
     };
@@ -2897,6 +2931,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         values: {
             shape: string;
+            color: string;
             motionPriority: string;
             avoidanceMotionPriority: string;
             minAltitude: string;

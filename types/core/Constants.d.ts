@@ -4,7 +4,7 @@ import { CameraSpecification } from "./CameraSpecification";
 import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 export declare class Constants {
-    static readonly Version = "2.1.0";
+    static readonly Version = "2.2.0";
     static readonly ExecuteIntervalTarget: number;
     static readonly ExecuteIntervalMax: number;
     static readonly ExecuteDelayStrikesMax = 5;
@@ -28,8 +28,10 @@ export declare class Constants {
     static CameraSpecification: (id: any) => CameraSpecification;
     static readonly MissionReengagementAltitudeRange: number;
     static readonly MissionReengagementMinAltitude: number;
+    static readonly MissionReengagementTakeoffAltitude: number;
     static readonly MissionReengagementMinRampVelocity: number;
     static readonly ComponentElevationTolerance = 1;
+    static readonly ComponentDyanmicHomeLocationUpdateFrequency = 5;
     static readonly PlanComponentTakeoffDistanceHorizontal: number;
     static readonly DroneMotionComponentGimbalOrientation: Orientation3Optional;
     static readonly DroneMotionComponentModelSampleTimeMax = 2;
