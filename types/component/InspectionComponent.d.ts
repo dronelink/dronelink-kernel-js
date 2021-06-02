@@ -37,7 +37,7 @@ export declare class InspectionComponent extends ApproachableComponent implement
     elevationCoordinates(context: ComponentContext): GeoCoordinate[];
     node(parent?: Node | null): ComponentNode;
     centerCoordinate(context: ComponentContext): GeoCoordinate;
-    inspectionPointSpatial(context: ComponentContext, index: number): GeoSpatial;
+    inspectionPointSpatial(context: ComponentContext, index: number, actionGroupIndex?: number | null): GeoSpatial;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
     endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;

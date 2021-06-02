@@ -7,4 +7,5 @@ export declare class FocusRingCameraCommand extends CameraCommand implements Ser
     applyJSON(json: any): void;
     get subtitle(): string;
     get reengagementTiming(): CommandReengagementTiming;
+    get reengagementPredicateCommandType(): TypeName | null;
 }

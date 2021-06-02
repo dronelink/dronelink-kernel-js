@@ -43,7 +43,10 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
     alignment(context: ComponentContext): {
         droneOrientation: Orientation3Optional | null;
-        gimbalOrientations: Dictionary<Orientation3Optional> | null;
+        gimbal: {
+            orientations: Dictionary<Orientation3Optional>;
+            required: boolean;
+        } | null;
     } | null;
     get referenceOffsets(): Vector2[];
     referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate;

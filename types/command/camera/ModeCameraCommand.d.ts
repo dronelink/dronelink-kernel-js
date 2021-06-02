@@ -7,6 +7,5 @@ export declare class ModeCameraCommand extends CameraCommand implements Serializ
     applyJSON(json: any): void;
     get subtitle(): string;
     get reengagementTiming(): CommandReengagementTiming;
-    get reengagementReplaceable(): boolean;
     get requiredCapturing(): boolean | null;
 }

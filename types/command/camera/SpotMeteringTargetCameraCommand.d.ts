@@ -8,4 +8,5 @@ export declare class SpotMeteringTargetCameraCommand extends CameraCommand imple
     applyJSON(json: any): void;
     get subtitle(): string;
     get reengagementTiming(): CommandReengagementTiming;
+    get reengagementPredicateCommandType(): TypeName | null;
 }

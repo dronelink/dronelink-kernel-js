@@ -55,6 +55,7 @@ export declare class DestinationComponent extends AchievableDroneMotionComponent
 declare class DestinationData {
     startCoordinate: GeoCoordinate;
     totalDistance: number;
+    slowSince: Datetime | null;
     achievementDistanceValidSince: Datetime | null;
     model: DroneMotionComponentModelData<DestinationComponentModelSample> | null;
     modelExecuted: boolean;

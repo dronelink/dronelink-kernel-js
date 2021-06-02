@@ -22,7 +22,10 @@ export declare abstract class ApproachableComponent extends DroneMotionComponent
     approachCoordinate(context: ComponentContext): GeoCoordinate;
     alignment(context: ComponentContext): {
         droneOrientation: Orientation3Optional | null;
-        gimbalOrientations: Dictionary<Orientation3Optional> | null;
+        gimbal: {
+            orientations: Dictionary<Orientation3Optional>;
+            required: boolean;
+        } | null;
     } | null;
     node(parent?: Node | null): ComponentNode;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;

@@ -38,7 +38,10 @@ export declare class OrbitComponent extends ApproachableComponent implements Ser
     finalReferencedAltitude(context: ComponentContext): ReferencedAltitude | null;
     alignment(context: ComponentContext): {
         droneOrientation: Orientation3Optional | null;
-        gimbalOrientations: Dictionary<Orientation3Optional> | null;
+        gimbal: {
+            orientations: Dictionary<Orientation3Optional>;
+            required: boolean;
+        } | null;
     } | null;
     endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;

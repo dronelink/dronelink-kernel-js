@@ -4,7 +4,7 @@ import { CameraSpecification } from "./CameraSpecification";
 import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 export declare class Constants {
-    static readonly Version = "2.2.0";
+    static readonly Version = "2.3.0";
     static readonly ExecuteIntervalTarget: number;
     static readonly ExecuteIntervalMax: number;
     static readonly ExecuteDelayStrikesMax = 5;
@@ -48,6 +48,9 @@ export declare class Constants {
     static readonly DestinationComponentRestrictionZoneCornerRadius: number;
     static readonly DestinationComponentSampleDistance = 0.3;
     static readonly DestinationComponentRestrictionZoneExitMinAltitude: number;
+    static readonly DestinationComponentClosingSpeedRatio: number;
+    static readonly DestinationComponentClosingTimeLimitRatio: number;
+    static readonly DestinationComponentClosingTimeLimitMin = 10;
     static readonly CourseComponentAchievementDistance: number;
     static readonly FacadeComponentDistance: number;
     static readonly FacadeComponentMinCaptureInterval = 2;

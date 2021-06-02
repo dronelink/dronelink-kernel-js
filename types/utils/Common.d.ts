@@ -19,4 +19,5 @@ export declare class Common {
     static joinNotEmpty(array: string[], delimeter?: string): string;
     static descendantsMatching(element: any, condition: (element: any) => boolean): any[];
     static descendantsMatchingIterable(children: any[] | null, condition: (element: any) => boolean): any[];
+    static merge(target: any, source: any, arrayReplace?: boolean): any;
 }

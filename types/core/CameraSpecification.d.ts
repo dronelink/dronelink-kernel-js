@@ -13,7 +13,7 @@ export declare class CameraSpecification extends Identifiable implements Seriali
     sensor: CameraSensorSpecification;
     image: CameraImageSpecification;
     applyJSON(json: any): void;
-    constructor(id?: string | null, name?: string, lensFocalLength?: number, sensorWidth?: number, sensorHeight?: number, imageWidth?: number, imageHeight?: number);
+    constructor(id?: string | null, name?: string, lensFocalLength?: number, lensFeatureFocusMode?: boolean, sensorWidth?: number, sensorHeight?: number, imageWidth?: number, imageHeight?: number);
     get resettable(): boolean;
     get fieldOfView(): FieldOfView;
     groundSampleDistance(distance: number): GroundSampleDistance;

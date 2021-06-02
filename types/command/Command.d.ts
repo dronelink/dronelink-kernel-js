@@ -1,10 +1,12 @@
 import { Identifiable } from "../core/Identifiable";
-import { CommandReengagementTiming } from "../core/Enums";
+import { CommandReengagementTiming, TypeName } from "../core/Enums";
 export declare abstract class Command extends Identifiable {
+    sameType(command: Command): boolean;
+    equivalent(command: Command): boolean;
     get title(): string;
     get subtitle(): string;
     get estimatedTime(): number;
     get verifiable(): boolean;
     get reengagementTiming(): CommandReengagementTiming;
-    get reengagementReplaceable(): boolean;
+    get reengagementPredicateCommandType(): TypeName | null;
 }

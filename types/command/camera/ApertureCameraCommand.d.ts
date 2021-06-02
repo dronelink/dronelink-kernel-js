@@ -7,4 +7,5 @@ export declare class ApertureCameraCommand extends CameraCommand implements Seri
     applyJSON(json: any): void;
     get subtitle(): string;
     get reengagementTiming(): CommandReengagementTiming;
+    get reengagementPredicateCommandType(): TypeName | null;
 }

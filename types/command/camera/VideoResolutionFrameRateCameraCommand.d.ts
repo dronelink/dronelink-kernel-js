@@ -9,6 +9,7 @@ export declare class VideoResolutionFrameRateCameraCommand extends CameraCommand
     applyJSON(json: any): void;
     get subtitle(): string;
     get reengagementTiming(): CommandReengagementTiming;
+    get reengagementPredicateCommandType(): TypeName | null;
     get requiredMode(): CameraMode | null;
     get requiredCapturing(): boolean | null;
 }

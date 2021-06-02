@@ -1,7 +1,7 @@
 import { ApproachableComponent } from "./ApproachableComponent";
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
-import { TypeName, FacadeCapturePriority, FacadeBoundaryFace, FacadePattern, CameraMode, PathCornering, CameraPhotoMode, FacadeSegmentParity } from "../core/Enums";
+import { TypeName, FacadeCapturePriority, FacadeBoundaryFace, FacadePattern, CameraMode, PathCornering, CameraPhotoMode, CameraFocusMode, FacadeSegmentParity } from "../core/Enums";
 import { CameraSpecification, GroundSampleDistance } from "../core/CameraSpecification";
 import { FacadeComponentBoundaryPoint } from "./FacadeComponentBoundaryPoint";
 import { Altitude } from "../core/Altitude";
@@ -19,7 +19,9 @@ import { Dictionary } from "../core/Dictionary";
 import { ComponentExecuteContext } from "./ComponentExecuteContext";
 import { ComponentExecutionState } from "./ComponentExecutionState";
 import { ReferencedAltitude } from "../core/ReferencedAltitude";
+import { FocusCameraCommand } from "../command/camera/FocusCameraCommand";
 import { ComponentContext } from "./ComponentContext";
+import { FocusRingCameraCommand } from "../command/camera/FocusRingCameraCommand";
 import { FacadeComponentModel, FacadeComponentModelData, FacadeComponentModelParameters } from "./FacadeComponentModel";
 export declare class FacadeComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.FacadeComponent;
@@ -30,6 +32,9 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     droneOrientation: Orientation3Optional | null;
     cameraMode: CameraMode;
     cameraPhotoMode: CameraPhotoMode;
+    cameraFocusMode: CameraFocusMode;
+    cameraFocusCommand: FocusCameraCommand | null;
+    cameraFocusRingCommand: FocusRingCameraCommand | null;
     captureVerifyFileCreated: boolean;
     capturePriority: FacadeCapturePriority;
     minCaptureInterval: number;
@@ -49,7 +54,10 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
     alignment(context: ComponentContext): {
         droneOrientation: Orientation3Optional | null;
-        gimbalOrientations: Dictionary<Orientation3Optional> | null;
+        gimbal: {
+            orientations: Dictionary<Orientation3Optional>;
+            required: boolean;
+        } | null;
     } | null;
     get referenceOffsets(): Vector2[];
     referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate;

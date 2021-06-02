@@ -7,4 +7,5 @@ export declare class ISOCameraCommand extends CameraCommand implements Serializa
     applyJSON(json: any): void;
     get subtitle(): string;
     get reengagementTiming(): CommandReengagementTiming;
+    get reengagementPredicateCommandType(): TypeName | null;
 }

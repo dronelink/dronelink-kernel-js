@@ -5,6 +5,7 @@ import { Message } from "./Message";
 import { Timeline } from "./Timeline";
 import { Executable } from "./Executable";
 import { Context } from "./Context";
+import { Drone } from "./Drone";
 export declare class Simulation {
     updateInterval: number;
     executeIntervalTarget: number;
@@ -19,7 +20,7 @@ export declare class Simulation {
     timeline: Timeline | null;
     private cameraFilesByChannel;
     private executionListeners;
-    constructor(takeoffCoordinate?: GeoCoordinate, executionListener?: (simulation: Simulation) => void, preview?: boolean, metadata?: any);
+    constructor(drone: Drone, takeoffCoordinate?: GeoCoordinate, executionListener?: (simulation: Simulation) => void, preview?: boolean, metadata?: any);
     get currentDatetime(): Datetime;
     start(): void;
     load(executable: Executable, timeline?: Timeline | null): void;

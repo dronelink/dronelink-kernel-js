@@ -53,5 +53,5 @@ export declare class Mission extends Executable implements Serializable {
     addCameraFile(channel: number, cameraFile: CameraFile): void;
     reengagement(drone: Drone): Mission | null;
     get assetManifest(): AssetManifest;
-    simulate(metadata: any, progress: (mission: Mission, timeline: Timeline) => boolean): void;
+    simulate(drone: Drone | null | undefined, metadata: any, progress: (mission: Mission, timeline: Timeline) => boolean): void;
 }

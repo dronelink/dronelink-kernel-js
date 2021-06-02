@@ -7,4 +7,5 @@ export declare class ExposureCompensationStepCameraCommand extends CameraCommand
     applyJSON(json: any): void;
     get subtitle(): string;
     get reengagementTiming(): CommandReengagementTiming;
+    get reengagementPredicateCommandType(): TypeName | null;
 }

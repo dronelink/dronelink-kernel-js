@@ -1405,6 +1405,10 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     heading: string;
                 };
             };
+            disengageNotClosing: {
+                title: string;
+                details: string;
+            };
         };
     };
     Device: {
@@ -1610,6 +1614,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             gimbalOrientations: string;
             direction: string;
             cameraMode: string;
+            cameraFocusMode: string;
             capturePriority: string;
             minCaptureInterval: string;
             targetDistance: string;
@@ -1698,6 +1703,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             focusTarget: string;
             focusTargetX: string;
             focusTargetY: string;
+            focusRingPercentLimits: string;
         };
     };
     FocusModeCameraCommand: {

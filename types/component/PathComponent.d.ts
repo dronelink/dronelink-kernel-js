@@ -46,7 +46,10 @@ export declare class PathComponent extends ApproachableComponent implements Seri
     path(context: ComponentContext): Path | null;
     alignment(context: ComponentContext): {
         droneOrientation: Orientation3Optional | null;
-        gimbalOrientations: Dictionary<Orientation3Optional> | null;
+        gimbal: {
+            orientations: Dictionary<Orientation3Optional>;
+            required: boolean;
+        } | null;
     } | null;
     endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
