@@ -184,6 +184,7 @@ export { ExposureModeCameraCommand } from "./command/camera/ExposureModeCameraCo
 export { FileIndexModeCameraCommand } from "./command/camera/FileIndexModeCameraCommand";
 export { FocusCameraCommand } from "./command/camera/FocusCameraCommand";
 export { FocusModeCameraCommand } from "./command/camera/FocusModeCameraCommand";
+export { FocusDistanceCameraCommand } from "./command/camera/FocusDistanceCameraCommand";
 export { FocusRingCameraCommand } from "./command/camera/FocusRingCameraCommand";
 export { ISOCameraCommand } from "./command/camera/ISOCameraCommand";
 export { MechanicalShutterCameraCommand } from "./command/camera/MechanicalShutterCameraCommand";

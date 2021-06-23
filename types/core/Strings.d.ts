@@ -1712,6 +1712,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             focusMode: string;
         };
     };
+    FocusDistanceCameraCommand: {
+        name: string;
+        values: {
+            distance: string;
+        };
+    };
     FocusRingCameraCommand: {
         name: string;
         values: {

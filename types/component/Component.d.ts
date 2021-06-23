@@ -22,6 +22,7 @@ import { CameraCaptureConfiguration } from "../core/CameraCaptureConfiguration";
 import { ComponentContext } from "./ComponentContext";
 import { PlanRestrictionZone } from "./PlanRestrictionZone";
 import { MessageGroup } from "../core/MessageGroup";
+import { CameraFocusCalibration } from "../core/CameraFocusCalibration";
 export declare abstract class Component extends Identifiable implements SerializableAbstract {
     coordinate: GeoCoordinate;
     descriptors: Descriptors;
@@ -39,6 +40,7 @@ export declare abstract class Component extends Identifiable implements Serializ
     get exclusiveReadonly(): boolean;
     get exclusiveExecution(): boolean;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
+    get cameraFocusCalibrationsRequired(): CameraFocusCalibration[];
     get referenceOffsets(): Vector2[];
     referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate | null;
     elevationCoordinates(context: ComponentContext): GeoCoordinate[];

@@ -4,7 +4,7 @@ import { CameraSpecification } from "./CameraSpecification";
 import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 export declare class Constants {
-    static readonly Version = "2.3.0";
+    static readonly Version = "2.4.0";
     static readonly ExecuteIntervalTarget: number;
     static readonly ExecuteIntervalMax: number;
     static readonly ExecuteDelayStrikesMax = 5;
@@ -30,6 +30,9 @@ export declare class Constants {
     static readonly MissionReengagementMinAltitude: number;
     static readonly MissionReengagementTakeoffAltitude: number;
     static readonly MissionReengagementMinRampVelocity: number;
+    static readonly CameraFocusCalibrationDistance: number;
+    static readonly CameraFocusCalibrationRingValueRange = 0.05;
+    static readonly CameraFocusCalibrationMinRingValues = 5;
     static readonly ComponentElevationTolerance = 1;
     static readonly ComponentDyanmicHomeLocationUpdateFrequency = 5;
     static readonly PlanComponentTakeoffDistanceHorizontal: number;

@@ -23,6 +23,8 @@ import { FocusCameraCommand } from "../command/camera/FocusCameraCommand";
 import { ComponentContext } from "./ComponentContext";
 import { FocusRingCameraCommand } from "../command/camera/FocusRingCameraCommand";
 import { FacadeComponentModel, FacadeComponentModelData, FacadeComponentModelParameters } from "./FacadeComponentModel";
+import { FocusDistanceCameraCommand } from "../command/camera/FocusDistanceCameraCommand";
+import { CameraFocusCalibration } from "../core/CameraFocusCalibration";
 export declare class FacadeComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.FacadeComponent;
     initialAltitude: Altitude;
@@ -34,6 +36,7 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     cameraPhotoMode: CameraPhotoMode;
     cameraFocusMode: CameraFocusMode;
     cameraFocusCommand: FocusCameraCommand | null;
+    cameraFocusDistanceCommand: FocusDistanceCameraCommand | null;
     cameraFocusRingCommand: FocusRingCameraCommand | null;
     captureVerifyFileCreated: boolean;
     capturePriority: FacadeCapturePriority;
@@ -52,6 +55,7 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     get subtitle(): string;
     verification(context: ComponentContext): Component | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
+    get cameraFocusCalibrationsRequired(): CameraFocusCalibration[];
     alignment(context: ComponentContext): {
         droneOrientation: Orientation3Optional | null;
         gimbal: {

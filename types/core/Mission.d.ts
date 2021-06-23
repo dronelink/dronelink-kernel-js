@@ -23,6 +23,7 @@ import { ComponentContext } from "../component/ComponentContext";
 import { CameraFile } from "./CameraFile";
 import { Context } from "./Context";
 import { GeoCoordinate } from "./GeoCoordinate";
+import { CameraFocusCalibration } from "./CameraFocusCalibration";
 export declare class Mission extends Executable implements Serializable {
     readonly type = TypeName.Mission;
     descriptors: Descriptors | null;
@@ -39,6 +40,7 @@ export declare class Mission extends Executable implements Serializable {
     get executingMessageGroups(): MessageGroup[];
     get droneMotionComponentCount(): number;
     get elevationsRequired(): boolean;
+    get cameraFocusCalibrationsRequired(): CameraFocusCalibration[];
     get context(): ComponentContext;
     componentExecuteContext(context: Context, engagement: Engagement): ComponentExecuteContext;
     componentEstimateParams(pathRequired?: boolean, altitudeRequired?: boolean, timeRequired?: boolean, drone?: Drone | null): {
