@@ -1,7 +1,7 @@
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
 import { SubComponent } from "./SubComponent";
-import { TypeName, PlanCompleteAction } from "../core/Enums";
+import { TypeName, PlanCompleteAction, ExecutionEngine } from "../core/Enums";
 import { ComponentExecuteContext } from "./ComponentExecuteContext";
 import { ComponentExecutionState } from "./ComponentExecutionState";
 import { ComponentNode } from "./ComponentNode";
@@ -32,6 +32,7 @@ export declare class PlanComponent extends Component implements Serializable {
     completeAction: PlanCompleteAction;
     userInterfaceSettings: UserInterfaceSettings | null;
     applyJSON(json: any): void;
+    get executionEngines(): ExecutionEngine[];
     verification(context: ComponentContext): Component | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
     get referenceOffsets(): Vector2[];

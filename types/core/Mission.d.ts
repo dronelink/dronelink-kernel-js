@@ -4,10 +4,11 @@ import { Execution } from "./Execution";
 import { Drone } from "./Drone";
 import { Descriptors } from "./Descriptors";
 import { Serializable } from "./Serializable";
-import { TypeName } from "./Enums";
+import { TypeName, ExecutionEngine } from "./Enums";
 import { Component } from "../component/Component";
 import { ComponentExecutionState } from "../component/ComponentExecutionState";
 import { Datetime } from "./Datetime";
+import { Simulation } from "./Simulation";
 import { ComponentExecuteContext } from "../component/ComponentExecuteContext";
 import { ComponentEstimate } from "../component/ComponentEstimate";
 import { ComponentEstimateContext } from "../component/ComponentEstimateContext";
@@ -37,10 +38,12 @@ export declare class Mission extends Executable implements Serializable {
     get complete(): boolean;
     get state(): ComponentExecutionState;
     get componentNodeExecutionStates(): ComponentNodeExecutionState[];
-    get executingMessageGroups(): MessageGroup[];
+    executingMessageGroups(context: Context): MessageGroup[];
     get droneMotionComponentCount(): number;
     get elevationsRequired(): boolean;
     get cameraFocusCalibrationsRequired(): CameraFocusCalibration[];
+    get executionEngines(): ExecutionEngine[];
+    executionEngineSupported(executionEngine: ExecutionEngine): boolean;
     get context(): ComponentContext;
     componentExecuteContext(context: Context, engagement: Engagement): ComponentExecuteContext;
     componentEstimateParams(pathRequired?: boolean, altitudeRequired?: boolean, timeRequired?: boolean, drone?: Drone | null): {
@@ -55,5 +58,6 @@ export declare class Mission extends Executable implements Serializable {
     addCameraFile(channel: number, cameraFile: CameraFile): void;
     reengagement(drone: Drone): Mission | null;
     get assetManifest(): AssetManifest;
-    simulate(drone: Drone | null | undefined, metadata: any, progress: (mission: Mission, timeline: Timeline) => boolean): void;
+    simulate(drone: Drone | null | undefined, metadata: any, progress: (mission: Mission, timeline: Timeline) => boolean): Simulation;
+    toJSONForExecutionEngine(executionEngine: ExecutionEngine): any;
 }

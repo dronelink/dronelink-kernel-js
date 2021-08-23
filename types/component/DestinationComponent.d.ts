@@ -35,6 +35,7 @@ export declare class DestinationComponent extends AchievableDroneMotionComponent
     get referenceOffsets(): Vector2[];
     verification(context: ComponentContext): Component | null;
     get pointsOfInterestEnabled(): boolean;
+    get pointsOfInterestMax(): number | null;
     node(parent?: Node | null): ComponentNode;
     elevationCoordinates(context: ComponentContext): GeoCoordinate[];
     destinationCoordinate(context: ComponentContext): GeoCoordinate;

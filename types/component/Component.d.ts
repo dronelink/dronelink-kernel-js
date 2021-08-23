@@ -12,6 +12,7 @@ import { GeoSpatial } from "../core/GeoSpatial";
 import { Velocity3 } from "../core/Velocity3";
 import { VelocityGimbalCommand } from "../command/gimbal/VelocityGimbalCommand";
 import { Orientation3Optional } from "../core/Orientation3Optional";
+import { ExecutionEngine } from "../core/Enums";
 import { ComponentEstimateContext } from "./ComponentEstimateContext";
 import { ComponentSource } from "./ComponentSource";
 import { AssetSource } from "../core/AssetSource";
@@ -39,6 +40,8 @@ export declare abstract class Component extends Identifiable implements Serializ
     verification(context: ComponentContext): Component | null;
     get exclusiveReadonly(): boolean;
     get exclusiveExecution(): boolean;
+    get executionEngines(): ExecutionEngine[];
+    executionEngineSupported(executionEngine: ExecutionEngine): boolean;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
     get cameraFocusCalibrationsRequired(): CameraFocusCalibration[];
     get referenceOffsets(): Vector2[];
@@ -53,7 +56,7 @@ export declare abstract class Component extends Identifiable implements Serializ
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
-    executingMessageGroup(state: ComponentExecutionState, messageGroup: MessageGroup): MessageGroup | null;
+    executingMessageGroup(context: ComponentExecuteContext, state: ComponentExecutionState, messageGroup: MessageGroup): MessageGroup | MessageGroup[] | null;
     executing(context: ComponentExecuteContext): ComponentExecutionState;
     succeeded(context: ComponentExecuteContext): ComponentExecutionState;
     failed(context: ComponentExecuteContext, error?: string | null): ComponentExecutionState;

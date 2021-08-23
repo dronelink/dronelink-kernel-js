@@ -1,6 +1,7 @@
 import { Node } from "../core/Node";
 import { Component } from "./Component";
 import { Vector2 } from "../core/Vector2";
+import { ExecutionEngine } from "../core/Enums";
 import { Message } from "../core/Message";
 import { ComponentContext } from "./ComponentContext";
 export declare class ComponentNode extends Node {
@@ -13,6 +14,8 @@ export declare class ComponentNode extends Node {
     get subComponentCount(): number;
     descendantComponentCount(where: (descendant: Component) => boolean): number;
     descendantAllowed(descendant: any): boolean;
+    executionEngineSupported(executionEngine: ExecutionEngine): boolean;
+    get executionEngines(): ExecutionEngine[];
     elevationsRequired(context: ComponentContext): boolean;
     addChild(childComponent: Component, insert?: boolean): ComponentNode;
     get referenceOffsets(): Vector2[];

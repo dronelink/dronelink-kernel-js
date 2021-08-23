@@ -12,6 +12,7 @@ import { CameraFile } from "./CameraFile";
 import { Camera } from "./Camera";
 import { Context } from "./Context";
 import { Executable } from "./Executable";
+import { MessageGroup } from "./MessageGroup";
 export declare class Timeline implements Serializable {
     readonly type = TypeName.Timeline;
     frames: TimelineFrame[];
@@ -36,8 +37,14 @@ export declare class TimelineFrame implements Serializable {
     device: Device;
     drone: Drone;
     executingComponentStates: Dictionary<ComponentExecutionState>;
+    executingMessageGroups: MessageGroup[];
     applyJSON(json: any): void;
-    constructor(elapsedTime?: number, distanceTravelledHorizontal?: number, datetime?: Datetime, device?: Device, drone?: Drone, executingComponentStates?: Dictionary<ComponentExecutionState>);
+    constructor(elapsedTime?: number, distanceTravelledHorizontal?: number, datetime?: Datetime, device?: Device, drone?: Drone, executingComponentStates?: Dictionary<ComponentExecutionState>, executingMessageGroups?: MessageGroup[]);
+}
+export declare class TimelineFrameGroup {
+    frames: TimelineFrame[];
+    distance: number;
+    addFrame(frame: TimelineFrame): void;
 }
 export declare class TimelineCommand implements Serializable {
     readonly type = TypeName.TimelineFrame;

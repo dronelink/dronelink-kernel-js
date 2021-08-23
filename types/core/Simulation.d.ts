@@ -1,4 +1,5 @@
 import { GeoCoordinate } from "./GeoCoordinate";
+import { TypeName } from "./Enums";
 import { Datetime } from "./Datetime";
 import { MotionLimits6 } from "./MotionLimits6";
 import { Message } from "./Message";
@@ -6,6 +7,7 @@ import { Timeline } from "./Timeline";
 import { Executable } from "./Executable";
 import { Context } from "./Context";
 import { Drone } from "./Drone";
+import { PlanComponent } from "../component/PlanComponent";
 export declare class Simulation {
     updateInterval: number;
     executeIntervalTarget: number;
@@ -41,4 +43,5 @@ export declare class Simulation {
     private applyCameraCommandFinish;
     private applyGimbalCommandStart;
     private applyGimbalCommandFinish;
+    toPlan(type: TypeName, options: any): PlanComponent;
 }

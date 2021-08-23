@@ -1292,6 +1292,10 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             script: string;
         };
         messages: {
+            invalidExecutionEngine: {
+                single: string;
+                multiple: string;
+            };
             dynamicHomeLocationFailure: {
                 title: string;
                 details: string;
@@ -1435,6 +1439,118 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             vertical: string;
         };
     };
+    DJIWaypointActionType: {
+        name: string;
+        values: {
+            stay: {
+                name: string;
+            };
+            shootPhoto: {
+                name: string;
+            };
+            startRecord: string;
+            stopRecord: string;
+            rotateAircraft: string;
+            rotateGimbalPitch: string;
+        };
+    };
+    DJIWaypointMissionComponent: {
+        name: string;
+        description: string;
+        values: {
+            autoFlightSpeed: string;
+            gotoFirstWaypointMode: string;
+            exitMissionOnRCSignalLost: string;
+            repeatTimes: string;
+            maxFlightSpeed: string;
+            rotateGimbalPitch: string;
+            headingMode: string;
+            pointOfInterest: string;
+            flightPathMode: string;
+            cornerRadius: string;
+            waypoints: string;
+        };
+        convert: {
+            invalidComponent: string;
+        };
+    };
+    DJIWaypointMissionComponentWaypoint: {
+        name: string;
+        multiple: string;
+        values: {
+            altitude: string;
+            heading: string;
+            cornerRadius: string;
+            turnMode: string;
+            gimbalPitch: string;
+            speed: string;
+            shootPhotoTimeInterval: string;
+            shootPhotoDistanceInterval: string;
+            actions: string;
+            actionRepeatTimes: string;
+            actionTimeout: string;
+        };
+    };
+    DJIWaypointMissionGotoWaypointMode: {
+        name: string;
+        values: {
+            safely: {
+                name: string;
+            };
+            pointToPoint: {
+                name: string;
+            };
+        };
+    };
+    DJIWaypointMissionHeadingMode: {
+        name: string;
+        values: {
+            auto: {
+                name: string;
+            };
+            usingInitialDirection: {
+                name: string;
+            };
+            controlledByRemoteController: {
+                name: string;
+            };
+            usingWaypointHeading: {
+                name: string;
+            };
+            towardPointOfInterest: {
+                name: string;
+            };
+        };
+    };
+    DJIWaypointMissionFlightPathMode: {
+        name: string;
+        values: {
+            normal: {
+                name: string;
+            };
+            curved: {
+                name: string;
+            };
+        };
+    };
+    DJIWaypointMissionComponentWaypointAction: {
+        name: string;
+        multiple: string;
+    };
+    DJIWaypointTurnMode: {
+        name: string;
+        values: {
+            shortest: {
+                name: string;
+            };
+            clockwise: {
+                name: string;
+            };
+            counterClockwise: {
+                name: string;
+            };
+        };
+    };
     Drone: {
         name: string;
         multiple: string;
@@ -1554,6 +1670,20 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     Execution: {
         name: string;
+    };
+    ExecutionEngine: {
+        name: string;
+        values: {
+            dronelinkKernel: {
+                name: string;
+            };
+            dji: {
+                name: string;
+            };
+            unknown: {
+                name: string;
+            };
+        };
     };
     ExposureCompensationCameraCommand: {
         name: string;
@@ -1863,6 +1993,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     heading: string;
                 };
             };
+        };
+        convert: {
+            pointsEmpty: string;
         };
     };
     InspectionComponentAction: {
@@ -2545,6 +2678,10 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         messages: {
             disengageStop: string;
+        };
+        convert: {
+            unknownType: string;
+            invalidSimulation: string;
         };
     };
     SmartReturnHomeDroneCommand: {

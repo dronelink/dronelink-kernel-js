@@ -387,6 +387,14 @@ export declare enum ComponentExecutionStatus {
     Succeeded = "succeeded",
     Failed = "failed"
 }
+export declare enum DJIWaypointActionType {
+    Stay = "stay",
+    ShootPhoto = "shootPhoto",
+    StartRecord = "startRecord",
+    StopRecord = "stopRecord",
+    RotateAircraft = "rotateAircraft",
+    RotateGimbalPitch = "rotateGimbalPitch"
+}
 export declare enum DJIWaypointMissionGotoWaypointMode {
     Safely = "safely",
     PointToPoint = "pointToPoint"
@@ -398,21 +406,21 @@ export declare enum DJIWaypointMissionHeadingMode {
     UsingWaypointHeading = "usingWaypointHeading",
     TowardPointOfInterest = "towardPointOfInterest"
 }
+export declare enum DJIWaypointMissionFinishedAction {
+    NoAction = "noAction",
+    GoHome = "goHome",
+    AutoLand = "autoLand",
+    GoFirstWaypoint = "goFirstWaypoint",
+    ContinueUntilStop = "continueUntilStop"
+}
 export declare enum DJIWaypointMissionFlightPathMode {
     Normal = "normal",
     Curved = "curved"
 }
 export declare enum DJIWaypointTurnMode {
+    Shortest = "shortest",
     Clockwise = "clockwise",
     DJIWaypointTurnCounterClockwise = "counterClockwise"
-}
-export declare enum DJIWaypointMissionComponentWaypointActionType {
-    Stay = "stay",
-    ShootPhoto = "shootPhoto",
-    StartRecord = "startRecord",
-    StopRecord = "stopRecord",
-    RotateAircraft = "rotateAircraft",
-    RotateGimbalPitch = "rotateGimbalPitch"
 }
 export declare enum DroneConnectionFailSafeBehavior {
     Hover = "hover",
@@ -441,6 +449,10 @@ export declare enum DroneOcuSyncFrequencyBand {
     _5dot8ghz = "5dot8ghz",
     Dual = "dual",
     Unknown = "unknown"
+}
+export declare enum ExecutionEngine {
+    DronelinkKernel = "dronelinkKernel",
+    DJI = "dji"
 }
 export declare enum FacadeBoundaryFace {
     LineLeft = "lineLeft",

@@ -4,7 +4,7 @@ import { OrbitDirection, TypeName } from "../core/Enums";
 import { Vector2 } from "../core/Vector2";
 import { Serializable } from "../core/Serializable";
 import { ComponentEstimate } from "./ComponentEstimate";
-import { ApproachableComponent } from "./ApproachableComponent";
+import { ApproachableAlignment, ApproachableComponent } from "./ApproachableComponent";
 import { GeoCoordinate } from "../core/GeoCoordinate";
 import { GeoSpatial } from "../core/GeoSpatial";
 import { DroneMotionComponentModelSample, DroneMotionComponentModelData, DroneMotionComponentModel } from "./DroneMotionComponent";
@@ -28,6 +28,7 @@ export declare class OrbitComponent extends ApproachableComponent implements Ser
     get subtitle(): string;
     verification(context: ComponentContext): Component | null;
     get pointsOfInterestEnabled(): boolean;
+    get pointsOfInterestMax(): number | null;
     get referenceOffsets(): Vector2[];
     get radius(): number;
     set radius(value: number);
@@ -36,13 +37,7 @@ export declare class OrbitComponent extends ApproachableComponent implements Ser
     centerCoordinate(context: ComponentContext): GeoCoordinate;
     finalCoordinate(context: ComponentContext): GeoCoordinate;
     finalReferencedAltitude(context: ComponentContext): ReferencedAltitude | null;
-    alignment(context: ComponentContext): {
-        droneOrientation: Orientation3Optional | null;
-        gimbal: {
-            orientations: Dictionary<Orientation3Optional>;
-            required: boolean;
-        } | null;
-    } | null;
+    alignment(context: ComponentContext): ApproachableAlignment | null;
     endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     cachedData(context: ComponentExecuteContext): DroneMotionComponentModelData<DroneMotionComponentModelSample> | null;

@@ -1,6 +1,6 @@
 import { ComponentExecutionState } from "./ComponentExecutionState";
 import { ComponentExecuteContext } from "./ComponentExecuteContext";
-import { TypeName } from "../core/Enums";
+import { ExecutionEngine, TypeName } from "../core/Enums";
 import { Serializable } from "../core/Serializable";
 import { ComponentEstimate } from "./ComponentEstimate";
 import { ComponentNode } from "./ComponentNode";
@@ -16,6 +16,7 @@ export declare class ListComponent extends SubComponent implements Serializable 
     childComponents: SubComponent[];
     applyJSON(json: any): void;
     get subtitle(): string;
+    get executionEngines(): ExecutionEngine[];
     verification(context: ComponentContext): Component | null;
     get exclusiveReadonly(): boolean;
     get exclusiveExecution(): boolean;

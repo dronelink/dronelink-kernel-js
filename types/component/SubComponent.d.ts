@@ -20,6 +20,7 @@ export declare abstract class SubComponent extends Component implements Serializ
     pointsOfInterest: PointOfInterest[];
     applyJSON(json: any): void;
     get pointsOfInterestEnabled(): boolean;
+    get pointsOfInterestMax(): number | null;
     get pointsOfInterestReferences(): PointOfInterestReference[];
     get exclusiveReadonly(): boolean;
     get exclusiveExecution(): boolean;

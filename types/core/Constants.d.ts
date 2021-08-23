@@ -4,7 +4,7 @@ import { CameraSpecification } from "./CameraSpecification";
 import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 export declare class Constants {
-    static readonly Version = "2.4.0";
+    static readonly Version = "2.5.0";
     static readonly ExecuteIntervalTarget: number;
     static readonly ExecuteIntervalMax: number;
     static readonly ExecuteDelayStrikesMax = 5;
@@ -114,4 +114,8 @@ export declare class Constants {
     static readonly PhotoIntervalCommandValue = 2;
     static readonly ZoneMaxAltitude: number;
     static readonly ZoneEdgeBufferDistance = 0.1;
+    static readonly DJIWaypointMissionComponentMaxWaypoints = 99;
+    static readonly DJIWaypointMissionComponentMinWaypointDistance = 0.2;
+    static readonly DJIWaypointMissionComponentCornerRadius: number;
+    static readonly DJIWaypointMissionComponentWaypointAltitude: number;
 }

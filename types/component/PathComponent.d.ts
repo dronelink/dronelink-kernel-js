@@ -4,7 +4,7 @@ import { Vector2 } from "../core/Vector2";
 import { Serializable } from "../core/Serializable";
 import { ComponentEstimate } from "./ComponentEstimate";
 import { TypeName, PathCornering } from "../core/Enums";
-import { ApproachableComponent } from "./ApproachableComponent";
+import { ApproachableAlignment, ApproachableComponent } from "./ApproachableComponent";
 import { GeoCoordinate } from "../core/GeoCoordinate";
 import { PathComponentWaypoint } from "./PathComponentWaypoint";
 import { PathComponentMarker } from "./PathComponentMarker";
@@ -13,8 +13,6 @@ import { ComponentNode } from "./ComponentNode";
 import { PointOfInterestReference } from "../core/PointOfInterest";
 import { Node } from "../core/Node";
 import { PathComponentModelSample, PathComponentModel } from "./PathComponentModel";
-import { Orientation3Optional } from "../core/Orientation3Optional";
-import { Dictionary } from "../core/Dictionary";
 import { GeoSpatial } from "../core/GeoSpatial";
 import { DroneMotionComponentModelData } from "./DroneMotionComponent";
 import { ComponentEstimateContext } from "./ComponentEstimateContext";
@@ -44,13 +42,7 @@ export declare class PathComponent extends ApproachableComponent implements Seri
     addMarker(marker: PathComponentMarker): PathComponentMarker;
     orderMarkers(): void;
     path(context: ComponentContext): Path | null;
-    alignment(context: ComponentContext): {
-        droneOrientation: Orientation3Optional | null;
-        gimbal: {
-            orientations: Dictionary<Orientation3Optional>;
-            required: boolean;
-        } | null;
-    } | null;
+    alignment(context: ComponentContext): ApproachableAlignment | null;
     endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     cachedData(context: ComponentExecuteContext): DroneMotionComponentModelData<PathComponentModelSample> | null;

@@ -19,6 +19,7 @@ import { Component } from "./Component";
 import { Vector2 } from "../core/Vector2";
 import { Altitude } from "../core/Altitude";
 import { Orientation3 } from "../core/Orientation3";
+import { Simulation } from "../core/Simulation";
 export declare class InspectionComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.InspectionComponent;
     altitudeRange: Limits;
@@ -49,6 +50,11 @@ export declare class InspectionComponent extends ApproachableComponent implement
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
     static parseAsctecTrinityPoints(value: string): InspectionPointExternal[];
     static parseDJIPilotKmlPoints(value: string): InspectionPointExternal[];
+    static fromSimulation(simulation: Simulation, context: ComponentContext, options: {
+        pointsOrder: string;
+        mergeDistance: number;
+        mergeAcrossAssets: boolean;
+    }): SubComponent[];
 }
 declare class InspectionData {
     intialComponents: SubComponent[];

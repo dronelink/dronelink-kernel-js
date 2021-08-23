@@ -1,4 +1,4 @@
-import { ApproachableComponent } from "./ApproachableComponent";
+import { ApproachableAlignment, ApproachableComponent } from "./ApproachableComponent";
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
 import { TypeName, FacadeCapturePriority, FacadeBoundaryFace, FacadePattern, CameraMode, PathCornering, CameraPhotoMode, CameraFocusMode, FacadeSegmentParity } from "../core/Enums";
@@ -56,13 +56,7 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     verification(context: ComponentContext): Component | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
     get cameraFocusCalibrationsRequired(): CameraFocusCalibration[];
-    alignment(context: ComponentContext): {
-        droneOrientation: Orientation3Optional | null;
-        gimbal: {
-            orientations: Dictionary<Orientation3Optional>;
-            required: boolean;
-        } | null;
-    } | null;
+    alignment(context: ComponentContext): ApproachableAlignment | null;
     get referenceOffsets(): Vector2[];
     referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate;
     elevationCoordinates(context: ComponentContext): GeoCoordinate[];

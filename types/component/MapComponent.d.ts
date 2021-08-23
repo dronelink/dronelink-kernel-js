@@ -1,5 +1,5 @@
 import { TypeName, MapPattern, CameraMode } from "../core/Enums";
-import { ApproachableComponent } from "./ApproachableComponent";
+import { ApproachableAlignment, ApproachableComponent } from "./ApproachableComponent";
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
 import { Orientation3 } from "../core/Orientation3";
@@ -41,13 +41,7 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     area(): number;
     verification(context: ComponentContext): Component | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
-    alignment(context: ComponentContext): {
-        droneOrientation: Orientation3Optional | null;
-        gimbal: {
-            orientations: Dictionary<Orientation3Optional>;
-            required: boolean;
-        } | null;
-    } | null;
+    alignment(context: ComponentContext): ApproachableAlignment | null;
     get referenceOffsets(): Vector2[];
     referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate;
     elevationCoordinates(context: ComponentContext): GeoCoordinate[];
@@ -79,7 +73,6 @@ export declare class MapComponent extends ApproachableComponent implements Seria
 }
 export declare class MapComponentModelData extends DroneMotionComponentModelData<MapComponentModelSample> {
     setupComponents: CommandComponent[];
-    addedInitialFocus: boolean;
     commandComponents: CommandComponent[];
     captureInterval: number;
     constructor(modelSample: LinkedValue<MapComponentModelSample>, captureInterval: number);
