@@ -17,6 +17,7 @@ export declare class ListComponent extends SubComponent implements Serializable 
     applyJSON(json: any): void;
     get subtitle(): string;
     get executionEngines(): ExecutionEngine[];
+    toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     verification(context: ComponentContext): Component | null;
     get exclusiveReadonly(): boolean;
     get exclusiveExecution(): boolean;

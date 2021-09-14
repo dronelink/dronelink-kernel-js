@@ -395,6 +395,10 @@ export declare enum DJIWaypointActionType {
     RotateAircraft = "rotateAircraft",
     RotateGimbalPitch = "rotateGimbalPitch"
 }
+export declare enum DJIWaypointMissionComponentFromSimulationStrategy {
+    Single = "single",
+    Multiple = "multiple"
+}
 export declare enum DJIWaypointMissionGotoWaypointMode {
     Safely = "safely",
     PointToPoint = "pointToPoint"

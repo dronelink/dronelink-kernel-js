@@ -61,7 +61,7 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     cachedData(context: ComponentExecuteContext): MapComponentModelData | null;
-    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): GeoSpatial[] | null;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
     resolveDroneMotionLimitsCaptureInterval(context: ComponentContext): {

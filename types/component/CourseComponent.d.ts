@@ -14,5 +14,6 @@ export declare class CourseComponent extends AchievableDroneMotionComponent impl
     get subtitle(): string;
     achieved(context: ComponentExecuteContext): boolean;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): GeoSpatial[] | null;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
 }

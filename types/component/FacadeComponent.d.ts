@@ -80,7 +80,7 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     cachedData(context: ComponentExecuteContext): FacadeComponentModelData | null;
-    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): GeoSpatial[] | null;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
     paths(context: ComponentContext): Path[] | null;

@@ -33,6 +33,7 @@ export declare class InspectionComponent extends ApproachableComponent implement
     get subtitle(): string;
     verification(context: ComponentContext): Component | null;
     get inspectionPointOffsets(): Vector2[];
+    inspectionPointSpatials(context: ComponentContext): GeoSpatial[];
     get referenceOffsets(): Vector2[];
     referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate;
     elevationCoordinates(context: ComponentContext): GeoCoordinate[];
@@ -44,7 +45,7 @@ export declare class InspectionComponent extends ApproachableComponent implement
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     addInspectionPoint(inspectionPoint: InspectionComponentInspectionPoint): void;
     cachedData(context: ComponentExecuteContext, startSpatial?: GeoSpatial | null): InspectionData | null;
-    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): GeoSpatial[] | null;
     get captureChannels(): number[];
     execute(context: ComponentExecuteContext): ComponentExecutionState;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;

@@ -36,6 +36,6 @@ export declare abstract class SubComponent extends Component implements Serializ
     pointOfInterestCoordinateByID(context: ComponentContext, id: String): GeoCoordinate | null;
     pointOfInterestReferencedAltitudeByID(context: ComponentContext, id: String): ReferencedAltitude | null;
     node(parent?: Node | null): ComponentNode;
-    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): GeoSpatial[] | null;
     failed(context: ComponentExecuteContext, error?: string | null): ComponentExecutionState;
 }

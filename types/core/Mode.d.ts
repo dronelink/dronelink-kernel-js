@@ -44,7 +44,11 @@ export declare class Mode extends Executable implements Serializable {
     private evaluate;
     validateSyntax(): void;
     modeExecuteContext(context?: Context, engagement?: Engagement): ModeExecuteContext;
-    engage(context: Context, datetime?: Datetime | null): Engagement | null;
+    engage(context: Context, datetime?: Datetime | null): {
+        engagement: Engagement;
+        remainingSpatials: GeoSpatial[];
+        reengagementSpatials: GeoSpatial[] | null;
+    } | null;
     execute(context: Context, datetime?: Datetime | null, timeline?: Timeline | null): any;
     addDroneVelocityCommand(context: ModeExecuteContext, limits: MotionLimits6, velocity: Velocity6, heading?: number | null): VelocityDroneCommand;
     addGimbalVelocityCommand(context: ModeExecuteContext, channel: number, orientationTarget: Orientation3Optional, referencePath: {

@@ -1470,15 +1470,13 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             cornerRadius: string;
             waypoints: string;
         };
-        convert: {
-            invalidComponent: string;
-        };
     };
     DJIWaypointMissionComponentWaypoint: {
         name: string;
         multiple: string;
         values: {
             altitude: string;
+            pointOfInterestID: string;
             heading: string;
             cornerRadius: string;
             turnMode: string;
@@ -1773,7 +1771,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 title: string;
                 detailsUp: string;
                 detailsDown: string;
-                defailsRestricted: string;
+                detailsRestricted: string;
             };
             verticalTraverse: {
                 title: string;
@@ -2213,14 +2211,8 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             complete: string;
             engageDisallowed: {
                 complete: string;
-                requiredTakeoffUnavailable: {
-                    title: string;
-                };
-                requiredTakeoffInvalid: {
-                    title: string;
-                    details: string;
-                };
             };
+            simulationEngineInvalid: string;
         };
         values: {
             reengagement: string;
@@ -2569,6 +2561,22 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             restrictionZones: string;
             takeoffOffset: string;
             altitudeContinuity: string;
+        };
+        messages: {
+            engageDisallowed: {
+                requiredTakeoffUnavailable: {
+                    title: string;
+                };
+                requiredTakeoffInvalid: {
+                    title: string;
+                    details: string;
+                };
+                ultrasonicAltitudeMin: {
+                    title: string;
+                    detailsOffsetsDisabled: string;
+                    detailsOffsetsEnabled: string;
+                };
+            };
         };
     };
     PlanRestrictionZone: {

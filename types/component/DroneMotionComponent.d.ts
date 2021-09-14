@@ -33,7 +33,7 @@ export declare abstract class DroneMotionComponent extends SubComponent implemen
     addVelocityCommandsFromModel(context: ComponentExecuteContext, model: DroneMotionComponentModelData<DroneMotionComponentModelSample>, headingRotation: boolean | null): void;
     addDroneVelocityCommand(context: ComponentExecuteContext, velocity: Velocity6, heading?: number | null): VelocityDroneCommand;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
-    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): GeoSpatial[] | null;
     activeRestrictionZones(context: ComponentContext): PlanRestrictionZone[];
 }
 export declare class DroneMotionComponentModelData<S extends DroneMotionComponentModelSample> {
@@ -45,6 +45,7 @@ export declare class DroneMotionComponentModelData<S extends DroneMotionComponen
     updateProgress(progress: number): void;
     updateTime(time: number): void;
     incrementTime(time: number): void;
+    get sampleDroneSpatials(): GeoSpatial[] | null;
     get sampleLinked(): LinkedValue<S>;
     get sampleInterpolated(): DroneMotionComponentModelSample;
     get progress(): number;

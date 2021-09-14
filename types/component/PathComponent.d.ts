@@ -3,7 +3,7 @@ import { ComponentExecuteContext } from "./ComponentExecuteContext";
 import { Vector2 } from "../core/Vector2";
 import { Serializable } from "../core/Serializable";
 import { ComponentEstimate } from "./ComponentEstimate";
-import { TypeName, PathCornering } from "../core/Enums";
+import { TypeName, PathCornering, ExecutionEngine } from "../core/Enums";
 import { ApproachableAlignment, ApproachableComponent } from "./ApproachableComponent";
 import { GeoCoordinate } from "../core/GeoCoordinate";
 import { PathComponentWaypoint } from "./PathComponentWaypoint";
@@ -12,7 +12,7 @@ import { Path } from "../core/Path";
 import { ComponentNode } from "./ComponentNode";
 import { PointOfInterestReference } from "../core/PointOfInterest";
 import { Node } from "../core/Node";
-import { PathComponentModelSample, PathComponentModel } from "./PathComponentModel";
+import { PathComponentModelSample, PathComponentModel, PathComponentModelParameters } from "./PathComponentModel";
 import { GeoSpatial } from "../core/GeoSpatial";
 import { DroneMotionComponentModelData } from "./DroneMotionComponent";
 import { ComponentEstimateContext } from "./ComponentEstimateContext";
@@ -26,6 +26,7 @@ export declare class PathComponent extends ApproachableComponent implements Seri
     markers: PathComponentMarker[];
     applyJSON(json: any): void;
     get subtitle(): string;
+    toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     verification(context: ComponentContext): Component | null;
     get pointsOfInterestEnabled(): boolean;
     get pointsOfInterestReferences(): PointOfInterestReference[];
@@ -46,8 +47,9 @@ export declare class PathComponent extends ApproachableComponent implements Seri
     endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     cachedData(context: ComponentExecuteContext): DroneMotionComponentModelData<PathComponentModelSample> | null;
-    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): GeoSpatial[] | null;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
     model(context: ComponentContext, positionOnly?: boolean, alignmentOrientationOnly?: boolean): PathComponentModel | null;
+    modelParameters(context: ComponentContext, positionOnly?: boolean): PathComponentModelParameters | null;
 }

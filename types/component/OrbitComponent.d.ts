@@ -41,7 +41,7 @@ export declare class OrbitComponent extends ApproachableComponent implements Ser
     endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     cachedData(context: ComponentExecuteContext): DroneMotionComponentModelData<DroneMotionComponentModelSample> | null;
-    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): GeoSpatial[] | null;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
     model(context: ComponentContext, positionOnly?: boolean, alignmentOrientationOnly?: boolean): DroneMotionComponentModel<DroneMotionComponentModelSample> | null;

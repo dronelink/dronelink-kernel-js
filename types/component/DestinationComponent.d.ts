@@ -46,7 +46,7 @@ export declare class DestinationComponent extends AchievableDroneMotionComponent
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     achieved(context: ComponentExecuteContext): boolean;
     cachedData(context: ComponentExecuteContext, startSpatial?: GeoSpatial | null): DestinationData | null;
-    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): GeoSpatial[] | null;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
     model(context: ComponentContext, start: GeoSpatial): DroneMotionComponentModel<DestinationComponentModelSample> | null;

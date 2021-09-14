@@ -10,11 +10,13 @@ import { ListElementNode } from "../core/ListElementNode";
 import { LimitFormatter } from "../core/Limits";
 import { Descriptors } from "../core/Descriptors";
 import { Vector2 } from "../core/Vector2";
-export declare class DJIWaypointMissionComponentWaypoint extends Identifiable implements Serializable {
+import { PointOfInterestReference } from "../core/PointOfInterest";
+export declare class DJIWaypointMissionComponentWaypoint extends Identifiable implements Serializable, PointOfInterestReference {
     readonly type = TypeName.DJIWaypointMissionComponentWaypoint;
     descriptors: Descriptors;
     offset: Vector2;
     altitude: Altitude;
+    pointOfInterestID: string | null;
     heading: number;
     cornerRadius: number | null;
     turnMode: DJIWaypointTurnMode;

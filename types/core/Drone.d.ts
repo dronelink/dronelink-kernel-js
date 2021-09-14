@@ -24,6 +24,7 @@ export declare class Drone extends Identifiable implements Serializable {
     spatial: GeoSpatial;
     batteryPercent: number | null;
     obstacleDistance: number | null;
+    ultrasonicAltitude: number | null;
     cameras: Dictionary<Camera>;
     gimbals: Dictionary<Gimbal>;
     statelessCommands: Command[];

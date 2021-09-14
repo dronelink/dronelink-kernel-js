@@ -8,6 +8,8 @@ import { Executable } from "./Executable";
 import { Context } from "./Context";
 import { Drone } from "./Drone";
 import { PlanComponent } from "../component/PlanComponent";
+import { Engagement } from "./Engagement";
+import { GeoSpatial } from "./GeoSpatial";
 export declare class Simulation {
     updateInterval: number;
     executeIntervalTarget: number;
@@ -27,7 +29,11 @@ export declare class Simulation {
     start(): void;
     load(executable: Executable, timeline?: Timeline | null): void;
     addExecutionListener(callback: (simulation: Simulation) => void): void;
-    engage(executable?: Executable | null, timeline?: Timeline | null): void;
+    engage(executable?: Executable | null, timeline?: Timeline | null): {
+        engagement: Engagement;
+        remainingSpatials: GeoSpatial[];
+        reengagementSpatials: GeoSpatial[] | null;
+    } | null;
     disengage(reason: Message): void;
     stop(): void;
     private generateCameraFile;

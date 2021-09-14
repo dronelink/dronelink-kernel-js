@@ -38,10 +38,12 @@ export declare abstract class Component extends Identifiable implements Serializ
     get title(): string;
     get subtitle(): string;
     verification(context: ComponentContext): Component | null;
+    get singleton(): boolean;
     get exclusiveReadonly(): boolean;
     get exclusiveExecution(): boolean;
     get executionEngines(): ExecutionEngine[];
     executionEngineSupported(executionEngine: ExecutionEngine): boolean;
+    toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
     get cameraFocusCalibrationsRequired(): CameraFocusCalibration[];
     get referenceOffsets(): Vector2[];
@@ -54,7 +56,7 @@ export declare abstract class Component extends Identifiable implements Serializ
     descendantAllowed(component: Component): boolean;
     endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
-    engaging(context: ComponentExecuteContext, start: GeoSpatial): void;
+    engaging(context: ComponentExecuteContext, start: GeoSpatial): GeoSpatial[] | null;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
     executingMessageGroup(context: ComponentExecuteContext, state: ComponentExecutionState, messageGroup: MessageGroup): MessageGroup | MessageGroup[] | null;
     executing(context: ComponentExecuteContext): ComponentExecutionState;

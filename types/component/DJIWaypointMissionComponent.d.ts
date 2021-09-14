@@ -1,6 +1,6 @@
 import { Serializable } from "../core/Serializable";
 import { SubComponent } from "./SubComponent";
-import { TypeName, DJIWaypointMissionGotoWaypointMode, DJIWaypointMissionHeadingMode, DJIWaypointMissionFlightPathMode, ExecutionEngine, AltitudeSystem, DJIWaypointMissionFinishedAction } from "../core/Enums";
+import { TypeName, DJIWaypointMissionGotoWaypointMode, DJIWaypointMissionHeadingMode, DJIWaypointMissionFlightPathMode, AltitudeSystem, DJIWaypointMissionFinishedAction, ExecutionEngine } from "../core/Enums";
 import { DJIWaypointMissionComponentWaypoint } from "./DJIWaypointMissionComponentWaypoint";
 import { ComponentNode } from "./ComponentNode";
 import { Node } from "../core/Node";
@@ -11,6 +11,10 @@ import { ComponentContext } from "./ComponentContext";
 import { Simulation } from "../core/Simulation";
 import { Vector2 } from "../core/Vector2";
 import { GeoCoordinate } from "../core/GeoCoordinate";
+import { TimelineFrameGroup } from "../core/Timeline";
+import { Component } from "./Component";
+import { PathComponent } from "./PathComponent";
+import { PointOfInterestReference } from "../core/PointOfInterest";
 import { Path } from "../core/Path";
 export declare class DJIWaypointMissionComponent extends SubComponent implements Serializable {
     readonly type = TypeName.DJIWaypointMissionComponent;
@@ -25,11 +29,15 @@ export declare class DJIWaypointMissionComponent extends SubComponent implements
     cornerRadius: number;
     waypoints: DJIWaypointMissionComponentWaypoint[];
     applyJSON(json: any): void;
-    toJSONCompatible(context: ComponentContext, finishedAction: DJIWaypointMissionFinishedAction): any;
+    toJSONCompatible(context: ComponentContext, finishedAction?: DJIWaypointMissionFinishedAction): any;
+    get exclusiveReadonly(): boolean;
+    get exclusiveExecution(): boolean;
+    get repositionIfIncluded(): boolean;
     get subtitle(): string;
     get executionEngines(): ExecutionEngine[];
     get pointsOfInterestEnabled(): boolean;
     get pointsOfInterestMax(): number | null;
+    get pointsOfInterestReferences(): PointOfInterestReference[];
     get waypointOffsets(): Vector2[];
     get referenceOffsets(): Vector2[];
     referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate;
@@ -43,7 +51,11 @@ export declare class DJIWaypointMissionComponent extends SubComponent implements
     get canAddWaypoints(): boolean;
     addWaypoint(waypoint: DJIWaypointMissionComponentWaypoint, context?: ComponentContext | null): DJIWaypointMissionComponentWaypoint;
     endSpatial(context: ComponentContext): GeoSpatial | null;
+    toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
+    toPathComponent(context: ComponentContext, markers?: boolean): PathComponent | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     path(context: ComponentContext): Path | null;
     static fromSimulation(simulation: Simulation, context: ComponentContext, options: any): SubComponent[];
+    static fromSimulation2(simulation: Simulation, context: ComponentContext, options: any): SubComponent[];
+    static fromFrameGroup(frameGroup: TimelineFrameGroup, context: ComponentContext, options: any): DJIWaypointMissionComponent;
 }
