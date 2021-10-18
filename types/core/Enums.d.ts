@@ -381,12 +381,6 @@ export declare enum CommandReengagementTiming {
     Approach = "approach",
     Destination = "destination"
 }
-export declare enum ComponentExecutionStatus {
-    Pending = "pending",
-    Executing = "executing",
-    Succeeded = "succeeded",
-    Failed = "failed"
-}
 export declare enum DJIWaypointActionType {
     Stay = "stay",
     ShootPhoto = "shootPhoto",
@@ -394,6 +388,11 @@ export declare enum DJIWaypointActionType {
     StopRecord = "stopRecord",
     RotateAircraft = "rotateAircraft",
     RotateGimbalPitch = "rotateGimbalPitch"
+}
+export declare enum DJIWaypointShootPhotoInterval {
+    None = "none",
+    Time = "time",
+    Distance = "distance"
 }
 export declare enum DJIWaypointMissionComponentFromSimulationStrategy {
     Single = "single",
@@ -457,6 +456,12 @@ export declare enum DroneOcuSyncFrequencyBand {
 export declare enum ExecutionEngine {
     DronelinkKernel = "dronelinkKernel",
     DJI = "dji"
+}
+export declare enum ExecutionStatus {
+    Pending = "pending",
+    Executing = "executing",
+    Succeeded = "succeeded",
+    Failed = "failed"
 }
 export declare enum FacadeBoundaryFace {
     LineLeft = "lineLeft",
@@ -592,6 +597,7 @@ export declare enum TypeName {
     DistanceTolerance = "DistanceTolerance",
     Device = "Device",
     DisengageComponent = "DisengageComponent",
+    DJIExecutionState = "DJIExecutionState",
     DJIWaypointMissionComponent = "DJIWaypointMissionComponent",
     DJIWaypointMissionComponentWaypoint = "DJIWaypointMissionComponentWaypoint",
     DJIWaypointMissionComponentWaypointAction = "DJIWaypointMissionComponentWaypointAction",

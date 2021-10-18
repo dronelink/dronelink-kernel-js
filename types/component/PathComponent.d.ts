@@ -38,6 +38,7 @@ export declare class PathComponent extends ApproachableComponent implements Seri
     centerCoordinate(context: ComponentContext): GeoCoordinate;
     waypointCoordinate(context: ComponentContext, index: number): GeoCoordinate;
     waypointCoordinates(context: ComponentContext): GeoCoordinate[];
+    waypointDistances(context: ComponentContext): number[] | null;
     addWaypoint(waypoint: PathComponentWaypoint, context?: ComponentContext | null): PathComponentWaypoint;
     markerCoordinates(context: ComponentContext): GeoCoordinate[] | null;
     addMarker(marker: PathComponentMarker): PathComponentMarker;

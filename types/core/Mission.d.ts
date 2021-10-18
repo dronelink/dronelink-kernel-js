@@ -4,9 +4,8 @@ import { Execution } from "./Execution";
 import { Drone } from "./Drone";
 import { Descriptors } from "./Descriptors";
 import { Serializable } from "./Serializable";
-import { TypeName, ExecutionEngine } from "./Enums";
+import { ExecutionStatus, TypeName, ExecutionEngine } from "./Enums";
 import { Component } from "../component/Component";
-import { ComponentExecutionState } from "../component/ComponentExecutionState";
 import { Datetime } from "./Datetime";
 import { Simulation } from "./Simulation";
 import { ComponentExecuteContext } from "../component/ComponentExecuteContext";
@@ -25,6 +24,8 @@ import { CameraFile } from "./CameraFile";
 import { Context } from "./Context";
 import { GeoCoordinate } from "./GeoCoordinate";
 import { CameraFocusCalibration } from "./CameraFocusCalibration";
+import { Dictionary } from "./Dictionary";
+import { ExecutionState } from "./ExecutionState";
 export declare class Mission extends Executable implements Serializable {
     readonly type = TypeName.Mission;
     descriptors: Descriptors | null;
@@ -36,10 +37,11 @@ export declare class Mission extends Executable implements Serializable {
     get coordinate(): GeoCoordinate;
     get verification(): Mission | null;
     get complete(): boolean;
-    get state(): ComponentExecutionState;
+    get state(): ExecutionState;
     get componentNodeExecutionStates(): ComponentNodeExecutionState[];
     executingMessageGroups(context: Context): MessageGroup[];
     get droneMotionComponentCount(): number;
+    get componentCountsByType(): Dictionary<number>;
     get elevationsRequired(): boolean;
     get cameraFocusCalibrationsRequired(): CameraFocusCalibration[];
     get executionEngines(): ExecutionEngine[];
@@ -52,14 +54,17 @@ export declare class Mission extends Executable implements Serializable {
     };
     estimate(altitudeRequired?: boolean, timeRequired?: boolean, drone?: Drone | null): ComponentEstimate;
     engageDisallowedReasons(context: Context): Message[];
-    engage(context: Context, datetime?: Datetime | null): {
+    engage(context: Context, datetime?: Datetime | null, executionEngine?: ExecutionEngine): {
         engagement: Engagement;
         remainingSpatials: GeoSpatial[];
         reengagementSpatials: GeoSpatial[] | null;
     } | null;
-    execute(context: Context, datetime?: Datetime | null, timeline?: Timeline | null): any;
+    private executingEngagement;
+    execute(context: Context, datetime?: Datetime | null, timeline?: Timeline | null, executionEngine?: ExecutionEngine): any;
     get executionDuration(): number;
+    disengageWithStatus(context: Context, status: ExecutionStatus, error: string | null | undefined, overwrite: boolean): void;
     addCameraFile(channel: number, cameraFile: CameraFile): void;
+    reengagementSpatial(drone: Drone): GeoSpatial | null;
     reengagement(drone: Drone): Mission | null;
     get assetManifest(): AssetManifest;
     simulate(drone: Drone | null | undefined, metadata: any, progress: (mission: Mission, timeline: Timeline) => boolean): Simulation;

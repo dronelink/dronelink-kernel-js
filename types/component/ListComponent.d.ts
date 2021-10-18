@@ -26,5 +26,6 @@ export declare class ListComponent extends SubComponent implements Serializable 
     node(parent?: Node | null): ComponentNode;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
+    get collapsedComponent(): SubComponent | null;
     toString: () => string;
 }

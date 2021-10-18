@@ -1,7 +1,7 @@
 import { ApproachableAlignment, ApproachableComponent } from "./ApproachableComponent";
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
-import { TypeName, FacadeCapturePriority, FacadeBoundaryFace, FacadePattern, CameraMode, PathCornering, CameraPhotoMode, CameraFocusMode, FacadeSegmentParity } from "../core/Enums";
+import { TypeName, FacadeCapturePriority, FacadeBoundaryFace, FacadePattern, CameraMode, PathCornering, CameraPhotoMode, CameraFocusMode, FacadeSegmentParity, ExecutionEngine } from "../core/Enums";
 import { CameraSpecification, GroundSampleDistance } from "../core/CameraSpecification";
 import { FacadeComponentBoundaryPoint } from "./FacadeComponentBoundaryPoint";
 import { Altitude } from "../core/Altitude";
@@ -53,6 +53,7 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     boundaryPoints: FacadeComponentBoundaryPoint[];
     applyJSON(json: any): void;
     get subtitle(): string;
+    toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     verification(context: ComponentContext): Component | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
     get cameraFocusCalibrationsRequired(): CameraFocusCalibration[];

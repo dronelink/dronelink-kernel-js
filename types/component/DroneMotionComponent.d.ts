@@ -55,6 +55,7 @@ export declare class DroneMotionComponentModel<S extends DroneMotionComponentMod
     readonly samples: LinkedValue<S>[];
     constructor(sample: LinkedValue<S>);
     addToEstimate(estimate: ComponentEstimate): void;
+    get distance(): number;
     static insertSamplesAltitudeChanges(context: ComponentContext, modelSample: LinkedValue<DroneMotionComponentModelSample>, maxSampleDistance: number, approachAltitudeATL: number): void;
     static updateSamplesContrainVelocities(sample: LinkedValue<DroneMotionComponentModelSample>, maxSampleDistance: number, smoothing: boolean): void;
     private static updateSamplesSmooth;

@@ -1,4 +1,4 @@
-import { TypeName, MapPattern, CameraMode } from "../core/Enums";
+import { TypeName, MapPattern, CameraMode, ExecutionEngine } from "../core/Enums";
 import { ApproachableAlignment, ApproachableComponent } from "./ApproachableComponent";
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
@@ -16,7 +16,7 @@ import { ComponentEstimate, ComponentEstimateCameraCapture } from "./ComponentEs
 import { ComponentExecuteContext } from "./ComponentExecuteContext";
 import { DroneMotionComponentModelData, DroneMotionComponentModelSample, DroneMotionComponentModel } from "./DroneMotionComponent";
 import { ComponentExecutionState } from "./ComponentExecutionState";
-import { BoundingBox2 } from "../core/Point2";
+import { Point2, BoundingBox2 } from "../core/Point2";
 import { LinkedValue } from "../core/LinkedValue";
 import { CommandComponent } from "./CommandComponent";
 import { MotionLimits6 } from "../core/MotionLimits6";
@@ -38,6 +38,7 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     boundaryPoints: MapComponentBoundaryPoint[];
     applyJSON(json: any): void;
     get subtitle(): string;
+    toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     area(): number;
     verification(context: ComponentContext): Component | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
@@ -66,7 +67,8 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
     resolveDroneMotionLimitsCaptureInterval(context: ComponentContext): {
         motionLimits: MotionLimits6;
-        captureInterval: number;
+        captureIntervalTime: number;
+        captureIntervalDistance: number;
     };
     model(context: ComponentContext, altitudeRequired?: boolean, timeRequired?: boolean, pathingRequired?: boolean): MapComponentModel | null;
     private segments;
@@ -78,9 +80,12 @@ export declare class MapComponentModelData extends DroneMotionComponentModelData
     constructor(modelSample: LinkedValue<MapComponentModelSample>, captureInterval: number);
 }
 export declare class MapComponentModel extends DroneMotionComponentModel<MapComponentModelSample> {
-    captureInterval: number;
+    captureIntervalTime: number;
+    captureIntervalDistance: number;
     estimatedCapture: ComponentEstimateCameraCapture;
-    constructor(sample: LinkedValue<MapComponentModelSample>, captureInterval: number, estimatedCapture: ComponentEstimateCameraCapture);
+    points: Point2[];
+    cornerRadius: number;
+    constructor(sample: LinkedValue<MapComponentModelSample>, captureIntervalTime: number, captureIntervalDistance: number, estimatedCapture: ComponentEstimateCameraCapture, points: Point2[], cornerRadius: number);
 }
 export declare class MapComponentModelSample extends DroneMotionComponentModelSample {
     distance: number;

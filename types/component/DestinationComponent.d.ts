@@ -1,6 +1,6 @@
 import { ComponentExecutionState } from "./ComponentExecutionState";
 import { ComponentExecuteContext } from "./ComponentExecuteContext";
-import { TypeName } from "../core/Enums";
+import { TypeName, ExecutionEngine } from "../core/Enums";
 import { Vector2 } from "../core/Vector2";
 import { Serializable } from "../core/Serializable";
 import { ComponentEstimate } from "./ComponentEstimate";
@@ -33,6 +33,7 @@ export declare class DestinationComponent extends AchievableDroneMotionComponent
     applyJSON(json: any): void;
     get subtitle(): string;
     get referenceOffsets(): Vector2[];
+    toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     verification(context: ComponentContext): Component | null;
     get pointsOfInterestEnabled(): boolean;
     get pointsOfInterestMax(): number | null;

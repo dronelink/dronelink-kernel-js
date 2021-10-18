@@ -2,6 +2,7 @@ import { Altitude } from "./Altitude";
 import { Orientation3 } from "./Orientation3";
 import { GeoCoordinate } from "./GeoCoordinate";
 import { Serializable } from "./Serializable";
+import { Vector2 } from "./Vector2";
 import { TypeName } from "./Enums";
 import { Datetime } from "./Datetime";
 import { Velocity6 } from "./Velocity6";
@@ -21,6 +22,7 @@ export declare class GeoSpatial implements Serializable {
     projectCoordinate(time: number): GeoCoordinate;
     projectAltitude(time: number): Altitude;
     projectOrientation(time: number): Orientation3;
+    offset(to: GeoSpatial): Vector2;
     distance(to: GeoSpatial): number;
     groundCoordinate(pitch: number, yaw?: number | null, maxPitch?: number): GeoCoordinate;
     groundCoordinates(fieldOfView: FieldOfView, pitch: number, yaw?: number | null, maxPitch?: number): GeoCoordinate[];

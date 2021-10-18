@@ -1,6 +1,6 @@
 import { ComponentExecutionState } from "./ComponentExecutionState";
 import { ComponentExecuteContext } from "./ComponentExecuteContext";
-import { CameraMode, CameraPhotoMode, TypeName } from "../core/Enums";
+import { CameraMode, CameraPhotoMode, TypeName, ExecutionEngine } from "../core/Enums";
 import { Serializable } from "../core/Serializable";
 import { ApproachableComponent } from "./ApproachableComponent";
 import { ComponentEstimateContext } from "./ComponentEstimateContext";
@@ -31,6 +31,7 @@ export declare class InspectionComponent extends ApproachableComponent implement
     inspectionPoints: InspectionComponentInspectionPoint[];
     applyJSON(json: any): void;
     get subtitle(): string;
+    toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     verification(context: ComponentContext): Component | null;
     get inspectionPointOffsets(): Vector2[];
     inspectionPointSpatials(context: ComponentContext): GeoSpatial[];

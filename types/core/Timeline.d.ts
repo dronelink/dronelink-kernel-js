@@ -45,6 +45,7 @@ export declare class TimelineFrameGroup {
     frames: TimelineFrame[];
     distance: number;
     addFrame(frame: TimelineFrame): void;
+    addFrameGroup(frameGroup: TimelineFrameGroup): void;
 }
 export declare class TimelineCommand implements Serializable {
     readonly type = TypeName.TimelineFrame;

@@ -1,4 +1,4 @@
-import { TypeName } from "./Enums";
+import { ExecutionEngine, TypeName } from "./Enums";
 import { GeoCoordinate } from "./GeoCoordinate";
 import { Descriptors } from "./Descriptors";
 import { Serializable } from "./Serializable";
@@ -49,7 +49,7 @@ export declare class Mode extends Executable implements Serializable {
         remainingSpatials: GeoSpatial[];
         reengagementSpatials: GeoSpatial[] | null;
     } | null;
-    execute(context: Context, datetime?: Datetime | null, timeline?: Timeline | null): any;
+    execute(context: Context, datetime?: Datetime | null, timeline?: Timeline | null, executionEngine?: ExecutionEngine): any;
     addDroneVelocityCommand(context: ModeExecuteContext, limits: MotionLimits6, velocity: Velocity6, heading?: number | null): VelocityDroneCommand;
     addGimbalVelocityCommand(context: ModeExecuteContext, channel: number, orientationTarget: Orientation3Optional, referencePath: {
         x: number;

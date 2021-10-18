@@ -1,6 +1,6 @@
 import { ComponentExecutionState } from "./ComponentExecutionState";
 import { ComponentExecuteContext } from "./ComponentExecuteContext";
-import { OrbitDirection, TypeName } from "../core/Enums";
+import { OrbitDirection, TypeName, ExecutionEngine } from "../core/Enums";
 import { Vector2 } from "../core/Vector2";
 import { Serializable } from "../core/Serializable";
 import { ComponentEstimate } from "./ComponentEstimate";
@@ -26,6 +26,7 @@ export declare class OrbitComponent extends ApproachableComponent implements Ser
     gimbalOrientations: Dictionary<Orientation3Optional> | null;
     applyJSON(json: any): void;
     get subtitle(): string;
+    toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     verification(context: ComponentContext): Component | null;
     get pointsOfInterestEnabled(): boolean;
     get pointsOfInterestMax(): number | null;

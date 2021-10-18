@@ -1,7 +1,7 @@
 import { Node } from "../core/Node";
 import { Serializable } from "../core/Serializable";
 import { Identifiable } from "../core/Identifiable";
-import { TypeName, DJIWaypointTurnMode } from "../core/Enums";
+import { TypeName, DJIWaypointTurnMode, DJIWaypointShootPhotoInterval } from "../core/Enums";
 import { DJIWaypointMissionComponentWaypointAction } from "./DJIWaypointMissionComponentWaypointAction";
 import { Altitude } from "../core/Altitude";
 import { ListNode } from "../core/ListNode";
@@ -22,6 +22,7 @@ export declare class DJIWaypointMissionComponentWaypoint extends Identifiable im
     turnMode: DJIWaypointTurnMode;
     gimbalPitch: number;
     speed: number | null;
+    shootPhotoInterval: DJIWaypointShootPhotoInterval;
     shootPhotoTimeInterval: number;
     shootPhotoDistanceInterval: number;
     actions: DJIWaypointMissionComponentWaypointAction[];
@@ -32,6 +33,7 @@ export declare class DJIWaypointMissionComponentWaypoint extends Identifiable im
     title(index: number): string;
     abbreviation(index: number): string;
     toString: (formatters?: DJIWaypointMissionComponentWaypointFormatters) => string;
+    get canAddAction(): boolean;
 }
 export declare type DJIWaypointMissionComponentWaypointFormatters = {
     horizontal: LimitFormatter;

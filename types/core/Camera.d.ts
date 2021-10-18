@@ -17,6 +17,8 @@ export declare class Camera extends Payload implements Serializable {
         videoMode: CameraVideoMode;
         videoFileFormat: CameraVideoFileFormat;
     };
+    customSpecification: CameraSpecification | null;
     applyJSON(json: any): void;
+    set specification(specification: CameraSpecification | null);
     get specification(): CameraSpecification | null;
 }

@@ -17,9 +17,9 @@ export declare class FacadeComponentModel extends DroneMotionComponentModel<Faca
     static generate(context: ComponentContext, timeRequired: boolean | undefined, paths: Path[], parameters: FacadeComponentModelParameters): FacadeComponentModel | null;
     static createHorizontalSamples(paths: Path[], pathSampleDistance: number, parameters: FacadeComponentModelParameters, cameraCaptures: ComponentEstimateCameraCaptures): LinkedValue<FacadeComponentModelSample> | null;
     static createVerticalSamples(context: ComponentContext, paths: Path[], pathSampleDistance: number, parameters: FacadeComponentModelParameters, cameraCaptures: ComponentEstimateCameraCaptures): LinkedValue<FacadeComponentModelSample> | null;
-    captureInterval: number | null;
+    parameters: FacadeComponentModelParameters;
     cameraCaptures: Dictionary<ComponentEstimateCameraCapture>;
-    constructor(sample: LinkedValue<FacadeComponentModelSample>, captureInterval: number | null, cameraCaptures: Dictionary<ComponentEstimateCameraCapture>);
+    constructor(sample: LinkedValue<FacadeComponentModelSample>, parameters: FacadeComponentModelParameters, cameraCaptures: Dictionary<ComponentEstimateCameraCapture>);
     cameraCapture(channel?: number): ComponentEstimateCameraCapture;
 }
 export declare class FacadeComponentModelSample extends DroneMotionComponentModelSample {
@@ -42,7 +42,9 @@ export declare class FacadeComponentModelParameters {
     readonly initialAltitude: Altitude;
     readonly finalAltitude: Altitude;
     readonly rows: number;
+    readonly rowSpacing: number;
     readonly columns: number;
+    readonly columnSpacing: number;
     readonly captureIntervalTime: number | null;
     readonly captureIntervalDistance: number | null;
     readonly cameraMode: CameraMode;
@@ -54,5 +56,5 @@ export declare class FacadeComponentModelParameters {
     readonly gimbalOrientations: Dictionary<Orientation3Optional>;
     readonly droneOrientation: Orientation3Optional | null;
     readonly activeRestrictionZones: PlanRestrictionZone[];
-    constructor(motionLimits: MotionLimits6, approachAltitude: Altitude, initialAltitude: Altitude, finalAltitude: Altitude, rows: number, columns: number, captureIntervalTime: number | null, captureIntervalDistance: number | null, cameraMode: CameraMode, captureVerifyFileCreated: boolean, pattern: FacadePattern, boundaryFace: FacadeBoundaryFace, boundaryClosed: boolean, boundaryFaceOrientation: number, gimbalOrientations: Dictionary<Orientation3Optional>, droneOrientation: Orientation3Optional | null, activeRestrictionZones: PlanRestrictionZone[]);
+    constructor(motionLimits: MotionLimits6, approachAltitude: Altitude, initialAltitude: Altitude, finalAltitude: Altitude, rows: number, rowSpacing: number, columns: number, columnSpacing: number, captureIntervalTime: number | null, captureIntervalDistance: number | null, cameraMode: CameraMode, captureVerifyFileCreated: boolean, pattern: FacadePattern, boundaryFace: FacadeBoundaryFace, boundaryClosed: boolean, boundaryFaceOrientation: number, gimbalOrientations: Dictionary<Orientation3Optional>, droneOrientation: Orientation3Optional | null, activeRestrictionZones: PlanRestrictionZone[]);
 }

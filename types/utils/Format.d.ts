@@ -4,8 +4,8 @@ import { GroundSampleDistance } from "../core/CameraSpecification";
 export declare class Format {
     static UnitSystem: UnitSystem;
     static string(key: string): string;
-    static velocityHorizontal(value?: number): FormattedValue;
-    static velocityVertical(value?: number): FormattedValue;
+    static velocityHorizontal(value?: number, precise?: boolean): FormattedValue;
+    static velocityVertical(value?: number, precise?: boolean): FormattedValue;
     static velocityRotational(value?: number): FormattedValue;
     static accelerationHorizontal(value?: number): FormattedValue;
     static accelerationVertical(value?: number): FormattedValue;
@@ -16,7 +16,7 @@ export declare class Format {
         minutes: FormattedValue;
         seconds: FormattedValue;
     };
-    static distance(value?: number, threshold?: number): FormattedValue;
+    static distance(value?: number, threshold?: number, precise?: boolean): FormattedValue;
     static distanceOffset(value: any): string;
     static altitude(value?: number): FormattedValue;
     static angle(value?: number, mod?: boolean, precise?: boolean): FormattedValue;
@@ -27,7 +27,7 @@ export declare class Format {
     static groundSampleDistanceCombined(value: GroundSampleDistance): string;
     static absoluteTemperature(value?: number): string;
     static percent(value?: number): FormattedValue;
-    static number(value: number): string;
+    static number(value: number, precise?: boolean): string;
     static integer(value: number, labels?: {
         singular: string;
         plural: string;

@@ -13,9 +13,9 @@ import { Vector2 } from "../core/Vector2";
 import { GeoCoordinate } from "../core/GeoCoordinate";
 import { TimelineFrameGroup } from "../core/Timeline";
 import { Component } from "./Component";
-import { PathComponent } from "./PathComponent";
 import { PointOfInterestReference } from "../core/PointOfInterest";
 import { Path } from "../core/Path";
+import { DroneMotionComponent } from "..";
 export declare class DJIWaypointMissionComponent extends SubComponent implements Serializable {
     readonly type = TypeName.DJIWaypointMissionComponent;
     autoFlightSpeed: number;
@@ -38,6 +38,8 @@ export declare class DJIWaypointMissionComponent extends SubComponent implements
     get pointsOfInterestEnabled(): boolean;
     get pointsOfInterestMax(): number | null;
     get pointsOfInterestReferences(): PointOfInterestReference[];
+    get flightPathModeRequired(): DJIWaypointMissionFlightPathMode | null;
+    get flightPathModeResolved(): DJIWaypointMissionFlightPathMode;
     get waypointOffsets(): Vector2[];
     get referenceOffsets(): Vector2[];
     referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate;
@@ -48,14 +50,13 @@ export declare class DJIWaypointMissionComponent extends SubComponent implements
     waypointCoordinates(context: ComponentContext): GeoCoordinate[];
     waypointSpatials(context: ComponentContext, altitudeSystem?: AltitudeSystem): GeoSpatial[];
     get waypointCornerRadiuses(): number[];
-    get canAddWaypoints(): boolean;
+    get canAddWaypoint(): boolean;
     addWaypoint(waypoint: DJIWaypointMissionComponentWaypoint, context?: ComponentContext | null): DJIWaypointMissionComponentWaypoint;
     endSpatial(context: ComponentContext): GeoSpatial | null;
     toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
-    toPathComponent(context: ComponentContext, markers?: boolean): PathComponent | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     path(context: ComponentContext): Path | null;
+    static fromDroneMotionComponent(droneMotionComponent: DroneMotionComponent, context: ComponentContext): DJIWaypointMissionComponent;
     static fromSimulation(simulation: Simulation, context: ComponentContext, options: any): SubComponent[];
-    static fromSimulation2(simulation: Simulation, context: ComponentContext, options: any): SubComponent[];
-    static fromFrameGroup(frameGroup: TimelineFrameGroup, context: ComponentContext, options: any): DJIWaypointMissionComponent;
+    static fromFrameGroup(droneMotionComponent: DroneMotionComponent, frameGroup: TimelineFrameGroup, context: ComponentContext, options: any): DJIWaypointMissionComponent | null;
 }

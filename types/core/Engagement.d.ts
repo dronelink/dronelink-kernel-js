@@ -9,8 +9,10 @@ import { Disengagement } from "./Disengagement";
 import { User } from "./User";
 import { Device } from "./Device";
 import { Message } from "./Message";
+import { ExecutionEngine } from "..";
 export declare class Engagement extends Identifiable implements Serializable {
     readonly type = TypeName.Engagement;
+    executionEngine: ExecutionEngine;
     engaged: Datetime;
     reengagement: Mission | null;
     lastUserSnapshot: User;
@@ -26,9 +28,9 @@ export declare class Engagement extends Identifiable implements Serializable {
     executeDelayStrikesMax: number;
     disengagement: Disengagement | null;
     applyJSON(json: any): void;
-    constructor(engaged?: Datetime | null, user?: User, device?: Device, drone?: Drone, reengagement?: Mission | null);
+    constructor(executionEngine?: ExecutionEngine, engaged?: Datetime | null, user?: User, device?: Device, drone?: Drone, reengagement?: Mission | null);
     execute(datetime: Datetime, user: User, device: Device | undefined, drone: Drone): void;
-    disengage(drone: Drone, reason: Message): void;
+    disengage(drone: Drone, reason: Message, overwrite?: boolean): void;
     get currentDatetime(): Datetime;
     get timeElapsed(): number;
 }

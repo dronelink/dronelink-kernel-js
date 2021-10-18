@@ -7,6 +7,7 @@ import { CameraFile } from "./CameraFile";
 import { Context } from "./Context";
 import { Timeline } from "./Timeline";
 import { GeoSpatial } from "./GeoSpatial";
+import { ExecutionEngine } from "..";
 export declare abstract class Executable extends Identifiable {
     engagements: Engagement[];
     applyJSON(json: any): void;
@@ -18,8 +19,8 @@ export declare abstract class Executable extends Identifiable {
         remainingSpatials: GeoSpatial[];
         reengagementSpatials: GeoSpatial[] | null;
     } | null;
-    execute(context: Context, datetime?: Datetime | null, timeline?: Timeline | null): any;
-    disengage(context: Context, reason: Message): void;
+    execute(context: Context, datetime?: Datetime | null, timeline?: Timeline | null, executionEngine?: ExecutionEngine): any;
+    disengage(context: Context, reason: Message, overwrite?: boolean): void;
     get disengagement(): Disengagement | null;
     addCameraFile(channel: number, cameraFile: CameraFile): void;
 }

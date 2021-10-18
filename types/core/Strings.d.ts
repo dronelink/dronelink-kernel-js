@@ -1343,23 +1343,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     ComponentExecutionState: {
         name: string;
     };
-    ComponentExecutionStatus: {
-        name: string;
-        values: {
-            pending: {
-                name: string;
-            };
-            executing: {
-                name: string;
-            };
-            succeeded: {
-                name: string;
-            };
-            failed: {
-                name: string;
-            };
-        };
-    };
     ConnectionFailSafeBehaviorDroneCommand: {
         name: string;
         values: {
@@ -1448,10 +1431,32 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             shootPhoto: {
                 name: string;
             };
-            startRecord: string;
-            stopRecord: string;
-            rotateAircraft: string;
-            rotateGimbalPitch: string;
+            startRecord: {
+                name: string;
+            };
+            stopRecord: {
+                name: string;
+            };
+            rotateAircraft: {
+                name: string;
+            };
+            rotateGimbalPitch: {
+                name: string;
+            };
+        };
+    };
+    DJIWaypointShootPhotoInterval: {
+        name: string;
+        values: {
+            none: {
+                name: string;
+            };
+            time: {
+                name: string;
+            };
+            distance: {
+                name: string;
+            };
         };
     };
     DJIWaypointMissionComponent: {
@@ -1470,6 +1475,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             cornerRadius: string;
             waypoints: string;
         };
+        convert: {
+            part: string;
+        };
     };
     DJIWaypointMissionComponentWaypoint: {
         name: string;
@@ -1482,11 +1490,22 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             turnMode: string;
             gimbalPitch: string;
             speed: string;
+            shootPhotoInterval: string;
             shootPhotoTimeInterval: string;
             shootPhotoDistanceInterval: string;
             actions: string;
             actionRepeatTimes: string;
             actionTimeout: string;
+        };
+    };
+    DJIWaypointMissionComponentWaypointAction: {
+        name: string;
+        multiple: string;
+        values: {
+            actionType: string;
+            paramStay: string;
+            paramRotateAircraft: string;
+            paramRotateGimbalPitch: string;
         };
     };
     DJIWaypointMissionGotoWaypointMode: {
@@ -1530,10 +1549,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
         };
-    };
-    DJIWaypointMissionComponentWaypointAction: {
-        name: string;
-        multiple: string;
     };
     DJIWaypointTurnMode: {
         name: string;
@@ -1679,6 +1694,23 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             unknown: {
+                name: string;
+            };
+        };
+    };
+    ExecutionStatus: {
+        name: string;
+        values: {
+            pending: {
+                name: string;
+            };
+            executing: {
+                name: string;
+            };
+            succeeded: {
+                name: string;
+            };
+            failed: {
                 name: string;
             };
         };
