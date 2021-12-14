@@ -27,6 +27,7 @@ import { CameraFocusCalibration } from "../core/CameraFocusCalibration";
 export declare abstract class Component extends Identifiable implements SerializableAbstract {
     coordinate: GeoCoordinate;
     descriptors: Descriptors;
+    resetReengagementCommands: boolean;
     dynamicHomeLocation: boolean;
     cameraCaptureConfigurations: CameraCaptureConfiguration[] | null;
     source: ComponentSource | null;

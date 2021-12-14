@@ -43,6 +43,8 @@ export declare class Simulation {
     private applyCommandFinish;
     private applyDroneCommandStart;
     private applyDroneCommandFinish;
+    private applyRemoteControllerCommandStart;
+    private applyRemoteControllerCommandFinish;
     private applyPayloadCommandStart;
     private applyPayloadCommandFinish;
     private applyCameraCommandStart;

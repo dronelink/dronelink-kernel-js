@@ -1,6 +1,7 @@
 import { SubComponent } from "./SubComponent";
 import { ComponentExecuteContext } from "./ComponentExecuteContext";
 import { VelocityDroneCommand } from "../command/drone/VelocityDroneCommand";
+import { DroneRotationMode } from "../core/Enums";
 import { MotionLimits6Optional } from "../core/MotionLimits6Optional";
 import { Velocity6 } from "../core/Velocity6";
 import { MotionLimits6 } from "../core/MotionLimits6";
@@ -21,6 +22,7 @@ export declare abstract class DroneMotionComponent extends SubComponent implemen
     droneMotionLimits: MotionLimits6Optional;
     droneMotionErrorTolerance: DistanceTolerance | null;
     droneMotionErrorLimits: MotionLimits6Optional | null;
+    droneRotationMode: DroneRotationMode | null;
     restrictionZonesEnabled: boolean;
     applyJSON(json: any): void;
     get exclusiveReadonly(): boolean;
@@ -30,7 +32,7 @@ export declare abstract class DroneMotionComponent extends SubComponent implemen
     resolveDroneMotionLimits(context: ComponentContext, droneMotionLimits?: MotionLimits6Optional | null): MotionLimits6;
     resolveDroneMotionErrorTolerance(context: ComponentContext, droneMotionErrorTolerance?: DistanceTolerance | null): DistanceTolerance;
     resolveDroneMotionErrorLimits(context: ComponentContext, droneMotionLimits: MotionLimits6): MotionLimits6;
-    addVelocityCommandsFromModel(context: ComponentExecuteContext, model: DroneMotionComponentModelData<DroneMotionComponentModelSample>, headingRotation: boolean | null): void;
+    addVelocityCommandsFromModel(context: ComponentExecuteContext, model: DroneMotionComponentModelData<DroneMotionComponentModelSample>, droneRotationMode?: DroneRotationMode | null, ignoreGimbal?: boolean): void;
     addDroneVelocityCommand(context: ComponentExecuteContext, velocity: Velocity6, heading?: number | null): VelocityDroneCommand;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
     engaging(context: ComponentExecuteContext, start: GeoSpatial): GeoSpatial[] | null;

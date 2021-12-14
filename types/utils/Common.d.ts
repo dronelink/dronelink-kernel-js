@@ -2,6 +2,7 @@ import { GeoCoordinate } from "..";
 export declare class Common {
     static sleep(millis: number): Promise<unknown>;
     static uuid(): string;
+    static randomBase62(length: number): string;
     static parseBoolean(value: any, defaultValue?: boolean | null): any;
     static parseFloat(value: any, defaultValue?: number | null): any;
     static parseInt(value: any, defaultValue?: number | null): any;

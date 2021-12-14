@@ -86,6 +86,13 @@ export declare enum CameraColor {
     HLG = "hlg",
     Unknown = "unknown"
 }
+export declare enum CameraDisplayMode {
+    Visual = "visual",
+    Thermal = "thermal",
+    PIP = "pip",
+    MSX = "msx",
+    Unknown = "unknown"
+}
 export declare enum CameraExposureCompensation {
     N50 = "n50",
     N47 = "n47",
@@ -358,6 +365,12 @@ export declare enum CameraVideoStandard {
     NTSC = "ntsc",
     Unknown = "unknown"
 }
+export declare enum CameraVideoStreamSource {
+    Zoom = "zoom",
+    Wide = "wide",
+    Thermal = "thermal",
+    Unknown = "unknown"
+}
 export declare enum CameraWhiteBalancePreset {
     Auto = "auto",
     Sunny = "sunny",
@@ -453,6 +466,11 @@ export declare enum DroneOcuSyncFrequencyBand {
     Dual = "dual",
     Unknown = "unknown"
 }
+export declare enum DroneRotationMode {
+    None = "none",
+    Heading = "heading",
+    Velocity = "velocity"
+}
 export declare enum ExecutionEngine {
     DronelinkKernel = "dronelinkKernel",
     DJI = "dji"
@@ -521,6 +539,12 @@ export declare enum MessageLevel {
     Danger = "danger",
     Error = "error"
 }
+export declare enum MapDroneOrientationStrategy {
+    Forward = "forward",
+    Left = "left",
+    Right = "right",
+    Custom = "custom"
+}
 export declare enum MapPattern {
     Normal = "normal",
     Grid = "grid"
@@ -571,6 +595,7 @@ export declare enum TypeName {
     AssetSource = "AssetSource",
     AutoExposureLockCameraCommand = "AutoExposureLockCameraCommand",
     AutoLockGimbalCameraCommand = "AutoLockGimbalCameraCommand",
+    BeaconDroneCommand = "BeaconDroneCommand",
     Camera = "Camera",
     CameraFile = "CameraFile",
     CameraFocusCalibration = "CameraFocusCalibration",
@@ -597,6 +622,7 @@ export declare enum TypeName {
     DistanceTolerance = "DistanceTolerance",
     Device = "Device",
     DisengageComponent = "DisengageComponent",
+    DisplayModeCameraCommand = "DisplayModeCameraCommand",
     DJIExecutionState = "DJIExecutionState",
     DJIWaypointMissionComponent = "DJIWaypointMissionComponent",
     DJIWaypointMissionComponentWaypoint = "DJIWaypointMissionComponentWaypoint",
@@ -636,6 +662,7 @@ export declare enum TypeName {
     InspectionComponentInspectionPoint = "InspectionComponentInspectionPoint",
     Interpolation = "Interpolation",
     ISOCameraCommand = "ISOCameraCommand",
+    LabelComponent = "LabelComponent",
     LandingGearAutomaticMovementDroneCommand = "LandingGearAutomaticMovementDroneCommand",
     LandingGearDeployDroneCommand = "LandingGearDeployDroneCommand",
     LandingGearRetractDroneCommand = "LandingGearRetractDroneCommand",
@@ -671,6 +698,7 @@ export declare enum TypeName {
     OcuSyncChannelDroneCommand = "OcuSyncChannelDroneCommand",
     OcuSyncChannelSelectionModeDroneCommand = "OcuSyncChannelSelectionModeDroneCommand",
     OcuSyncFrequencyBandDroneCommand = "OcuSyncFrequencyBandDroneCommand",
+    OcuSyncVideoFeedSourcesDroneCommand = "OcuSyncVideoFeedSourcesDroneCommand",
     OrbitComponent = "OrbitComponent",
     Orientation3 = "Orientation3",
     Orientation3Optional = "Orientation3Optional",
@@ -705,11 +733,14 @@ export declare enum TypeName {
     ShutterSpeedCameraCommand = "ShutterSpeedCameraCommand",
     SmartReturnHomeDroneCommand = "SmartReturnHomeDroneCommand",
     SourcedGeoSpatial = "SourcedGeoSpatial",
+    SpotlightDroneCommand = "SpotlightDroneCommand",
+    SpotlightBrightnessDroneCommand = "SpotlightBrightnessDroneCommand",
     SpotMeteringTargetCameraCommand = "SpotMeteringTargetCameraCommand",
     StorageLocationCameraCommand = "StorageLocationCameraCommand",
     StartCaptureCameraCommand = "StartCaptureCameraCommand",
     StopCaptureCameraCommand = "StopCaptureCameraCommand",
     SubComponent = "SubComponent",
+    TargetGimbalChannelRemoteControllerCommand = "TargetGimbalChannelRemoteControllerCommand",
     Timeline = "Timeline",
     TimelineCameraCapture = "TimelineCameraCapture",
     TimelineCommand = "TimelineCommand",
@@ -729,6 +760,7 @@ export declare enum TypeName {
     VideoModeCameraCommand = "VideoModeCameraCommand",
     VideoResolutionFrameRateCameraCommand = "VideoResolutionFrameRateCameraCommand",
     VideoStandardCameraCommand = "VideoStandardCameraCommand",
+    VideoStreamSourceCameraCommand = "VideoStreamSourceCameraCommand",
     VisionAssistedPositioningDroneCommand = "VisionAssistedPositioningDroneCommand",
     WaitComponent = "WaitComponent",
     WhiteBalancePresetCameraCommand = "WhiteBalancePresetCameraCommand",
@@ -747,6 +779,18 @@ export declare enum VariableValueType {
     Boolean = "boolean",
     Number = "number",
     String = "string"
+}
+export declare enum VideoFeedSource {
+    MainCamera = "mainCamera",
+    FPVCamera = "fpvCamera",
+    LB = "lb",
+    EXT = "ext",
+    HDMI = "hdmi",
+    AV = "av",
+    LeftCamera = "leftCamera",
+    RightCamera = "rightCamera",
+    TopCamera = "topCamera",
+    Unknown = "unknown"
 }
 export declare enum ZoneMotionPriority {
     Horizontal = "horizontal",

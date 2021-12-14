@@ -1,4 +1,4 @@
-import { TypeName, MapPattern, CameraMode, ExecutionEngine } from "../core/Enums";
+import { TypeName, MapPattern, CameraMode, ExecutionEngine, MapDroneOrientationStrategy } from "../core/Enums";
 import { ApproachableAlignment, ApproachableComponent } from "./ApproachableComponent";
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
@@ -33,11 +33,18 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     pattern: MapPattern;
     frontOverlap: number;
     sideOverlap: number;
+    droneOrientationStrategy: MapDroneOrientationStrategy;
     droneOrientation: Orientation3Optional | null;
-    gimbalOrientation: Orientation3;
+    gimbalOrientations: Dictionary<Orientation3Optional>;
     boundaryPoints: MapComponentBoundaryPoint[];
     applyJSON(json: any): void;
     get subtitle(): string;
+    droneOrientationResolved(segments: Line2[] | null): Orientation3Optional | null;
+    get droneOrientationPerpendicular(): boolean;
+    get frontOverlapResolved(): number;
+    get sideOverlapResolved(): number;
+    get captureChannels(): number[];
+    get gimbalOrientationPrimary(): Orientation3;
     toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     area(): number;
     verification(context: ComponentContext): Component | null;
@@ -89,6 +96,6 @@ export declare class MapComponentModel extends DroneMotionComponentModel<MapComp
 }
 export declare class MapComponentModelSample extends DroneMotionComponentModelSample {
     distance: number;
-    commandComponent: CommandComponent | null;
+    commandType: TypeName | null;
     constructor(droneSpatial: GeoSpatial, droneMotionLimits: MotionLimits6, gimbalOrientations: Dictionary<Orientation3Optional>, distance: number);
 }

@@ -108,6 +108,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         multiple: string;
     };
+    BeaconDroneCommand: {
+        name: string;
+        values: {
+            enabled: string;
+        };
+    };
     Camera: {
         name: string;
     };
@@ -375,6 +381,26 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     CameraCommand: {
         name: string;
         description: string;
+    };
+    CameraDisplayMode: {
+        name: string;
+        values: {
+            visual: {
+                name: string;
+            };
+            thermal: {
+                name: string;
+            };
+            pip: {
+                name: string;
+            };
+            msx: {
+                name: string;
+            };
+            unknown: {
+                name: string;
+            };
+        };
     };
     CameraExposureCompensation: {
         name: string;
@@ -752,6 +778,8 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             mavic2EnterpriseMax: string;
             mavic2EnterpriseDualRGB: string;
             mavic2EnterpriseDualThermal: string;
+            mavic2EnterpriseAdvancedRGB: string;
+            mavic2EnterpriseAdvancedThermal: string;
             mavicAir2: string;
             mavicAir248MP: string;
             mavicAir: string;
@@ -1235,6 +1263,23 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             };
         };
     };
+    CameraVideoStreamSource: {
+        name: string;
+        values: {
+            wide: {
+                name: string;
+            };
+            zoom: {
+                name: string;
+            };
+            thermal: {
+                name: string;
+            };
+            unknown: {
+                name: string;
+            };
+        };
+    };
     CameraWhiteBalancePreset: {
         name: string;
         values: {
@@ -1287,6 +1332,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             coordinate: string;
             referenceOffsetsHandleCoordinate: string;
             descriptors: string;
+            resetReengagementCommands: string;
             dynamicHomeLocation: string;
             cameraCaptureConfiguration: string;
             script: string;
@@ -1304,6 +1350,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     Command: {
         name: string;
+        values: {
+            reengagementEnabled: string;
+        };
     };
     CommandComponent: {
         name: string;
@@ -1734,6 +1783,13 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             exposureMode: string;
         };
     };
+    DisplayModeCameraCommand: {
+        name: string;
+        values: {
+            displayMode: string;
+            lensIndex: string;
+        };
+    };
     FacadeBoundaryFace: {
         name: string;
         values: {
@@ -2071,6 +2127,13 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             enabled: string;
         };
     };
+    LabelComponent: {
+        name: string;
+        description: string;
+        values: {
+            label: string;
+        };
+    };
     LandingGearAutomaticMovementDroneCommand: {
         name: string;
         values: {
@@ -2152,8 +2215,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             sideOverlap: string;
             minCaptureInterval: string;
             targetDistance: string;
+            droneOrientationStrategy: string;
             droneOrientation: string;
-            gimbalOrientation: string;
+            gimbalOrientations: string;
         };
         messages: {
             setup: {
@@ -2164,6 +2228,23 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     MapComponentBoundaryPoint: {
         name: string;
         multiple: string;
+    };
+    MapDroneOrientationStrategy: {
+        name: string;
+        values: {
+            forward: {
+                name: string;
+            };
+            left: {
+                name: string;
+            };
+            right: {
+                name: string;
+            };
+            custom: {
+                name: string;
+            };
+        };
     };
     MapPattern: {
         name: string;
@@ -2420,6 +2501,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             ocuSyncFrequencyBand: string;
         };
     };
+    OcuSyncVideoFeedSourcesDroneCommand: {
+        name: string;
+        values: {
+            ocuSyncVideoFeedSources: string;
+        };
+    };
     OrbitComponent: {
         name: string;
         description: string;
@@ -2632,6 +2719,14 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             enabled: string;
         };
     };
+    RemoteController: {
+        name: string;
+        abbreviation: string;
+    };
+    RemoteControllerCommand: {
+        name: string;
+        description: string;
+    };
     RemoteControllerSticksDroneCommand: {
         name: string;
         values: {
@@ -2733,6 +2828,18 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     SourcedGeoSpatial: {
         name: string;
     };
+    SpotlightDroneCommand: {
+        name: string;
+        values: {
+            enabled: string;
+        };
+    };
+    SpotlightBrightnessDroneCommand: {
+        name: string;
+        values: {
+            spotlightBrightness: string;
+        };
+    };
     SpotMeteringTargetCameraCommand: {
         name: string;
         values: {
@@ -2784,6 +2891,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             propagate: {
                 name: string;
             };
+        };
+    };
+    TargetGimbalChannelRemoteControllerCommand: {
+        name: string;
+        values: {
+            targetGimbalChannel: string;
         };
     };
     Unit: {
@@ -3046,6 +3159,47 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         values: {
             enabled: string;
+        };
+    };
+    VideoStreamSourceCameraCommand: {
+        name: string;
+        values: {
+            videoStreamSource: string;
+        };
+    };
+    VideoFeedSource: {
+        name: string;
+        values: {
+            mainCamera: {
+                name: string;
+            };
+            fpvCamera: {
+                name: string;
+            };
+            lb: {
+                name: string;
+            };
+            ext: {
+                name: string;
+            };
+            hdmi: {
+                name: string;
+            };
+            av: {
+                name: string;
+            };
+            leftCamera: {
+                name: string;
+            };
+            rightCamera: {
+                name: string;
+            };
+            topCamera: {
+                name: string;
+            };
+            unknown: {
+                name: string;
+            };
         };
     };
     VideoFileCompressionStandardCameraCommand: {
