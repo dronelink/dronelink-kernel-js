@@ -6,6 +6,7 @@ import { Message } from "./Message";
 import { Timeline } from "./Timeline";
 import { Executable } from "./Executable";
 import { Context } from "./Context";
+import { Vector2 } from "./Vector2";
 import { Drone } from "./Drone";
 import { PlanComponent } from "../component/PlanComponent";
 import { Engagement } from "./Engagement";
@@ -22,6 +23,7 @@ export declare class Simulation {
     executable: Executable | null;
     engaged: boolean;
     timeline: Timeline | null;
+    wind: Vector2;
     private cameraFilesByChannel;
     private executionListeners;
     constructor(drone: Drone, takeoffCoordinate?: GeoCoordinate, executionListener?: (simulation: Simulation) => void, preview?: boolean, metadata?: any);

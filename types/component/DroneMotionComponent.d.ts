@@ -21,6 +21,7 @@ import { PlanRestrictionZone } from "./PlanRestrictionZone";
 export declare abstract class DroneMotionComponent extends SubComponent implements SerializableAbstract {
     droneMotionLimits: MotionLimits6Optional;
     droneMotionErrorTolerance: DistanceTolerance | null;
+    droneMotionErrorModelDelayAllowed: boolean;
     droneMotionErrorLimits: MotionLimits6Optional | null;
     droneRotationMode: DroneRotationMode | null;
     restrictionZonesEnabled: boolean;
@@ -32,6 +33,7 @@ export declare abstract class DroneMotionComponent extends SubComponent implemen
     resolveDroneMotionLimits(context: ComponentContext, droneMotionLimits?: MotionLimits6Optional | null): MotionLimits6;
     resolveDroneMotionErrorTolerance(context: ComponentContext, droneMotionErrorTolerance?: DistanceTolerance | null): DistanceTolerance;
     resolveDroneMotionErrorLimits(context: ComponentContext, droneMotionLimits: MotionLimits6): MotionLimits6;
+    updateModelProgress(context: ComponentExecuteContext, model: DroneMotionComponentModelData<DroneMotionComponentModelSample>): void;
     addVelocityCommandsFromModel(context: ComponentExecuteContext, model: DroneMotionComponentModelData<DroneMotionComponentModelSample>, droneRotationMode?: DroneRotationMode | null, ignoreGimbal?: boolean): void;
     addDroneVelocityCommand(context: ComponentExecuteContext, velocity: Velocity6, heading?: number | null): VelocityDroneCommand;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;

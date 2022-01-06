@@ -769,6 +769,8 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             zenmuseH20ZoomMax: string;
             zenmuseZ30Min: string;
             zenmuseZ30Max: string;
+            mavicMini2: string;
+            mavicMiniSE: string;
             mavicMini: string;
             mavic2Pro: string;
             mavic2ProHQ: string;
@@ -780,6 +782,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             mavic2EnterpriseDualThermal: string;
             mavic2EnterpriseAdvancedRGB: string;
             mavic2EnterpriseAdvancedThermal: string;
+            mavicAir2S: string;
             mavicAir2: string;
             mavicAir248MP: string;
             mavicAir: string;
@@ -1312,6 +1315,17 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             };
         };
     };
+    CapturePriority: {
+        name: string;
+        values: {
+            time: {
+                name: string;
+            };
+            distance: {
+                name: string;
+            };
+        };
+    };
     CollisionAvoidanceDroneCommand: {
         name: string;
         values: {
@@ -1351,6 +1365,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     Command: {
         name: string;
         values: {
+            retriesMax: string;
             reengagementEnabled: string;
         };
     };
@@ -1672,6 +1687,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     DroneMotionComponent: {
         name: string;
         values: {
+            droneMotionErrorModelDelayAllowed: string;
             droneMotionLimits: string;
             droneMotionLimitsHorizontalVelocityMax: string;
             droneMotionLimitsHorizontalAccelerationMin: string;
@@ -1683,6 +1699,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             droneMotionLimitsRotationalVelocityMax: string;
             droneMotionLimitsRotationalAccelerationMin: string;
             droneMotionLimitsRotationalAccelerationMax: string;
+            droneRotationMode: string;
             restrictionZonesEnabled: string;
         };
         messages: {
@@ -1722,6 +1739,20 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             unknown: {
+                name: string;
+            };
+        };
+    };
+    DroneRotationMode: {
+        name: string;
+        values: {
+            none: {
+                name: string;
+            };
+            heading: {
+                name: string;
+            };
+            velocity: {
                 name: string;
             };
         };
@@ -1832,6 +1863,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             cameraMode: string;
             cameraFocusMode: string;
             capturePriority: string;
+            captureDroneMotionLimitsPrefix: string;
             minCaptureInterval: string;
             targetDistance: string;
             pattern: string;
@@ -1851,9 +1883,13 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             horizontalRow: {
                 title: string;
             };
+            horizontalRowRestricted: {
+                title: string;
+            };
             horizontalTraverse: {
                 title: string;
                 details: string;
+                detailsRestricted: string;
             };
             verticalColumn: {
                 title: string;
@@ -1870,16 +1906,8 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     FacadeComponentBoundaryPoint: {
         name: string;
         multiple: string;
-    };
-    FacadeCapturePriority: {
-        name: string;
         values: {
-            time: {
-                name: string;
-            };
-            distance: {
-                name: string;
-            };
+            verticalPercent: string;
         };
     };
     FacadeSegmentParity: {
@@ -2213,6 +2241,8 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             boundaryPoints: string;
             frontOverlap: string;
             sideOverlap: string;
+            capturePriority: string;
+            captureDroneMotionLimitsPrefix: string;
             minCaptureInterval: string;
             targetDistance: string;
             droneOrientationStrategy: string;
@@ -2647,6 +2677,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             positioning: string;
             interpolation: string;
             component: string;
+            componentStartExecutionAfterMotionFinishedEnabled: string;
             altitude: string;
             pointOfInterestID: string;
             droneMotionLimits: string;
@@ -3081,6 +3112,23 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionDetailsExpanded: string;
         };
     };
+    UserInterfaceMapTracking: {
+        name: string;
+        values: {
+            noChange: {
+                name: string;
+            };
+            none: {
+                name: string;
+            };
+            droneHeading: {
+                name: string;
+            };
+            droneNorthUp: {
+                name: string;
+            };
+        };
+    };
     Variable: {
         name: string;
         multiple: string;
@@ -3115,6 +3163,10 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     Vector2: {
         name: string;
+        values: {
+            direction: string;
+            magnitude: string;
+        };
     };
     Velocity3: {
         name: string;

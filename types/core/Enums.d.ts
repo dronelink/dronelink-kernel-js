@@ -382,6 +382,10 @@ export declare enum CameraWhiteBalancePreset {
     Neutral = "neutral",
     Unknown = "unknown"
 }
+export declare enum CapturePriority {
+    Time = "time",
+    Distance = "distance"
+}
 export declare enum CommandExecutionStatus {
     Pending = "pending",
     Queued = "queued",
@@ -490,10 +494,6 @@ export declare enum FacadeBoundaryFace {
     CircleCounterclockwise = "circleCounterclockwise",
     SpiralClockwise = "spiralClockwise",
     SpiralCounterclockwise = "spiralCounterclockwise"
-}
-export declare enum FacadeCapturePriority {
-    Time = "time",
-    Distance = "distance"
 }
 export declare enum FacadeSegmentParity {
     Any = "any",
@@ -772,6 +772,12 @@ export declare enum TypeName {
 export declare enum UnitSystem {
     Metric = "metric",
     Imperial = "imperial"
+}
+export declare enum UserInterfaceMapTracking {
+    NoChange = "noChange",
+    None = "none",
+    DroneHeading = "droneHeading",
+    DroneNorthUp = "droneNorthUp"
 }
 export declare enum VariableValueType {
     Null = "null",

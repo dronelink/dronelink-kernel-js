@@ -10,6 +10,7 @@ export declare class MotionLimits implements Serializable {
     constructor(velocity?: Limits, acceleration?: Limits);
     currentVelocityLimits(currentVelocity: number, time: number): Limits;
     resolve(limits: MotionLimitsOptional | null): MotionLimits;
+    asOptional(): MotionLimitsOptional;
     interpolate(limits: MotionLimits, interpolate: (start: number, finish: number) => number): MotionLimits;
     toString: (formatters: MotionLimitsFormatters) => string;
 }

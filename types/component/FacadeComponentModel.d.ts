@@ -1,4 +1,4 @@
-import { FacadeBoundaryFace, FacadePattern, CameraMode } from "../core/Enums";
+import { FacadeBoundaryFace, FacadePattern, CapturePriority, CameraMode } from "../core/Enums";
 import { Path } from "../core/Path";
 import { GeoSpatial } from "../core/GeoSpatial";
 import { ComponentEstimateCameraCapture, ComponentEstimateCameraCaptures } from "./ComponentEstimate";
@@ -13,10 +13,14 @@ import { ComponentContext } from "./ComponentContext";
 import { PlanRestrictionZone } from "./PlanRestrictionZone";
 import { Altitude } from "../core/Altitude";
 import { Message } from "../core/Message";
+import { FacadeComponentBoundaryRadius } from "./FacadeComponent";
+import { MotionLimits6Optional } from "..";
 export declare class FacadeComponentModel extends DroneMotionComponentModel<FacadeComponentModelSample> {
     static generate(context: ComponentContext, timeRequired: boolean | undefined, paths: Path[], parameters: FacadeComponentModelParameters): FacadeComponentModel | null;
-    static createHorizontalSamples(paths: Path[], pathSampleDistance: number, parameters: FacadeComponentModelParameters, cameraCaptures: ComponentEstimateCameraCaptures): LinkedValue<FacadeComponentModelSample> | null;
-    static createVerticalSamples(context: ComponentContext, paths: Path[], pathSampleDistance: number, parameters: FacadeComponentModelParameters, cameraCaptures: ComponentEstimateCameraCaptures): LinkedValue<FacadeComponentModelSample> | null;
+    static createHorizontalSamples(context: ComponentContext, paths: Path[], parameters: FacadeComponentModelParameters, cameraCaptures: ComponentEstimateCameraCaptures): LinkedValue<FacadeComponentModelSample> | null;
+    static createHorizontalSamplesRestricted(context: ComponentContext, paths: Path[], parameters: FacadeComponentModelParameters, cameraCaptures: ComponentEstimateCameraCaptures): LinkedValue<FacadeComponentModelSample> | null;
+    static createHorizontalSamplesUnrestricted(paths: Path[], parameters: FacadeComponentModelParameters, cameraCaptures: ComponentEstimateCameraCaptures): LinkedValue<FacadeComponentModelSample> | null;
+    static createVerticalSamples(context: ComponentContext, paths: Path[], parameters: FacadeComponentModelParameters, cameraCaptures: ComponentEstimateCameraCaptures): LinkedValue<FacadeComponentModelSample> | null;
     parameters: FacadeComponentModelParameters;
     cameraCaptures: Dictionary<ComponentEstimateCameraCapture>;
     constructor(sample: LinkedValue<FacadeComponentModelSample>, parameters: FacadeComponentModelParameters, cameraCaptures: Dictionary<ComponentEstimateCameraCapture>);
@@ -38,15 +42,18 @@ export declare class FacadeComponentModelData extends DroneMotionComponentModelD
 }
 export declare class FacadeComponentModelParameters {
     readonly motionLimits: MotionLimits6;
-    readonly approachAltitude: Altitude;
+    readonly approachSpatial: GeoSpatial;
     readonly initialAltitude: Altitude;
     readonly finalAltitude: Altitude;
+    readonly targetDistance: number;
     readonly rows: number;
     readonly rowSpacing: number;
     readonly columns: number;
     readonly columnSpacing: number;
-    readonly captureIntervalTime: number | null;
-    readonly captureIntervalDistance: number | null;
+    readonly capturePriority: CapturePriority;
+    readonly captureIntervalTime: number;
+    readonly captureIntervalDistance: number;
+    readonly captureMotionLimits: MotionLimits6Optional;
     readonly cameraMode: CameraMode;
     readonly captureVerifyFileCreated: boolean;
     readonly pattern: FacadePattern;
@@ -56,5 +63,26 @@ export declare class FacadeComponentModelParameters {
     readonly gimbalOrientations: Dictionary<Orientation3Optional>;
     readonly droneOrientation: Orientation3Optional | null;
     readonly activeRestrictionZones: PlanRestrictionZone[];
-    constructor(motionLimits: MotionLimits6, approachAltitude: Altitude, initialAltitude: Altitude, finalAltitude: Altitude, rows: number, rowSpacing: number, columns: number, columnSpacing: number, captureIntervalTime: number | null, captureIntervalDistance: number | null, cameraMode: CameraMode, captureVerifyFileCreated: boolean, pattern: FacadePattern, boundaryFace: FacadeBoundaryFace, boundaryClosed: boolean, boundaryFaceOrientation: number, gimbalOrientations: Dictionary<Orientation3Optional>, droneOrientation: Orientation3Optional | null, activeRestrictionZones: PlanRestrictionZone[]);
+    readonly boundaryRadius: FacadeComponentBoundaryRadius | null;
+    constructor(motionLimits: MotionLimits6, approachSpatial: GeoSpatial, initialAltitude: Altitude, finalAltitude: Altitude, targetDistance: number, rows: number, rowSpacing: number, columns: number, columnSpacing: number, capturePriority: CapturePriority, captureIntervalTime: number, captureIntervalDistance: number, cameraMode: CameraMode, captureVerifyFileCreated: boolean, captureMotionLimits: MotionLimits6Optional, pattern: FacadePattern, boundaryFace: FacadeBoundaryFace, boundaryClosed: boolean, boundaryFaceOrientation: number, gimbalOrientations: Dictionary<Orientation3Optional>, droneOrientation: Orientation3Optional | null, activeRestrictionZones: PlanRestrictionZone[], boundaryRadius: FacadeComponentBoundaryRadius | null);
+    get capturePriorityResolved(): CapturePriority | null;
+    get pathSampleDistance(): number;
+    get circle(): boolean;
+    get spiral(): boolean;
+    segmentsHorizontalRestricted(context: ComponentContext, paths: Path[]): FacadeComponentModelRowSegment[];
+    get minAltitude(): Altitude;
+    get maxAltitude(): Altitude;
+    rowAltitude(row: number): number;
+    boundaryRadiusForRow(row: number): number;
+    boundaryRadiusForAltitude(altitude: number): number;
+    maxBoundaryRadiusForRows(start: number, end: number): number;
 }
+declare class FacadeComponentModelRowSegment {
+    row: number;
+    forward: boolean;
+    restricted: boolean;
+    droneSpatials: GeoSpatial[];
+    totalDistance: number;
+    constructor(row: number, restricted: boolean, droneSpatials: GeoSpatial[]);
+}
+export {};

@@ -18,6 +18,7 @@ export declare class PathComponentMarker extends Identifiable implements Seriali
     positioning: PathMarkerPositioning;
     interpolation: Interpolation;
     component: SubComponent | null;
+    componentStartExecutionAfterMotionFinishedEnabled: boolean;
     altitude: Altitude | null;
     pointOfInterestID: string | null;
     droneMotionLimits: MotionLimits6Optional | null;

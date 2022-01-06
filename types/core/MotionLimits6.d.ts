@@ -12,6 +12,7 @@ export declare class MotionLimits6 implements Serializable {
     applyJSON(json: any): void;
     constructor(position?: MotionLimits3, orientation?: MotionLimits3);
     resolve(limits: MotionLimits6Optional): MotionLimits6;
+    asOptional(): MotionLimits6Optional;
     interpolate(limits: MotionLimits6, interpolate: (start: number, finish: number) => number): MotionLimits6;
     get horizontal(): MotionLimits;
     set horizontal(x: MotionLimits);

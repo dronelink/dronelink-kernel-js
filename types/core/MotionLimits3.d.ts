@@ -10,6 +10,7 @@ export declare class MotionLimits3 implements Serializable {
     applyJSON(json: any): void;
     constructor(x?: MotionLimits, y?: MotionLimits, z?: MotionLimits);
     resolve(limits: MotionLimits3Optional | null): MotionLimits3;
+    asOptional(): MotionLimits3Optional;
     interpolate(limits: MotionLimits3, interpolate: (start: number, finish: number) => number): MotionLimits3;
     get pitch(): MotionLimits;
     set pitch(x: MotionLimits);

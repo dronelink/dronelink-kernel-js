@@ -55,6 +55,7 @@ export declare class Common {
     static sigmoid(percent: number, k?: number): number;
     static modSafe(value: number, mod: number): number;
     static matchSign(number: number, sign: number): number;
+    static signsMatch(a: number, b: number): boolean;
     static movingAverage(values: number[], exponent?: number): number;
     static debugLog(message: String): void;
     static last<T>(array: T[]): T;

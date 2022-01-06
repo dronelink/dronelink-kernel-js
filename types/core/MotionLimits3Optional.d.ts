@@ -2,6 +2,7 @@ import { Serializable } from "./Serializable";
 import { TypeName } from "./Enums";
 import { MotionLimitsOptional } from "./MotionLimitsOptional";
 import { MotionLimits3Formatters } from "./MotionLimits3";
+import { MotionLimits3 } from "..";
 export declare class MotionLimits3Optional implements Serializable {
     readonly type = TypeName.MotionLimits3Optional;
     x: MotionLimitsOptional | null;
@@ -22,4 +23,5 @@ export declare class MotionLimits3Optional implements Serializable {
     get upDown(): MotionLimitsOptional | null;
     set upDown(z: MotionLimitsOptional | null);
     toString: (formatters: MotionLimits3Formatters) => string;
+    apply(motionLimits: MotionLimits3): MotionLimits3Optional;
 }

@@ -1,7 +1,7 @@
 import { ApproachableAlignment, ApproachableComponent } from "./ApproachableComponent";
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
-import { TypeName, FacadeCapturePriority, FacadeBoundaryFace, FacadePattern, CameraMode, PathCornering, CameraPhotoMode, CameraFocusMode, FacadeSegmentParity, ExecutionEngine } from "../core/Enums";
+import { TypeName, CapturePriority, FacadeBoundaryFace, FacadePattern, CameraMode, PathCornering, CameraPhotoMode, CameraFocusMode, FacadeSegmentParity, ExecutionEngine } from "../core/Enums";
 import { CameraSpecification, GroundSampleDistance } from "../core/CameraSpecification";
 import { FacadeComponentBoundaryPoint } from "./FacadeComponentBoundaryPoint";
 import { Altitude } from "../core/Altitude";
@@ -25,6 +25,7 @@ import { FocusRingCameraCommand } from "../command/camera/FocusRingCameraCommand
 import { FacadeComponentModel, FacadeComponentModelData, FacadeComponentModelParameters } from "./FacadeComponentModel";
 import { FocusDistanceCameraCommand } from "../command/camera/FocusDistanceCameraCommand";
 import { CameraFocusCalibration } from "../core/CameraFocusCalibration";
+import { MotionLimits6Optional } from "..";
 export declare class FacadeComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.FacadeComponent;
     initialAltitude: Altitude;
@@ -39,7 +40,8 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     cameraFocusDistanceCommand: FocusDistanceCameraCommand | null;
     cameraFocusRingCommand: FocusRingCameraCommand | null;
     captureVerifyFileCreated: boolean;
-    capturePriority: FacadeCapturePriority;
+    capturePriority: CapturePriority;
+    captureDroneMotionLimits: MotionLimits6Optional;
     minCaptureInterval: number;
     targetDistance: number;
     sampleDistanceGimbalAngleEnabled: boolean;
@@ -72,9 +74,11 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     get boundaryClosed(): boolean;
     updateBoundaryPointCoordinate(index: number, coordinate: GeoCoordinate, context: ComponentContext): void;
     removeBoundaryPoint(boundaryPoint: FacadeComponentBoundaryPoint, context: ComponentContext): FacadeComponentBoundaryPoint;
+    get boundaryPointsResolved(): FacadeComponentBoundaryPoint[];
     get boundaryPointOffsets(): Vector2[];
     get maxBoundaryPoints(): number;
     get boundarySegments(): Line2[];
+    boundaryRadius(context: ComponentContext): FacadeComponentBoundaryRadius | null;
     boundaryPointCoordinates(context: ComponentContext): GeoCoordinate[];
     boundaryPointCoordinate(context: ComponentContext, index: number): GeoCoordinate;
     get boundaryFaceOrientation(): number;
@@ -91,4 +95,10 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     private pathsOffsets;
     modelParameters(context: ComponentContext, paths?: Path[] | null): FacadeComponentModelParameters | null;
     model(context: ComponentContext, timeRequired?: boolean): FacadeComponentModel | null;
+}
+export declare class FacadeComponentBoundaryRadius {
+    readonly center: GeoCoordinate;
+    readonly boundaryPoints: FacadeComponentBoundaryPoint[];
+    constructor(center: GeoCoordinate, boundaryPoints: FacadeComponentBoundaryPoint[]);
+    forVerticalPercent(verticalPercent: number): number;
 }

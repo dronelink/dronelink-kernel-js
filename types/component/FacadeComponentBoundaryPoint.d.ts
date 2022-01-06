@@ -8,6 +8,7 @@ import { FacadeComponentElementNode } from "./FacadeComponentNode";
 export declare class FacadeComponentBoundaryPoint extends Identifiable implements Serializable {
     readonly type = TypeName.FacadeComponentBoundaryPoint;
     offset: Vector2;
+    verticalPercent: number;
     applyJSON(json: any): void;
     node(parent: FacadeComponentBoundaryPointsNode, index: number): FacadeComponentBoundaryPointNode;
     title(index: number): string;

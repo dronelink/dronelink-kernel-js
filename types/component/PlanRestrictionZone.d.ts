@@ -1,4 +1,4 @@
-import { Zone } from "../core/Zone";
+import { Zone, ZonePath } from "../core/Zone";
 import { Identifiable } from "../core/Identifiable";
 import { Serializable } from "../core/Serializable";
 import { TypeName } from "../core/Enums";
@@ -7,6 +7,7 @@ import { MotionLimits6Optional } from "../core/MotionLimits6Optional";
 import { DistanceTolerance } from "../core/DistanceTolerance";
 import { Node } from "../core/Node";
 import { ListNode } from "../core/ListNode";
+import { ComponentContext, GeoSpatial } from "..";
 export declare class PlanRestrictionZone extends Identifiable implements Serializable {
     readonly type = TypeName.PlanRestrictionZone;
     descriptors: Descriptors;
@@ -15,6 +16,8 @@ export declare class PlanRestrictionZone extends Identifiable implements Seriali
     droneMotionLimits: MotionLimits6Optional;
     droneMotionErrorTolerance: DistanceTolerance | null;
     applyJSON(json: any): void;
+    static restrictionZonePath(context: ComponentContext, restrictionZones: PlanRestrictionZone[], start: GeoSpatial, end: GeoSpatial): ZonePath | null;
+    static spatialInside(context: ComponentContext, restrictionZones: PlanRestrictionZone[], spatial: GeoSpatial): PlanRestrictionZone[] | null;
 }
 export declare class PlanRestrictionZonesNode extends ListNode {
     private listAccessor;

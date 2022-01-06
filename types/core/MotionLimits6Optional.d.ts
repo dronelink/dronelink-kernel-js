@@ -3,6 +3,7 @@ import { TypeName } from "./Enums";
 import { MotionLimitsOptional } from "./MotionLimitsOptional";
 import { MotionLimits3Optional } from "./MotionLimits3Optional";
 import { MotionLimits6Formatters } from "./MotionLimits6";
+import { MotionLimits6 } from "..";
 export declare class MotionLimits6Optional implements Serializable {
     readonly type = TypeName.MotionLimits6Optional;
     position: MotionLimits3Optional | null;
@@ -16,4 +17,5 @@ export declare class MotionLimits6Optional implements Serializable {
     get rotational(): MotionLimitsOptional | null;
     set rotational(z: MotionLimitsOptional | null);
     toString: (formatters?: MotionLimits6Formatters) => string;
+    apply(motionLimits: MotionLimits6): MotionLimits6Optional;
 }

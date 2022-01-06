@@ -40,6 +40,7 @@ export declare class Zone extends Identifiable implements Serializable {
         end: number;
     }): boolean;
     coordinateInside(context: ComponentContext, coordinate: GeoCoordinate): boolean;
+    spatialInside(context: ComponentContext, spatial: GeoSpatial): boolean;
     private edgeSpatial;
     intersections(context: ComponentContext, start: GeoSpatial, end: GeoSpatial, includeAltitudes: boolean): {
         coordinate: GeoCoordinate;

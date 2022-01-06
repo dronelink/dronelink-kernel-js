@@ -21,6 +21,7 @@ export declare abstract class ApproachableComponent extends DroneMotionComponent
     verification(context: ComponentContext): Component | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
     approachCoordinate(context: ComponentContext): GeoCoordinate;
+    resetApproachDestinationOffset(context: ComponentContext): void;
     alignment(context: ComponentContext): ApproachableAlignment | null;
     node(parent?: Node | null): ComponentNode;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;

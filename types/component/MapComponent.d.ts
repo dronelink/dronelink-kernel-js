@@ -1,4 +1,4 @@
-import { TypeName, MapPattern, CameraMode, ExecutionEngine, MapDroneOrientationStrategy } from "../core/Enums";
+import { TypeName, CapturePriority, MapPattern, CameraMode, CameraPhotoMode, ExecutionEngine, MapDroneOrientationStrategy } from "../core/Enums";
 import { ApproachableAlignment, ApproachableComponent } from "./ApproachableComponent";
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
@@ -12,22 +12,28 @@ import { CameraSpecification, GroundSampleDistance } from "../core/CameraSpecifi
 import { Line2 } from "../core/Line2";
 import { ComponentEstimateContext } from "./ComponentEstimateContext";
 import { GeoSpatial } from "../core/GeoSpatial";
-import { ComponentEstimate, ComponentEstimateCameraCapture } from "./ComponentEstimate";
+import { ComponentEstimate, ComponentEstimateCameraCaptures } from "./ComponentEstimate";
 import { ComponentExecuteContext } from "./ComponentExecuteContext";
 import { DroneMotionComponentModelData, DroneMotionComponentModelSample, DroneMotionComponentModel } from "./DroneMotionComponent";
 import { ComponentExecutionState } from "./ComponentExecutionState";
-import { Point2, BoundingBox2 } from "../core/Point2";
+import { BoundingBox2 } from "../core/Point2";
 import { LinkedValue } from "../core/LinkedValue";
 import { CommandComponent } from "./CommandComponent";
 import { MotionLimits6 } from "../core/MotionLimits6";
 import { Dictionary } from "../core/Dictionary";
 import { Orientation3Optional } from "../core/Orientation3Optional";
+import { Altitude } from "../core/Altitude";
+import { MotionLimits6Optional } from "../core/MotionLimits6Optional";
 import { ComponentContext } from "./ComponentContext";
 export declare class MapComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.MapComponent;
     cameraSpecification: CameraSpecification;
     direction: number;
     cameraMode: CameraMode;
+    cameraPhotoMode: CameraPhotoMode;
+    captureVerifyFileCreated: boolean;
+    capturePriority: CapturePriority;
+    captureDroneMotionLimits: MotionLimits6Optional;
     minCaptureInterval: number;
     targetDistance: number | null;
     pattern: MapPattern;
@@ -39,12 +45,13 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     boundaryPoints: MapComponentBoundaryPoint[];
     applyJSON(json: any): void;
     get subtitle(): string;
-    droneOrientationResolved(segments: Line2[] | null): Orientation3Optional | null;
+    droneOrientationResolved(segments: MapComponentSegment[] | null): Orientation3Optional | null;
     get droneOrientationPerpendicular(): boolean;
     get frontOverlapResolved(): number;
     get sideOverlapResolved(): number;
     get captureChannels(): number[];
     get gimbalOrientationPrimary(): Orientation3;
+    get terrainFollow(): boolean;
     toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     area(): number;
     verification(context: ComponentContext): Component | null;
@@ -57,6 +64,7 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     centerCoordinate(context: ComponentContext): GeoCoordinate;
     targetDistanceResolved(context: ComponentContext): number;
     groundSampleDistance(context: ComponentContext): GroundSampleDistance;
+    rampDistance(context: ComponentContext): number;
     resetApproachDestinationOffset(context: ComponentContext): void;
     addBoundaryPoint(boundaryPoint: MapComponentBoundaryPoint, context?: ComponentContext | null, index?: number | null): MapComponentBoundaryPoint;
     updateBoundaryPointCoordinate(index: number, coordinate: GeoCoordinate, context: ComponentContext): void;
@@ -74,11 +82,27 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
     resolveDroneMotionLimitsCaptureInterval(context: ComponentContext): {
         motionLimits: MotionLimits6;
+        captureMotionLimits: MotionLimits6;
         captureIntervalTime: number;
         captureIntervalDistance: number;
     };
-    model(context: ComponentContext, altitudeRequired?: boolean, timeRequired?: boolean, pathingRequired?: boolean): MapComponentModel | null;
+    startAltitude(context: ComponentContext): Altitude;
+    model(context: ComponentContext, altitudeRequired?: boolean, timeRequired?: boolean): MapComponentModel | null;
     private segments;
+    private applyElevationData;
+}
+declare class MapComponentSegment {
+    direction: number;
+    distance: number;
+    readonly points: MapComponentSegmentPoint[];
+    constructor(spatials: GeoSpatial[]);
+    get start(): MapComponentSegmentPoint;
+    get end(): MapComponentSegmentPoint;
+}
+declare class MapComponentSegmentPoint {
+    readonly spatial: GeoSpatial;
+    readonly distance: number;
+    constructor(spatial: GeoSpatial, distance: number);
 }
 export declare class MapComponentModelData extends DroneMotionComponentModelData<MapComponentModelSample> {
     setupComponents: CommandComponent[];
@@ -89,13 +113,11 @@ export declare class MapComponentModelData extends DroneMotionComponentModelData
 export declare class MapComponentModel extends DroneMotionComponentModel<MapComponentModelSample> {
     captureIntervalTime: number;
     captureIntervalDistance: number;
-    estimatedCapture: ComponentEstimateCameraCapture;
-    points: Point2[];
-    cornerRadius: number;
-    constructor(sample: LinkedValue<MapComponentModelSample>, captureIntervalTime: number, captureIntervalDistance: number, estimatedCapture: ComponentEstimateCameraCapture, points: Point2[], cornerRadius: number);
+    cameraCaptures: ComponentEstimateCameraCaptures;
+    constructor(sample: LinkedValue<MapComponentModelSample>, captureIntervalTime: number, captureIntervalDistance: number, cameraCaptures: ComponentEstimateCameraCaptures);
 }
 export declare class MapComponentModelSample extends DroneMotionComponentModelSample {
-    distance: number;
     commandType: TypeName | null;
-    constructor(droneSpatial: GeoSpatial, droneMotionLimits: MotionLimits6, gimbalOrientations: Dictionary<Orientation3Optional>, distance: number);
+    constructor(droneSpatial: GeoSpatial, droneMotionLimits: MotionLimits6, gimbalOrientations: Dictionary<Orientation3Optional>);
 }
+export {};
