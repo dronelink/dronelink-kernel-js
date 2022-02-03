@@ -31,6 +31,7 @@ export declare class OrbitComponent extends ApproachableComponent implements Ser
     get pointsOfInterestEnabled(): boolean;
     get pointsOfInterestMax(): number | null;
     get referenceOffsets(): Vector2[];
+    get droneRotationModeReadonly(): boolean;
     get radius(): number;
     set radius(value: number);
     referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate | null;

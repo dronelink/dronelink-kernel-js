@@ -495,14 +495,18 @@ export declare enum FacadeBoundaryFace {
     SpiralClockwise = "spiralClockwise",
     SpiralCounterclockwise = "spiralCounterclockwise"
 }
+export declare enum FacadePattern {
+    Horizontal = "horizontal",
+    Vertical = "vertical"
+}
 export declare enum FacadeSegmentParity {
     Any = "any",
     Even = "even",
     Odd = "odd"
 }
-export declare enum FacadePattern {
-    Horizontal = "horizontal",
-    Vertical = "vertical"
+export declare enum FacadeSpacing {
+    CameraOverlaps = "cameraOverlaps",
+    Distance = "distance"
 }
 export declare enum GeoSpatialSource {
     Input = "input",
@@ -548,6 +552,10 @@ export declare enum MapDroneOrientationStrategy {
 export declare enum MapPattern {
     Normal = "normal",
     Grid = "grid"
+}
+export declare enum MapSpacing {
+    CameraOverlaps = "cameraOverlaps",
+    Distance = "distance"
 }
 export declare enum OrientationXReference {
     Horizon = "horizon",
@@ -632,6 +640,7 @@ export declare enum TypeName {
     DroneCommand = "DroneCommand",
     DroneMotionComponent = "DroneMotionComponent",
     Engagement = "Engagement",
+    EngagementParameters = "EngagementParameters",
     Execution = "Execution",
     ExposureCompensationCameraCommand = "ExposureCompensationCameraCommand",
     ExposureCompensationStepCameraCommand = "ExposureCompensationStepCameraCommand",

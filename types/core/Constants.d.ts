@@ -4,9 +4,9 @@ import { CameraSpecification } from "./CameraSpecification";
 import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 export declare class Constants {
-    static readonly Version = "3.2.0";
-    static readonly ExecuteIntervalTarget: number;
-    static readonly ExecuteIntervalMax: number;
+    static readonly Version = "3.3.0";
+    static readonly ExecuteFrequencyTarget = 10;
+    static readonly ExecuteFrequencyMin = 5;
     static readonly ExecuteDelayStrikesMax = 5;
     static readonly SimulationUpdateInterval: number;
     static readonly DroneConnectionLatency: number;
@@ -39,6 +39,7 @@ export declare class Constants {
     static readonly DroneMotionComponentGimbalOrientation: Orientation3Optional;
     static readonly DroneMotionComponentModelSampleTimeMax = 2;
     static readonly DroneMotionComponentErrorK: number;
+    static readonly DroneMotionErrorLimitHorizontalMin = 1;
     static readonly DroneMotionErrorToleranceHorizontal: number;
     static readonly DroneMotionErrorToleranceVertical: number;
     static readonly DestinationComponentHeadingAchievement: number;
@@ -57,8 +58,10 @@ export declare class Constants {
     static readonly CourseComponentAchievementDistance: number;
     static readonly FacadeComponentDistance: number;
     static readonly FacadeComponentMinCaptureInterval = 2;
-    static readonly FacadeComponentFrontOverlap = 0.5;
-    static readonly FacadeComponentSideOverlap = 0.5;
+    static readonly FacadeComponentVerticalOverlap = 0.5;
+    static readonly FacadeComponentHorizontalOverlap = 0.5;
+    static readonly FacadeComponentVerticalDistance = 5;
+    static readonly FacadeComponentHorizontalDistance = 5;
     static readonly FacadeComponentGimbalPitch: number;
     static readonly FacadeComponentInitialAltitude: number;
     static readonly FacadeComponentFinalAltitude: number;
@@ -81,8 +84,10 @@ export declare class Constants {
     static readonly InspectionComponentAltitudeRange: number;
     static readonly MapComponentMaxHorizontalVelocity: number;
     static readonly MapComponentMinCaptureInterval = 2;
-    static readonly MapComponentFrontOverlap = 0.8;
+    static readonly MapComponentFrontOverlap = 0.75;
     static readonly MapComponentSideOverlap = 0.7;
+    static readonly MapComponentFrontDistance: number;
+    static readonly MapComponentSideDistance: number;
     static readonly MapComponentGimbalPitch: number;
     static readonly MapComponentBaseAccelerationMultiplier = 0.5;
     static readonly MapComponentSampleDistance = 0.3;

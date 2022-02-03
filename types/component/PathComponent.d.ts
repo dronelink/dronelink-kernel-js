@@ -30,6 +30,7 @@ export declare class PathComponent extends ApproachableComponent implements Seri
     verification(context: ComponentContext): Component | null;
     get pointsOfInterestEnabled(): boolean;
     get pointsOfInterestReferences(): PointOfInterestReference[];
+    get droneRotationModeReadonly(): boolean;
     get waypointOffsets(): Vector2[];
     get referenceOffsets(): Vector2[];
     referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate;

@@ -15,8 +15,8 @@ export declare class Convert {
     static radiansToDegrees(value: number, mod?: boolean): number;
     static degreesToRadians(value: number, mod?: boolean): number;
     static distance(precision?: number | null): Converters;
-    static angle(mod?: boolean): Converters;
-    static percent(): Converters;
+    static angle(mod?: boolean, precision?: number): Converters;
+    static percent(precision?: number): Converters;
     static velocityHorizontal(): Converters;
     static velocityVertical(): Converters;
     static velocityRotational(): Converters;

@@ -6,9 +6,10 @@ import { Vector2 } from "./Vector2";
 import { TypeName } from "./Enums";
 import { Datetime } from "./Datetime";
 import { Velocity6 } from "./Velocity6";
-import { FieldOfView } from "./FieldOfView";
 import { OrientationReferenceSources } from "./OrientationReferenceSources";
 import { OrientationReferenceTargets } from "./OrientationReferenceTargets";
+import { Quaternion } from "./Quaternion";
+import { CameraSpecification } from "..";
 export declare class GeoSpatial implements Serializable {
     readonly type = TypeName.GeoSpatial;
     updated: Datetime;
@@ -25,5 +26,6 @@ export declare class GeoSpatial implements Serializable {
     offset(to: GeoSpatial): Vector2;
     distance(to: GeoSpatial): number;
     groundCoordinate(pitch: number, yaw?: number | null, maxPitch?: number): GeoCoordinate;
-    groundCoordinates(fieldOfView: FieldOfView, pitch: number, yaw?: number | null, maxPitch?: number): GeoCoordinate[];
+    groundCoordinates(cameraSpecification: CameraSpecification, pitch: number, yaw?: number | null, maxPitch?: number): GeoCoordinate[];
+    groundCoordinateFromQuaternion(quaternion: Quaternion): GeoCoordinate;
 }

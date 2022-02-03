@@ -1,4 +1,4 @@
-import { TypeName, CapturePriority, MapPattern, CameraMode, CameraPhotoMode, ExecutionEngine, MapDroneOrientationStrategy } from "../core/Enums";
+import { TypeName, CapturePriority, MapPattern, CameraMode, CameraPhotoMode, ExecutionEngine, MapDroneOrientationStrategy, MapSpacing } from "../core/Enums";
 import { ApproachableAlignment, ApproachableComponent } from "./ApproachableComponent";
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
@@ -27,7 +27,12 @@ import { MotionLimits6Optional } from "../core/MotionLimits6Optional";
 import { ComponentContext } from "./ComponentContext";
 export declare class MapComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.MapComponent;
+    spacing: MapSpacing;
     cameraSpecification: CameraSpecification;
+    frontOverlap: number;
+    sideOverlap: number;
+    frontDistance: number;
+    sideDistance: number;
     direction: number;
     cameraMode: CameraMode;
     cameraPhotoMode: CameraPhotoMode;
@@ -37,18 +42,17 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     minCaptureInterval: number;
     targetDistance: number | null;
     pattern: MapPattern;
-    frontOverlap: number;
-    sideOverlap: number;
     droneOrientationStrategy: MapDroneOrientationStrategy;
     droneOrientation: Orientation3Optional | null;
     gimbalOrientations: Dictionary<Orientation3Optional>;
     boundaryPoints: MapComponentBoundaryPoint[];
+    preferredStartOffset: Vector2 | null;
     applyJSON(json: any): void;
     get subtitle(): string;
+    validate(context: ComponentContext): void;
     droneOrientationResolved(segments: MapComponentSegment[] | null): Orientation3Optional | null;
     get droneOrientationPerpendicular(): boolean;
-    get frontOverlapResolved(): number;
-    get sideOverlapResolved(): number;
+    syncSpacing(context: ComponentContext): void;
     get captureChannels(): number[];
     get gimbalOrientationPrimary(): Orientation3;
     get terrainFollow(): boolean;
@@ -64,6 +68,10 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     centerCoordinate(context: ComponentContext): GeoCoordinate;
     targetDistanceResolved(context: ComponentContext): number;
     groundSampleDistance(context: ComponentContext): GroundSampleDistance;
+    cameraOverlapDistance(context: ComponentContext): {
+        front: number;
+        side: number;
+    };
     rampDistance(context: ComponentContext): number;
     resetApproachDestinationOffset(context: ComponentContext): void;
     addBoundaryPoint(boundaryPoint: MapComponentBoundaryPoint, context?: ComponentContext | null, index?: number | null): MapComponentBoundaryPoint;

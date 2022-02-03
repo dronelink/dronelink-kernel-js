@@ -19,6 +19,8 @@ import { UserInterfaceSettings } from "../core/UserInterfaceSettings";
 import { MotionLimits6Optional } from "../core/MotionLimits6Optional";
 import { ComponentContext } from "./ComponentContext";
 import { Context, Message } from "..";
+import { EngagementParameters } from "../core/Engagement";
+import { CameraSpecification } from "../core/CameraSpecification";
 export declare class PlanComponent extends Component implements Serializable {
     readonly type = TypeName.PlanComponent;
     takeoffOffset: Vector2 | null;
@@ -33,7 +35,9 @@ export declare class PlanComponent extends Component implements Serializable {
     reengagementRules: PlanReengagementRules;
     completeAction: PlanCompleteAction;
     userInterfaceSettings: UserInterfaceSettings | null;
+    engagementParameters: EngagementParameters | null;
     applyJSON(json: any): void;
+    validate(): void;
     get executionEngines(): ExecutionEngine[];
     verification(context: ComponentContext): Component | null;
     toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
@@ -44,6 +48,8 @@ export declare class PlanComponent extends Component implements Serializable {
     elevationCoordinates(context: ComponentContext): GeoCoordinate[];
     get context(): ComponentContext;
     node(parent?: Node | null): ComponentNode;
+    get firstCameraSpecification(): CameraSpecification | null;
+    updateCameraSpecifications(cameraSpecification: CameraSpecification): void;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
     engageDisallowedReasons(context: Context): Message[];

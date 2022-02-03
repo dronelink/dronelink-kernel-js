@@ -1,7 +1,7 @@
 import { ApproachableAlignment, ApproachableComponent } from "./ApproachableComponent";
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
-import { TypeName, CapturePriority, FacadeBoundaryFace, FacadePattern, CameraMode, PathCornering, CameraPhotoMode, CameraFocusMode, FacadeSegmentParity, ExecutionEngine } from "../core/Enums";
+import { TypeName, CapturePriority, FacadeBoundaryFace, FacadePattern, CameraMode, PathCornering, CameraPhotoMode, CameraFocusMode, FacadeSegmentParity, ExecutionEngine, FacadeSpacing } from "../core/Enums";
 import { CameraSpecification, GroundSampleDistance } from "../core/CameraSpecification";
 import { FacadeComponentBoundaryPoint } from "./FacadeComponentBoundaryPoint";
 import { Altitude } from "../core/Altitude";
@@ -30,6 +30,7 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     readonly type = TypeName.FacadeComponent;
     initialAltitude: Altitude;
     finalAltitude: Altitude;
+    spacing: FacadeSpacing;
     cameraSpecification: CameraSpecification;
     gimbalOrientations: Dictionary<Orientation3Optional>;
     droneOrientation: Orientation3Optional | null;
@@ -50,6 +51,8 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     cornerRadius: number;
     verticalOverlap: number;
     horizontalOverlap: number;
+    verticalDistance: number;
+    horizontalDistance: number;
     segmentParity: FacadeSegmentParity;
     boundaryFace: FacadeBoundaryFace;
     boundaryPoints: FacadeComponentBoundaryPoint[];

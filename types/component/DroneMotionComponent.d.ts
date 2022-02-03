@@ -29,6 +29,7 @@ export declare abstract class DroneMotionComponent extends SubComponent implemen
     get exclusiveReadonly(): boolean;
     get exclusiveExecution(): boolean;
     get repositionIfIncluded(): boolean;
+    get droneRotationModeReadonly(): boolean;
     descendantAllowed(component: Component): boolean;
     resolveDroneMotionLimits(context: ComponentContext, droneMotionLimits?: MotionLimits6Optional | null): MotionLimits6;
     resolveDroneMotionErrorTolerance(context: ComponentContext, droneMotionErrorTolerance?: DistanceTolerance | null): DistanceTolerance;
@@ -44,7 +45,7 @@ export declare class DroneMotionComponentModelData<S extends DroneMotionComponen
     private _sample;
     private currentTime;
     readonly totalTime: number;
-    filters: any;
+    errorFilters: any;
     constructor(modelSample: LinkedValue<S>);
     updateProgress(progress: number): void;
     updateTime(time: number): void;

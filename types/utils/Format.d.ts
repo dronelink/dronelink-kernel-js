@@ -20,6 +20,7 @@ export declare class Format {
     static distanceOffset(value: any): string;
     static altitude(value?: number): FormattedValue;
     static angle(value?: number, mod?: boolean, precise?: boolean): FormattedValue;
+    static frequency(value?: number): FormattedValue;
     static area(value?: number): FormattedValue;
     static cameraSpecificationLength(value?: number): FormattedValue;
     static cameraSpecificationPixels(value?: number): FormattedValue;

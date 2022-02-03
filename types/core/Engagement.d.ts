@@ -28,9 +28,16 @@ export declare class Engagement extends Identifiable implements Serializable {
     executeDelayStrikesMax: number;
     disengagement: Disengagement | null;
     applyJSON(json: any): void;
-    constructor(executionEngine?: ExecutionEngine, engaged?: Datetime | null, user?: User, device?: Device, drone?: Drone, reengagement?: Mission | null);
+    constructor(executionEngine?: ExecutionEngine, parameters?: EngagementParameters | null, engaged?: Datetime | null, user?: User, device?: Device, drone?: Drone, reengagement?: Mission | null);
     execute(datetime: Datetime, user: User, device: Device | undefined, drone: Drone): void;
     disengage(drone: Drone, reason: Message, overwrite?: boolean): void;
     get currentDatetime(): Datetime;
     get timeElapsed(): number;
+}
+export declare class EngagementParameters implements Serializable {
+    readonly type = TypeName.EngagementParameters;
+    executeFrequencyTarget: number;
+    executeFrequencyMin: number;
+    executeDelayStrikesMax: number;
+    applyJSON(json: any): void;
 }

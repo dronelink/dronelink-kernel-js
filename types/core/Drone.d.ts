@@ -9,12 +9,12 @@ import { Serializable } from "./Serializable";
 import { Gimbal } from "./Gimbal";
 import { Camera } from "./Camera";
 import { Datetime } from "./Datetime";
-import { FieldOfView } from "./FieldOfView";
 import { Orientation3 } from "./Orientation3";
 import { OrientationReferenceSources } from "./OrientationReferenceSources";
 import { GeoLocation } from "./GeoLocation";
 import { Altitude } from "./Altitude";
 import { CameraFile } from "./CameraFile";
+import { CameraSpecification } from "..";
 export declare class Drone extends Identifiable implements Serializable {
     readonly type = TypeName.Drone;
     model: string | null;
@@ -50,5 +50,5 @@ export declare class Drone extends Identifiable implements Serializable {
     statefulCommandsWhereStatus(status: CommandExecutionStatus): Command[];
     get takeoffLocation(): GeoLocation | null;
     get groundCoordinateInView(): GeoCoordinate;
-    groundCoordinatesInView(fieldOfView: FieldOfView): GeoCoordinate[];
+    groundCoordinatesInView(cameraSpecification: CameraSpecification): GeoCoordinate[];
 }

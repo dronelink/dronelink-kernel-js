@@ -70,6 +70,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     ApproachableComponent: {
         name: string;
+        multiple: string;
         values: {
             approachComponent: string;
         };
@@ -1371,6 +1372,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     CommandComponent: {
         name: string;
+        multiple: string;
         description: string;
     };
     ComponentEstimate: {
@@ -1421,6 +1423,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     CourseComponent: {
         name: string;
+        multiple: string;
         description: string;
         subtitle: string;
     };
@@ -1437,6 +1440,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     DestinationComponent: {
         name: string;
+        multiple: string;
         description: string;
         values: {
             destinationOffset: string;
@@ -1471,6 +1475,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     DisengageComponent: {
         name: string;
+        multiple: string;
         description: string;
         values: {
             reason: string;
@@ -1525,6 +1530,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     DJIWaypointMissionComponent: {
         name: string;
+        multiple: string;
         description: string;
         values: {
             autoFlightSpeed: string;
@@ -1686,6 +1692,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     DroneMotionComponent: {
         name: string;
+        multiple: string;
         values: {
             droneMotionErrorModelDelayAllowed: string;
             droneMotionLimits: string;
@@ -1760,6 +1767,14 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     Engagement: {
         name: string;
         multiple: string;
+    };
+    EngagementParameters: {
+        name: string;
+        values: {
+            executeFrequencyTarget: string;
+            executeFrequencyMin: string;
+            executeDelayStrikesMax: string;
+        };
     };
     Execution: {
         name: string;
@@ -1852,9 +1867,11 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     FacadeComponent: {
         name: string;
+        multiple: string;
         description: string;
         subtitle: string;
         values: {
+            spacing: string;
             approachAltitude: string;
             initialAltitude: string;
             finalAltitude: string;
@@ -1869,6 +1886,8 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             pattern: string;
             verticalOverlap: string;
             horizontalOverlap: string;
+            verticalDistance: string;
+            horizontalDistance: string;
             segmentParity: string;
             boundaryFace: string;
             boundaryPoints: string;
@@ -1910,6 +1929,17 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             verticalPercent: string;
         };
     };
+    FacadePattern: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            vertical: {
+                name: string;
+            };
+        };
+    };
     FacadeSegmentParity: {
         name: string;
         values: {
@@ -1924,13 +1954,13 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             };
         };
     };
-    FacadePattern: {
+    FacadeSpacing: {
         name: string;
         values: {
-            horizontal: {
+            cameraOverlaps: {
                 name: string;
             };
-            vertical: {
+            distance: {
                 name: string;
             };
         };
@@ -2060,6 +2090,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     HeadingComponent: {
         name: string;
+        multiple: string;
         description: string;
         subtitle: string;
         values: {
@@ -2085,6 +2116,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     InspectionComponent: {
         name: string;
+        multiple: string;
         description: string;
         values: {
             achievement: string;
@@ -2157,6 +2189,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     LabelComponent: {
         name: string;
+        multiple: string;
         description: string;
         values: {
             label: string;
@@ -2214,6 +2247,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     ListComponent: {
         name: string;
+        multiple: string;
         description: string;
         subtitle: string;
         messages: {
@@ -2233,14 +2267,18 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     MapComponent: {
         name: string;
+        multiple: string;
         description: string;
         values: {
+            spacing: string;
             pattern: string;
             direction: string;
             cameraMode: string;
             boundaryPoints: string;
             frontOverlap: string;
             sideOverlap: string;
+            frontDistance: string;
+            sideDistance: string;
             capturePriority: string;
             captureDroneMotionLimitsPrefix: string;
             minCaptureInterval: string;
@@ -2283,6 +2321,17 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             grid: {
+                name: string;
+            };
+        };
+    };
+    MapSpacing: {
+        name: string;
+        values: {
+            cameraOverlaps: {
+                name: string;
+            };
+            distance: {
                 name: string;
             };
         };
@@ -2371,8 +2420,14 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     details: string;
                 };
             };
+            component: {
+                multipleCameraSpecifications: {
+                    title: string;
+                    details: string;
+                };
+            };
             map: {
-                largeTerrainFollow: {
+                large: {
                     title: string;
                     details: string;
                 };
@@ -2539,6 +2594,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     OrbitComponent: {
         name: string;
+        multiple: string;
         description: string;
         subtitle: string;
         values: {
@@ -2662,6 +2718,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     PathComponent: {
         name: string;
+        multiple: string;
         description: string;
         values: {
             cornering: string;
@@ -2711,6 +2768,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             restrictionZones: string;
             takeoffOffset: string;
             altitudeContinuity: string;
+            engagementParameters: string;
         };
         messages: {
             engageDisallowed: {
@@ -2797,6 +2855,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     RotationComponent: {
         name: string;
+        multiple: string;
         description: string;
         values: {
             direction: string;
@@ -2974,6 +3033,10 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 abbreviation: string;
             };
             feet: {
+                name: string;
+                abbreviation: string;
+            };
+            hertz: {
                 name: string;
                 abbreviation: string;
             };
@@ -3294,6 +3357,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     WaitComponent: {
         name: string;
+        multiple: string;
         description: string;
         values: {
             time: string;

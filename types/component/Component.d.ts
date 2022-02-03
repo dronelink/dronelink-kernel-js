@@ -37,6 +37,7 @@ export declare abstract class Component extends Identifiable implements Serializ
     customExecute: string | null;
     customExecutingMessageGroup: string | null;
     applyJSON(json: any): void;
+    validate(context: ComponentContext): void;
     get title(): string;
     get subtitle(): string;
     verification(context: ComponentContext): Component | null;

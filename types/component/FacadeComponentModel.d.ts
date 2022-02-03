@@ -69,6 +69,7 @@ export declare class FacadeComponentModelParameters {
     get pathSampleDistance(): number;
     get circle(): boolean;
     get spiral(): boolean;
+    get clockwise(): boolean;
     segmentsHorizontalRestricted(context: ComponentContext, paths: Path[]): FacadeComponentModelRowSegment[];
     get minAltitude(): Altitude;
     get maxAltitude(): Altitude;
