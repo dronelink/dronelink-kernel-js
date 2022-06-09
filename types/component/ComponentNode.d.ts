@@ -5,6 +5,7 @@ import { ExecutionEngine } from "../core/Enums";
 import { Message } from "../core/Message";
 import { ComponentContext } from "./ComponentContext";
 import { Dictionary } from "../core/Dictionary";
+import { GeoCoordinate } from "../core/GeoCoordinate";
 export declare class ComponentNode extends Node {
     readonly component: Component;
     label: string;
@@ -21,6 +22,7 @@ export declare class ComponentNode extends Node {
     elevationsRequired(context: ComponentContext): boolean;
     addChild(childComponent: Component, insert?: boolean): ComponentNode;
     get referenceOffsets(): Vector2[];
+    boundsCoordinates(context: ComponentContext): GeoCoordinate[];
     get issues(): MissionIssue[];
 }
 declare type MissionIssue = {

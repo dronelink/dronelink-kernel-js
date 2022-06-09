@@ -8,6 +8,7 @@ export declare class Path {
     get segmentEndPoints(): PathPoint[];
     get segmentCenterCoordinates(): GeoCoordinate[];
     nextCoordinate(distance?: number | null, padding?: number): GeoCoordinate;
+    nearestCoordinate(coordinate: GeoCoordinate): GeoCoordinate;
     nearestDistance(coordinate: GeoCoordinate): number;
     sampleForDistance(distance: number, clamp?: boolean): PathSample;
     samplesForMaxDistance(maxDistance: number, clamp?: boolean): PathSample[];

@@ -1,3 +1,5 @@
+import { ComponentContext } from "../component/ComponentContext";
+import { GeoCoordinate } from "./GeoCoordinate";
 import { Identifiable } from "./Identifiable";
 export declare abstract class Node extends Identifiable {
     nextOrdinal: () => number;
@@ -19,8 +21,10 @@ export declare abstract class Node extends Identifiable {
     get descendants(): Node[];
     get descendantsDepthFirst(): Node[];
     find(id: string): Node | null;
+    findAncestor(id: string): Node | null;
     findDescendant(id: string): Node | null;
     descendantAllowed(descendant: any): boolean;
+    boundsCoordinates(context: ComponentContext): GeoCoordinate[];
 }
 export declare type NodeRemove = () => void;
 export declare type NodeAdd = {

@@ -14,7 +14,10 @@ import { OrientationReferenceSources } from "../core/OrientationReferenceSources
 import { GeoLocation } from "../core/GeoLocation";
 import { ComponentContext } from "./ComponentContext";
 import { PlanRestrictionZone } from "..";
+import { PathComponentWaypoint } from "./PathComponentWaypoint";
 export declare class PathComponentModel extends DroneMotionComponentModel<PathComponentModelSample> {
+    parameters: PathComponentModelParameters;
+    constructor(sample: LinkedValue<PathComponentModelSample>, parameters: PathComponentModelParameters);
     static generate(context: ComponentContext, parameters: PathComponentModelParameters, positionOnly: boolean, alignmentOrientationOnly: boolean): PathComponentModel | null;
     static createSamples(context: ComponentContext, parameters: PathComponentModelParameters, positionOnly: boolean, alignmentOrientationOnly: boolean): LinkedValue<PathComponentModelSample> | null;
 }
@@ -53,6 +56,7 @@ export declare class PathComponentModelParameters {
     readonly maxSampleDistance: number;
     readonly path: Path;
     readonly activeRestrictionZones: PlanRestrictionZone[];
+    readonly markersResolved: PathComponentModelMarkerResolved[];
     readonly approachAltitudeATL: number;
     private _distance;
     private _altitude;
@@ -60,9 +64,11 @@ export declare class PathComponentModelParameters {
     private _droneOrientation;
     private _gimbalOrientations;
     private _pointOfInterest;
-    constructor(reference: SourcedGeoSpatial, maxSampleDistance: number, path: Path, activeRestrictionZones: PlanRestrictionZone[], approachAltitudeATL: number, altitude: PathComponentModelParameterAltitude, droneMotionLimits: PathComponentModelParameterMotionLimits6, droneOrientation: PathComponentModelParameterOrientation3Optional, gimbalOrientations: Dictionary<PathComponentModelParameterOrientation3Optional>, pointOfInterest: PathComponentModelParameterPointOfInterest | null);
+    constructor(reference: SourcedGeoSpatial, maxSampleDistance: number, path: Path, activeRestrictionZones: PlanRestrictionZone[], markersResolved: PathComponentModelMarkerResolved[], approachAltitudeATL: number, altitude: PathComponentModelParameterAltitude, droneMotionLimits: PathComponentModelParameterMotionLimits6, droneOrientation: PathComponentModelParameterOrientation3Optional, gimbalOrientations: Dictionary<PathComponentModelParameterOrientation3Optional>, pointOfInterest: PathComponentModelParameterPointOfInterest | null);
     resetToFirst(): PathComponentModelParameters;
     advanceToDistance(distance: number): PathComponentModelParameters;
+    waypointDistance(index: number): number;
+    get waypointDistances(): number[];
     get distance(): number;
     get altitude(): PathComponentModelParameterAltitude;
     get droneMotionLimits(): PathComponentModelParameterMotionLimits6;
@@ -79,4 +85,10 @@ export declare class PathComponentModelParameters {
     get pointOfInterest(): PathComponentModelParameterPointOfInterest | null;
     get pointOfInterestInterpolates(): boolean;
     private get pointOfInterestNext();
+}
+export declare class PathComponentModelMarkerResolved {
+    marker: PathComponentMarker;
+    spatial: GeoSpatial;
+    waypoint: PathComponentWaypoint | null;
+    constructor(marker: PathComponentMarker, spatial: GeoSpatial, waypoint?: PathComponentWaypoint | null);
 }

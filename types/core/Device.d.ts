@@ -10,4 +10,5 @@ export declare class Device extends Identifiable implements Serializable {
     model: String | null;
     applyJSON(json: any): void;
     projectSpatial(datetime: Datetime, additionalMillis?: number): GeoSpatial;
+    get gpsAvailable(): Boolean;
 }

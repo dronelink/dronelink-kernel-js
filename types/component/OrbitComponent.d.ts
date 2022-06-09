@@ -36,6 +36,7 @@ export declare class OrbitComponent extends ApproachableComponent implements Ser
     set radius(value: number);
     referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate | null;
     elevationCoordinates(context: ComponentContext): GeoCoordinate[];
+    boundsCoordinates(context: ComponentContext): GeoCoordinate[];
     centerCoordinate(context: ComponentContext): GeoCoordinate;
     finalCoordinate(context: ComponentContext): GeoCoordinate;
     finalReferencedAltitude(context: ComponentContext): ReferencedAltitude | null;
@@ -46,5 +47,5 @@ export declare class OrbitComponent extends ApproachableComponent implements Ser
     engaging(context: ComponentExecuteContext, start: GeoSpatial): GeoSpatial[] | null;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
-    model(context: ComponentContext, positionOnly?: boolean, alignmentOrientationOnly?: boolean): DroneMotionComponentModel<DroneMotionComponentModelSample> | null;
+    model(context: ComponentContext, positionOnly?: boolean, alignmentOrientationOnly?: boolean, pathApproximationOnly?: boolean): DroneMotionComponentModel<DroneMotionComponentModelSample> | null;
 }

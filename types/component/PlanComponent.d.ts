@@ -46,6 +46,7 @@ export declare class PlanComponent extends Component implements Serializable {
     get requiredTakeoffCoordinate(): GeoCoordinate | null;
     get takeoffCoordinate(): GeoCoordinate;
     elevationCoordinates(context: ComponentContext): GeoCoordinate[];
+    boundsCoordinates(context: ComponentContext): GeoCoordinate[];
     get context(): ComponentContext;
     node(parent?: Node | null): ComponentNode;
     get firstCameraSpecification(): CameraSpecification | null;

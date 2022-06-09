@@ -19,6 +19,7 @@ export declare class ListComponent extends SubComponent implements Serializable 
     get executionEngines(): ExecutionEngine[];
     toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     verification(context: ComponentContext): Component | null;
+    cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
     get exclusiveReadonly(): boolean;
     get exclusiveExecution(): boolean;
     get repositionIfIncluded(): boolean;

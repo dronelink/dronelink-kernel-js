@@ -12,12 +12,13 @@ import { Path } from "../core/Path";
 import { ComponentNode } from "./ComponentNode";
 import { PointOfInterestReference } from "../core/PointOfInterest";
 import { Node } from "../core/Node";
-import { PathComponentModelSample, PathComponentModel, PathComponentModelParameters } from "./PathComponentModel";
+import { PathComponentModelSample, PathComponentModel, PathComponentModelParameters, PathComponentModelMarkerResolved } from "./PathComponentModel";
 import { GeoSpatial } from "../core/GeoSpatial";
 import { DroneMotionComponentModelData } from "./DroneMotionComponent";
 import { ComponentEstimateContext } from "./ComponentEstimateContext";
 import { Component } from "./Component";
 import { ComponentContext } from "./ComponentContext";
+import { LinkedValue } from "../core/LinkedValue";
 export declare class PathComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.PathComponent;
     cornering: PathCornering;
@@ -39,19 +40,32 @@ export declare class PathComponent extends ApproachableComponent implements Seri
     centerCoordinate(context: ComponentContext): GeoCoordinate;
     waypointCoordinate(context: ComponentContext, index: number): GeoCoordinate;
     waypointCoordinates(context: ComponentContext): GeoCoordinate[];
-    waypointDistances(context: ComponentContext): number[] | null;
+    divide(context: ComponentContext, element: PathComponentWaypoint | PathComponentMarker): {
+        a: PathComponent | null;
+        b: PathComponent | null;
+    };
+    get firstWaypointApproachMismatched(): boolean;
+    insertValidFirstWaypoint(): void;
+    approachDestinationOffsetUpdated(context: ComponentContext): void;
+    resetApproachDestinationOffset(context: ComponentContext): void;
     addWaypoint(waypoint: PathComponentWaypoint, context?: ComponentContext | null): PathComponentWaypoint;
+    get markersCombined(): PathComponentMarker[];
     markerCoordinates(context: ComponentContext): GeoCoordinate[] | null;
     addMarker(marker: PathComponentMarker): PathComponentMarker;
     orderMarkers(): void;
+    markersResolved(context: ComponentContext, path?: Path | null): PathComponentModelMarkerResolved[];
     path(context: ComponentContext): Path | null;
     alignment(context: ComponentContext): ApproachableAlignment | null;
     endSpatial(context: ComponentContext): GeoSpatial | null;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
-    cachedData(context: ComponentExecuteContext): DroneMotionComponentModelData<PathComponentModelSample> | null;
+    cachedData(context: ComponentExecuteContext): PathComponentModelData | null;
     engaging(context: ComponentExecuteContext, start: GeoSpatial): GeoSpatial[] | null;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
     reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
     model(context: ComponentContext, positionOnly?: boolean, alignmentOrientationOnly?: boolean): PathComponentModel | null;
     modelParameters(context: ComponentContext, positionOnly?: boolean): PathComponentModelParameters | null;
+}
+export declare class PathComponentModelData extends DroneMotionComponentModelData<PathComponentModelSample> {
+    parameters: PathComponentModelParameters;
+    constructor(modelSample: LinkedValue<PathComponentModelSample>, parameters: PathComponentModelParameters);
 }

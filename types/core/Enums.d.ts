@@ -354,8 +354,10 @@ export declare enum CameraVideoResolution {
     _4608x2592 = "4608x2592",
     _5280x2160 = "5280x2160",
     _5280x2972 = "5280x2972",
+    _5472x3078 = "5472x3078",
     _5760x3240 = "5760x3240",
     _6016x3200 = "6016x3200",
+    _7680x4320 = "7680x4320",
     Max = "max",
     NoSSDVideo = "noSSDVideo",
     Unknown = "unknown"
@@ -571,6 +573,10 @@ export declare enum OrbitDirection {
     Clockwise = "clockwise",
     Counterclockwise = "counterclockwise"
 }
+export declare enum PanoPattern {
+    Spherical = "spherical",
+    Horizontal = "horizontal"
+}
 export declare enum PathCornering {
     Intersect = "intersect",
     Rounded = "rounded"
@@ -666,6 +672,7 @@ export declare enum TypeName {
     HeadingDroneCommand = "HeadingDroneCommand",
     HeadingComponent = "HeadingComponent",
     HomeLocationDroneCommand = "HomeLocationDroneCommand",
+    HoverComponent = "HoverComponent",
     InspectionComponent = "InspectionComponent",
     InspectionComponentAction = "InspectionComponentAction",
     InspectionComponentInspectionPoint = "InspectionComponentInspectionPoint",
@@ -712,11 +719,7 @@ export declare enum TypeName {
     Orientation3 = "Orientation3",
     Orientation3Optional = "Orientation3Optional",
     OrientationGimbalCommand = "OrientationGimbalCommand",
-    PhotoAspectRatioCameraCommand = "PhotoAspectRatioCameraCommand",
-    PhotoIntervalCameraCommand = "PhotoIntervalCameraCommand",
-    PhotoModeCameraCommand = "PhotoModeCameraCommand",
-    PointOfInterest = "PointOfInterest",
-    Position3 = "Position3",
+    PanoComponent = "PanoComponent",
     PathComponent = "PathComponent",
     PathComponentWaypoint = "PathComponentWaypoint",
     PathComponentMarker = "PathComponentMarker",
@@ -724,8 +727,14 @@ export declare enum TypeName {
     PlanComponent = "PlanComponent",
     PlanReengagementRules = "PlanReengagementRules",
     PlanRestrictionZone = "PlanRestrictionZone",
+    PhotoComponent = "PhotoComponent",
+    PhotoAspectRatioCameraCommand = "PhotoAspectRatioCameraCommand",
     PhotoFileFormatCameraCommand = "PhotoFileFormatCameraCommand",
+    PhotoIntervalCameraCommand = "PhotoIntervalCameraCommand",
+    PhotoModeCameraCommand = "PhotoModeCameraCommand",
     Point2 = "Point2",
+    PointOfInterest = "PointOfInterest",
+    Position3 = "Position3",
     PrecisionLandingDroneCommand = "PrecisionLandingDroneCommand",
     RemoteController = "RemoteController",
     RemoteControllerButton = "RemoteControllerButton",

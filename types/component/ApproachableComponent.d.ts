@@ -20,13 +20,17 @@ export declare abstract class ApproachableComponent extends DroneMotionComponent
     get subtitle(): string;
     verification(context: ComponentContext): Component | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
+    endSpatial(context: ComponentContext): GeoSpatial | null;
+    boundsCoordinates(context: ComponentContext): GeoCoordinate[];
     approachCoordinate(context: ComponentContext): GeoCoordinate;
+    approachDestinationOffsetUpdated(context: ComponentContext): void;
     resetApproachDestinationOffset(context: ComponentContext): void;
     alignment(context: ComponentContext): ApproachableAlignment | null;
     node(parent?: Node | null): ComponentNode;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     aligned(context: ComponentExecuteContext): boolean;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
+    reengagementDroneSpatial(context: ComponentExecuteContext): GeoSpatial | null;
 }
 export declare class ApproachableAlignment {
     droneOrientation: Orientation3Optional | null;

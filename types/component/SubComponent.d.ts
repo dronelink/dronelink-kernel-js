@@ -30,6 +30,7 @@ export declare abstract class SubComponent extends Component implements Serializ
     referenceSpatial(context: ComponentContext): GeoSpatial;
     referenceCoordinate(context: ComponentContext, offset?: Vector2 | null): GeoCoordinate;
     elevationCoordinates(context: ComponentContext): GeoCoordinate[];
+    boundsCoordinates(context: ComponentContext): GeoCoordinate[];
     pointOfInterestCoordinate(context: ComponentContext, index: number): GeoCoordinate;
     pointsOfInterestCoordinates(context: ComponentContext): GeoCoordinate[];
     pointOfInterestByID(pointOfInterestID: String): PointOfInterest | undefined;

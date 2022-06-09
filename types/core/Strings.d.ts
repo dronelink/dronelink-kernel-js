@@ -3,7 +3,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     Common: {
         delimeter: string;
         set: string;
-        new: string;
+        add: string;
         yes: string;
         no: string;
         more: string;
@@ -1236,10 +1236,16 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "5280x2972": {
                 name: string;
             };
+            "5472x3078": {
+                name: string;
+            };
             "5760x3240": {
                 name: string;
             };
             "6016x3200": {
+                name: string;
+            };
+            "7680x4320": {
                 name: string;
             };
             max: {
@@ -1713,6 +1719,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             disengageErrorTolerance: {
                 title: string;
                 details: {
+                    message: string;
                     distance: string;
                     altitude: string;
                 };
@@ -2112,6 +2119,19 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         values: {
             coordinate: string;
+        };
+    };
+    HoverComponent: {
+        name: string;
+        multiple: string;
+        description: string;
+        values: {
+            time: string;
+        };
+        messages: {
+            hovering: {
+                title: string;
+            };
         };
     };
     InspectionComponent: {
@@ -2678,42 +2698,33 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             channel: string;
         };
     };
-    PlanCompleteAction: {
+    PanoComponent: {
+        name: string;
+        multiple: string;
+        description: string;
+        values: {
+            pattern: string;
+            heading: string;
+            gimbalOrientationChannels: string;
+        };
+        messages: {
+            setup: {
+                title: string;
+            };
+            frame: {
+                title: string;
+            };
+        };
+    };
+    PanoPattern: {
         name: string;
         values: {
-            none: {
+            spherical: {
                 name: string;
             };
-            returnHome: {
+            horizontal: {
                 name: string;
             };
-            autoLand: {
-                name: string;
-            };
-        };
-    };
-    PhotoAspectRatioCameraCommand: {
-        name: string;
-        values: {
-            photoAspectRatio: string;
-        };
-    };
-    PhotoFileFormatCameraCommand: {
-        name: string;
-        values: {
-            photoFileFormat: string;
-        };
-    };
-    PhotoIntervalCameraCommand: {
-        name: string;
-        values: {
-            photoInterval: string;
-        };
-    };
-    PhotoModeCameraCommand: {
-        name: string;
-        values: {
-            photoMode: string;
         };
     };
     PathComponent: {
@@ -2753,6 +2764,58 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             rounded: {
+                name: string;
+            };
+        };
+    };
+    PhotoAspectRatioCameraCommand: {
+        name: string;
+        values: {
+            photoAspectRatio: string;
+        };
+    };
+    PhotoComponent: {
+        name: string;
+        multiple: string;
+        description: string;
+        values: {
+            heading: string;
+            gimbalOrientations: string;
+        };
+        messages: {
+            setup: {
+                title: string;
+            };
+        };
+    };
+    PhotoFileFormatCameraCommand: {
+        name: string;
+        values: {
+            photoFileFormat: string;
+        };
+    };
+    PhotoIntervalCameraCommand: {
+        name: string;
+        values: {
+            photoInterval: string;
+        };
+    };
+    PhotoModeCameraCommand: {
+        name: string;
+        values: {
+            photoMode: string;
+        };
+    };
+    PlanCompleteAction: {
+        name: string;
+        values: {
+            none: {
+                name: string;
+            };
+            returnHome: {
+                name: string;
+            };
+            autoLand: {
                 name: string;
             };
         };

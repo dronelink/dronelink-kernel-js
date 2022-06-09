@@ -55,6 +55,7 @@ export declare abstract class Component extends Identifiable implements Serializ
     elevationsPending(context: ComponentContext): boolean;
     referencedAltitude(context: ComponentContext, altitude: Altitude, coordinate: GeoCoordinate, tolerance?: number | null): ReferencedAltitude;
     elevation(coordinate: GeoCoordinate, tolerance?: number | null): GeoLocation | null;
+    boundsCoordinates(context: ComponentContext): GeoCoordinate[];
     node(parent?: Node | null): ComponentNode;
     descendantAllowed(component: Component): boolean;
     endSpatial(context: ComponentContext): GeoSpatial | null;

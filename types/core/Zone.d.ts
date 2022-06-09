@@ -31,6 +31,7 @@ export declare class Zone extends Identifiable implements Serializable {
     removeBoundaryPoint(boundaryPoint: ZoneBoundaryPoint, context: ComponentContext | null): ZoneBoundaryPoint;
     boundaryPointCoordinates(context: ComponentContext): GeoCoordinate[];
     boundaryPointCoordinate(context: ComponentContext, index: number): GeoCoordinate;
+    boundsCoordinates(context: ComponentContext): GeoCoordinate[];
     updateShape(context: ComponentContext, shape: ZoneShape, coordinate: GeoCoordinate, size: number): void;
     centerCoordinate(context: ComponentContext): GeoCoordinate;
     private get radius();

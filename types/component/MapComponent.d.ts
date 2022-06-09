@@ -73,6 +73,7 @@ export declare class MapComponent extends ApproachableComponent implements Seria
         side: number;
     };
     rampDistance(context: ComponentContext): number;
+    approachDestinationOffsetUpdated(context: ComponentContext): void;
     resetApproachDestinationOffset(context: ComponentContext): void;
     addBoundaryPoint(boundaryPoint: MapComponentBoundaryPoint, context?: ComponentContext | null, index?: number | null): MapComponentBoundaryPoint;
     updateBoundaryPointCoordinate(index: number, coordinate: GeoCoordinate, context: ComponentContext): void;

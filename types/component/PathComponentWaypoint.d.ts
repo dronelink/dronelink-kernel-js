@@ -6,11 +6,13 @@ import { TypeName } from "../core/Enums";
 import { Descriptors } from "../core/Descriptors";
 import { Identifiable } from "../core/Identifiable";
 import { PathComponentElementNode } from "./PathComponentNode";
+import { PathComponentMarker } from "./PathComponentMarker";
 export declare class PathComponentWaypoint extends Identifiable implements Serializable {
     readonly type = TypeName.PathComponentWaypoint;
     offset: Vector2;
     cornerRadius: number | null;
     descriptors: Descriptors;
+    marker: PathComponentMarker;
     applyJSON(json: any): void;
     node(parent: PathComponentWaypointsNode, index: number): PathComponentWaypointNode;
     title(index: number): string;

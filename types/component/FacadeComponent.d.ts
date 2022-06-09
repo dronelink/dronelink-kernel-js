@@ -71,6 +71,7 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     initialReferencedAltitude(context: ComponentContext): ReferencedAltitude;
     finalReferencedAltitude(context: ComponentContext): ReferencedAltitude;
     get surfaceSampleDistance(): GroundSampleDistance;
+    approachDestinationOffsetUpdated(context: ComponentContext): void;
     resetApproachDestinationOffset(context: ComponentContext): void;
     reverseBoundaryPoints(context: ComponentContext): void;
     addBoundaryPoint(boundaryPoint: FacadeComponentBoundaryPoint, context?: ComponentContext | null, index?: number | null): FacadeComponentBoundaryPoint;

@@ -8,6 +8,7 @@ import { DistanceTolerance } from "../core/DistanceTolerance";
 import { Node } from "../core/Node";
 import { ListNode } from "../core/ListNode";
 import { ComponentContext, GeoSpatial } from "..";
+import { GeoCoordinate } from "../core/GeoCoordinate";
 export declare class PlanRestrictionZone extends Identifiable implements Serializable {
     readonly type = TypeName.PlanRestrictionZone;
     descriptors: Descriptors;
@@ -31,4 +32,5 @@ export declare class PlanRestrictionZoneNode extends ListNode {
     constructor(parent: Node, index: number, planRestrictionZone: PlanRestrictionZone);
     get title(): string;
     get subtitle(): string;
+    boundsCoordinates(context: ComponentContext): GeoCoordinate[];
 }
