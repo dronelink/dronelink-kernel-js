@@ -208,6 +208,7 @@ export declare enum CameraPhotoMode {
     Unknown = "unknown"
 }
 export declare enum CameraShutterSpeed {
+    Auto = "auto",
     _1_8000 = "1/8000",
     _1_6400 = "1/6400",
     _1_6000 = "1/6000",
@@ -790,6 +791,11 @@ export declare enum TypeName {
 export declare enum UnitSystem {
     Metric = "metric",
     Imperial = "imperial"
+}
+export declare enum UserInterfaceDashboardFlavor {
+    Any = "any",
+    Dronelink1 = "dronelink1",
+    Dronelink2 = "dronelink2"
 }
 export declare enum UserInterfaceMapTracking {
     NoChange = "noChange",

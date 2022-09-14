@@ -800,11 +800,16 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             phantom3Standard: string;
             spark: string;
             anafi4k: string;
+            evoII8K: string;
+            evoII6K: string;
         };
     };
     CameraShutterSpeed: {
         name: string;
         values: {
+            auto: {
+                name: string;
+            };
             "1/8000": {
                 name: string;
             };
@@ -1414,6 +1419,15 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     };
     ComponentExecutionState: {
         name: string;
+    };
+    ComponentImporter: {
+        litchi: {
+            waypointActions: {
+                shootPhoto: string;
+                continuousPhotos: string;
+                startRecording: string;
+            };
+        };
     };
     ConnectionFailSafeBehaviorDroneCommand: {
         name: string;
@@ -3236,6 +3250,20 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             reticleImageUrl: string;
             droneOffsetsVisible: string;
             missionDetailsExpanded: string;
+        };
+    };
+    UserInterfaceDashboardFlavor: {
+        name: string;
+        values: {
+            any: {
+                name: string;
+            };
+            dronelink1: {
+                name: string;
+            };
+            dronelink2: {
+                name: string;
+            };
         };
     };
     UserInterfaceMapTracking: {

@@ -34,6 +34,8 @@ export declare class Format {
         plural: string;
     } | null): string;
     private static degreesMinutesAndSeconds;
+    static latitude(value: number, numeric?: boolean): FormattedValue;
+    static longitude(value: number, numeric?: boolean): FormattedValue;
     static geoCoordinate(value: GeoCoordinate, numeric?: boolean): {
         latitude: FormattedValue;
         longitude: FormattedValue;

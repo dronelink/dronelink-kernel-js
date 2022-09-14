@@ -18,6 +18,7 @@ import { PlanReengagementRules } from "./PlanReengagementRules";
 import { UserInterfaceSettings } from "../core/UserInterfaceSettings";
 import { MotionLimits6Optional } from "../core/MotionLimits6Optional";
 import { ComponentContext } from "./ComponentContext";
+import { DestinationComponent } from "..";
 import { Context, Message } from "..";
 import { EngagementParameters } from "../core/Engagement";
 import { CameraSpecification } from "../core/CameraSpecification";
@@ -54,4 +55,9 @@ export declare class PlanComponent extends Component implements Serializable {
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
     engageDisallowedReasons(context: Context): Message[];
+    createCompleteActionComponents(lastAltitude: number): SubComponent[] | null;
+    createReturnHomeComponent(lastAltitude: number, homeCoordinate?: GeoCoordinate): DestinationComponent;
+    get lastDroneMotionComponentEndSpatial(): GeoSpatial | null;
+    private get lastHomeLocationDroneCommand();
+    private get lastReturnHomeAltitudeDroneCommand();
 }

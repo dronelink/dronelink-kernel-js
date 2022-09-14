@@ -35,7 +35,6 @@ export declare class DestinationComponent extends AchievableDroneMotionComponent
     get referenceOffsets(): Vector2[];
     toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     verification(context: ComponentContext): Component | null;
-    cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
     get pointsOfInterestEnabled(): boolean;
     get pointsOfInterestMax(): number | null;
     node(parent?: Node | null): ComponentNode;

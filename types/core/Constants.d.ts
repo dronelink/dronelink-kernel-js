@@ -3,11 +3,14 @@ import { Limits } from "./Limits";
 import { CameraSpecification } from "./CameraSpecification";
 import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
+import { MotionLimitsOptional } from "./MotionLimitsOptional";
 export declare class Constants {
-    static readonly Version = "3.4.0";
-    static readonly ExecuteFrequencyTarget = 10;
-    static readonly ExecuteFrequencyMin = 5;
-    static readonly ExecuteDelayStrikesMax = 5;
+    static readonly Version = "4.0.0";
+    static readonly ExecuteFrequencyTargetDefault = 10;
+    static readonly ExecuteFrequencyMinDefault = 5;
+    static readonly ExecuteDelayStrikesMaxDefault = 5;
+    static readonly ExecuteFrequencyTargetAutel = 5;
+    static readonly ExecuteFrequencyMinAutel = 4;
     static readonly SimulationUpdateInterval: number;
     static readonly DroneConnectionLatency: number;
     static DroneMotionLimits: {
@@ -36,6 +39,9 @@ export declare class Constants {
     static readonly ComponentElevationTolerance = 1;
     static readonly ComponentDyanmicHomeLocationUpdateFrequency = 5;
     static readonly PlanComponentTakeoffDistanceHorizontal: number;
+    static readonly PlanComponentCompleteVerticalMotionLimits: MotionLimitsOptional;
+    static readonly PlanComponentCompleteHorizontalMotionLimits: MotionLimitsOptional;
+    static readonly PlanComponentCompleteReturnHomeAltitude: number;
     static readonly DroneMotionComponentGimbalOrientation: Orientation3Optional;
     static readonly DroneMotionComponentModelSampleTimeMax = 2;
     static readonly DroneMotionComponentErrorK: number;
