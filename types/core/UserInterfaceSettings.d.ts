@@ -7,6 +7,7 @@ export declare class UserInterfaceSettings implements Serializable {
     missionDetailsExpanded: Boolean | null;
     mapTracking: UserInterfaceMapTracking;
     dashboardFlavor: UserInterfaceDashboardFlavor;
+    gimbalOrientationVisible: Boolean | null;
     applyJSON(json: any): void;
     get reticalImageUrl(): string | null;
     set reticalImageUrl(value: string | null);

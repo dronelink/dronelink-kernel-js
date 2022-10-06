@@ -3250,6 +3250,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             reticleImageUrl: string;
             droneOffsetsVisible: string;
             missionDetailsExpanded: string;
+            gimbalOrientationVisible: string;
         };
     };
     UserInterfaceDashboardFlavor: {

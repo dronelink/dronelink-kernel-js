@@ -10,5 +10,6 @@ export declare class PlanReengagementRules implements Serializable {
     gimbalOrientations: Dictionary<Orientation3Optional> | null;
     confirmationMessage: Message | null;
     confirmationInstructionsImageUrl: string | null;
+    georectifyInstructionsImageUrl: string | null;
     applyJSON(json: any): void;
 }

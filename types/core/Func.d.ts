@@ -9,6 +9,7 @@ import { Device } from "./Device";
 import { SubComponent } from "../component/SubComponent";
 import { UserInterfaceSettings } from "./UserInterfaceSettings";
 import { Input } from "./Input";
+import { Orientation3Optional } from "../core/Orientation3Optional";
 export declare class FuncMapOverlay {
     coordinates: GeoCoordinate[];
     color: string;
@@ -51,5 +52,7 @@ export declare class FuncInput extends Input implements Serializable {
 export declare class FuncInputExtensions implements Serializable {
     readonly type = TypeName.FuncInputExtensions;
     droneOffsetsCoordinateReference: boolean;
+    gimbalOrientation: Orientation3Optional;
+    gimbalControlsVisible: boolean;
     applyJSON(json: any): void;
 }
