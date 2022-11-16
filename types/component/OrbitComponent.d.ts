@@ -34,6 +34,7 @@ export declare class OrbitComponent extends ApproachableComponent implements Ser
     get droneRotationModeReadonly(): boolean;
     get radius(): number;
     set radius(value: number);
+    approachDestinationOffsetUpdated(context: ComponentContext): void;
     referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate | null;
     elevationCoordinates(context: ComponentContext): GeoCoordinate[];
     boundsCoordinates(context: ComponentContext): GeoCoordinate[];

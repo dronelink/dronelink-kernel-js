@@ -44,6 +44,7 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     capturePriority: CapturePriority;
     captureDroneMotionLimits: MotionLimits6Optional;
     minCaptureInterval: number;
+    minPhotosPerHorizontalRestrictedSegment: number | null;
     targetDistance: number;
     sampleDistanceGimbalAngleEnabled: boolean;
     pattern: FacadePattern;

@@ -141,6 +141,21 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             auto: {
                 name: string;
             };
+            "f/0dot95": {
+                name: string;
+            };
+            "f/1dot0": {
+                name: string;
+            };
+            "f/1dot2": {
+                name: string;
+            };
+            "f/1dot3": {
+                name: string;
+            };
+            "f/1dot4": {
+                name: string;
+            };
             "f/1dot6": {
                 name: string;
             };
@@ -180,6 +195,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "f/4": {
                 name: string;
             };
+            "f/4dot4": {
+                name: string;
+            };
             "f/4dot5": {
                 name: string;
             };
@@ -190,6 +208,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             "f/5dot6": {
+                name: string;
+            };
+            "f/6": {
                 name: string;
             };
             "f/6dot3": {
@@ -238,6 +259,36 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             "f/22": {
+                name: string;
+            };
+            "f/25": {
+                name: string;
+            };
+            "f/27": {
+                name: string;
+            };
+            "f/28": {
+                name: string;
+            };
+            "f/32": {
+                name: string;
+            };
+            "f/37": {
+                name: string;
+            };
+            "f/41": {
+                name: string;
+            };
+            "f/45": {
+                name: string;
+            };
+            "f/52": {
+                name: string;
+            };
+            "f/58": {
+                name: string;
+            };
+            "f/64": {
                 name: string;
             };
             unknown: {
@@ -327,6 +378,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             trueColorExt: {
                 name: string;
             };
+            film: {
+                name: string;
+            };
             filmA: {
                 name: string;
             };
@@ -355,6 +409,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             hlg: {
+                name: string;
+            };
+            rec709: {
+                name: string;
+            };
+            cinelike: {
                 name: string;
             };
             unknown: {
@@ -557,6 +617,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             autoContinuous: {
                 name: string;
             };
+            fineTune: {
+                name: string;
+            };
             unknown: {
                 name: string;
             };
@@ -566,6 +629,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         values: {
             auto: {
+                name: string;
+            };
+            "50": {
                 name: string;
             };
             "100": {
@@ -595,7 +661,51 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "25600": {
                 name: string;
             };
+            "51200": {
+                name: string;
+            };
+            "102400": {
+                name: string;
+            };
             fixed: {
+                name: string;
+            };
+            unknown: {
+                name: string;
+            };
+        };
+    };
+    CameraLensType: {
+        name: string;
+        values: {
+            default: {
+                name: string;
+            };
+            wide: {
+                name: string;
+            };
+            zoom: {
+                name: string;
+            };
+            thermal: {
+                name: string;
+            };
+            ndvi: {
+                name: string;
+            };
+            visible: {
+                name: string;
+            };
+            msg: {
+                name: string;
+            };
+            msr: {
+                name: string;
+            };
+            msre: {
+                name: string;
+            };
+            msnir: {
                 name: string;
             };
             unknown: {
@@ -655,6 +765,15 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "3:2": {
                 name: string;
             };
+            "18:9": {
+                name: string;
+            };
+            "5:4": {
+                name: string;
+            };
+            "1:1": {
+                name: string;
+            };
             unknown: {
                 name: string;
             };
@@ -672,16 +791,25 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "raw+jpeg": {
                 name: string;
             };
-            tiff14bit: {
+            tiff8bit: {
                 name: string;
             };
-            radiometricJpeg: {
+            tiff14bit: {
                 name: string;
             };
             tiff14bitLinearLowTempResolution: {
                 name: string;
             };
             tiff14bitLinearHighTempResolution: {
+                name: string;
+            };
+            radiometricJpeg: {
+                name: string;
+            };
+            radiometricJpegLow: {
+                name: string;
+            };
+            radiometricJpegHigh: {
                 name: string;
             };
             unknown: {
@@ -719,19 +847,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             panorama: {
                 name: string;
             };
+            countdown: {
+                name: string;
+            };
             hyperLight: {
                 name: string;
             };
             timeLapse: {
                 name: string;
             };
+            hyperLapse: {
+                name: string;
+            };
             highResolution: {
+                name: string;
+            };
+            superResolution: {
+                name: string;
+            };
+            regionalSR: {
                 name: string;
             };
             smart: {
                 name: string;
             };
             internalAISpotChecking: {
+                name: string;
+            };
+            vr: {
                 name: string;
             };
             unknown: {
@@ -770,6 +913,14 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             zenmuseH20ZoomMax: string;
             zenmuseZ30Min: string;
             zenmuseZ30Max: string;
+            m30Wide: string;
+            m30ZoomMin: string;
+            m30ZoomMin48MP: string;
+            m30Thermal: string;
+            m30ThermalSuper: string;
+            mavic3EnterpriseWide: string;
+            mavic3EnterpriseZoomMin: string;
+            mavic3EnterpriseThermal: string;
             mavicMini2: string;
             mavicMiniSE: string;
             mavicMini: string;
@@ -808,6 +959,18 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         values: {
             auto: {
+                name: string;
+            };
+            "1/20000": {
+                name: string;
+            };
+            "1/16000": {
+                name: string;
+            };
+            "1/12800": {
+                name: string;
+            };
+            "1/10000": {
                 name: string;
             };
             "1/8000": {
@@ -1038,6 +1201,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "30": {
                 name: string;
             };
+            "40": {
+                name: string;
+            };
+            "50": {
+                name: string;
+            };
+            "60": {
+                name: string;
+            };
+            "80": {
+                name: string;
+            };
+            "100": {
+                name: string;
+            };
+            "120": {
+                name: string;
+            };
             unknown: {
                 name: string;
             };
@@ -1052,6 +1233,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             internal: {
                 name: string;
             };
+            internalSSD: {
+                name: string;
+            };
             unknown: {
                 name: string;
             };
@@ -1064,6 +1248,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             h265: {
+                name: string;
+            };
+            proRes: {
                 name: string;
             };
             unknown: {
@@ -1084,6 +1271,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             seq: {
+                name: string;
+            };
+            cdng: {
+                name: string;
+            };
+            mxf: {
                 name: string;
             };
             unknown: {
@@ -1176,6 +1369,18 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             slowMotion: {
                 name: string;
             };
+            fastMotion: {
+                name: string;
+            };
+            timeLapse: {
+                name: string;
+            };
+            hyperLapse: {
+                name: string;
+            };
+            quickShot: {
+                name: string;
+            };
             unknown: {
                 name: string;
             };
@@ -1187,6 +1392,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "336x256": {
                 name: string;
             };
+            "640x340": {
+                name: string;
+            };
             "640x360": {
                 name: string;
             };
@@ -1196,7 +1404,25 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "640x512": {
                 name: string;
             };
+            "720x576": {
+                name: string;
+            };
+            "864x480": {
+                name: string;
+            };
+            "1080x1920": {
+                name: string;
+            };
+            "1512x2688": {
+                name: string;
+            };
             "1280x720": {
+                name: string;
+            };
+            "1280x1024": {
+                name: string;
+            };
+            "1920x960": {
                 name: string;
             };
             "1920x1080": {
@@ -1208,10 +1434,19 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "2688x1512": {
                 name: string;
             };
+            "2688x2016": {
+                name: string;
+            };
             "2704x1520": {
                 name: string;
             };
             "2720x1530": {
+                name: string;
+            };
+            "2720x2040": {
+                name: string;
+            };
+            "2880x1620": {
                 name: string;
             };
             "3712x2088": {
@@ -1226,7 +1461,16 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "3944x2088": {
                 name: string;
             };
+            "4000x3000": {
+                name: string;
+            };
             "4096x2160": {
+                name: string;
+            };
+            "4096x2728": {
+                name: string;
+            };
+            "4096x3072": {
                 name: string;
             };
             "4608x2160": {
@@ -1235,13 +1479,28 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             "4608x2592": {
                 name: string;
             };
+            "5120x2700": {
+                name: string;
+            };
+            "5120x2880": {
+                name: string;
+            };
             "5280x2160": {
                 name: string;
             };
             "5280x2972": {
                 name: string;
             };
+            "5248x2952": {
+                name: string;
+            };
             "5472x3078": {
+                name: string;
+            };
+            "5472x3648": {
+                name: string;
+            };
+            "5576x2952": {
                 name: string;
             };
             "5760x3240": {
@@ -1251,6 +1510,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             "7680x4320": {
+                name: string;
+            };
+            "8192x3424": {
+                name: string;
+            };
+            "8192x4320": {
                 name: string;
             };
             max: {
@@ -1281,6 +1546,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     CameraVideoStreamSource: {
         name: string;
         values: {
+            default: {
+                name: string;
+            };
             wide: {
                 name: string;
             };
@@ -1288,6 +1556,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             thermal: {
+                name: string;
+            };
+            ndvi: {
+                name: string;
+            };
+            visible: {
+                name: string;
+            };
+            msg: {
+                name: string;
+            };
+            msr: {
+                name: string;
+            };
+            msre: {
+                name: string;
+            };
+            msnir: {
                 name: string;
             };
             unknown: {
@@ -1320,6 +1606,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             neutral: {
+                name: string;
+            };
+            underwater: {
                 name: string;
             };
             unknown: {
@@ -1761,6 +2050,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             "5dot8ghz": {
+                name: string;
+            };
+            "5dot7ghz": {
+                name: string;
+            };
+            "1dot4ghz": {
                 name: string;
             };
             dual: {
@@ -3218,6 +3513,10 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 abbreviation: string;
             };
             gigabytes: {
+                name: string;
+                abbreviation: string;
+            };
+            volts: {
                 name: string;
                 abbreviation: string;
             };

@@ -54,6 +54,7 @@ export declare class FacadeComponentModelParameters {
     readonly captureIntervalTime: number;
     readonly captureIntervalDistance: number;
     readonly captureMotionLimits: MotionLimits6Optional;
+    readonly minPhotosPerHorizontalRestrictedSegment: number;
     readonly cameraMode: CameraMode;
     readonly captureVerifyFileCreated: boolean;
     readonly pattern: FacadePattern;
@@ -64,7 +65,7 @@ export declare class FacadeComponentModelParameters {
     readonly droneOrientation: Orientation3Optional | null;
     readonly activeRestrictionZones: PlanRestrictionZone[];
     readonly boundaryRadius: FacadeComponentBoundaryRadius | null;
-    constructor(motionLimits: MotionLimits6, approachSpatial: GeoSpatial, initialAltitude: Altitude, finalAltitude: Altitude, targetDistance: number, rows: number, rowSpacing: number, columns: number, columnSpacing: number, capturePriority: CapturePriority, captureIntervalTime: number, captureIntervalDistance: number, cameraMode: CameraMode, captureVerifyFileCreated: boolean, captureMotionLimits: MotionLimits6Optional, pattern: FacadePattern, boundaryFace: FacadeBoundaryFace, boundaryClosed: boolean, boundaryFaceOrientation: number, gimbalOrientations: Dictionary<Orientation3Optional>, droneOrientation: Orientation3Optional | null, activeRestrictionZones: PlanRestrictionZone[], boundaryRadius: FacadeComponentBoundaryRadius | null);
+    constructor(motionLimits: MotionLimits6, approachSpatial: GeoSpatial, initialAltitude: Altitude, finalAltitude: Altitude, targetDistance: number, rows: number, rowSpacing: number, columns: number, columnSpacing: number, capturePriority: CapturePriority, captureIntervalTime: number, captureIntervalDistance: number, cameraMode: CameraMode, captureVerifyFileCreated: boolean, captureMotionLimits: MotionLimits6Optional, minPhotosPerHorizontalRestrictedSegment: number, pattern: FacadePattern, boundaryFace: FacadeBoundaryFace, boundaryClosed: boolean, boundaryFaceOrientation: number, gimbalOrientations: Dictionary<Orientation3Optional>, droneOrientation: Orientation3Optional | null, activeRestrictionZones: PlanRestrictionZone[], boundaryRadius: FacadeComponentBoundaryRadius | null);
     get capturePriorityResolved(): CapturePriority | null;
     get pathSampleDistance(): number;
     get circle(): boolean;

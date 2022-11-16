@@ -10,6 +10,12 @@ export declare enum CameraAEBCount {
     Unknown = "unknown"
 }
 export declare enum CameraAperture {
+    Auto = "auto",
+    F0dot95 = "f/0dot95",
+    F1dot0 = "f/1dot0",
+    F1dot2 = "f/1dot2",
+    F1dot3 = "f/1dot3",
+    F1dot4 = "f/1dot4",
     F1dot6 = "f/1dot6",
     F1dot7 = "f/1dot7",
     F1dot8 = "f/1dot8",
@@ -23,10 +29,12 @@ export declare enum CameraAperture {
     F3dot4 = "f/3dot4",
     F3dot5 = "f/3dot5",
     F4 = "f/4",
+    F4dot4 = "f/4dot4",
     F4dot5 = "f/4dot5",
     F4dot8 = "f/4dot8",
     F5 = "f/5",
     F5dot6 = "f/5dot6",
+    F6 = "f/6",
     F6dot3 = "f/6dot3",
     F6dot8 = "f/6dot8",
     F7dot1 = "f/7dot1",
@@ -43,6 +51,16 @@ export declare enum CameraAperture {
     F19 = "f/19",
     F20 = "f/20",
     F22 = "f/22",
+    F25 = "f/25",
+    F27 = "f/27",
+    F28 = "f/28",
+    F32 = "f/32",
+    F37 = "f/37",
+    F41 = "f/41",
+    F45 = "f/45",
+    F52 = "f/52",
+    F58 = "f/58",
+    F64 = "f/64",
     Unknown = "unknown"
 }
 export declare enum CameraCaptureType {
@@ -74,6 +92,7 @@ export declare enum CameraColor {
     Vision4 = "vision4",
     Vision6 = "vision6",
     TrueColorExt = "trueColorExt",
+    Film = "film",
     FilmA = "filmA",
     FilmB = "filmB",
     FilmC = "filmC",
@@ -84,6 +103,8 @@ export declare enum CameraColor {
     FilmH = "filmH",
     FilmI = "filmI",
     HLG = "hlg",
+    REC709 = "rec709",
+    cinelike = "cinelike",
     Unknown = "unknown"
 }
 export declare enum CameraDisplayMode {
@@ -144,10 +165,12 @@ export declare enum CameraFocusMode {
     Manual = "manual",
     Auto = "auto",
     AutoContinuous = "autoContinuous",
+    FineTune = "fineTune",
     Unknown = "unknown"
 }
 export declare enum CameraISO {
     Auto = "auto",
+    _50 = "50",
     _100 = "100",
     _200 = "200",
     _400 = "400",
@@ -157,6 +180,8 @@ export declare enum CameraISO {
     _6400 = "6400",
     _12800 = "12800",
     _25600 = "25600",
+    _51200 = "51200",
+    _102400 = "102400",
     Fixed = "fixed",
     Unknown = "unknown"
 }
@@ -164,6 +189,19 @@ export declare enum CameraMeteringMode {
     Center = "center",
     Average = "average",
     Spot = "spot",
+    Unknown = "unknown"
+}
+export declare enum CameraLensType {
+    Default = "default",
+    Wide = "wide",
+    Zoom = "zoom",
+    Thermal = "thermal",
+    NDVI = "ndvi",
+    Visible = "visible",
+    MSG = "msg",
+    MSR = "msr",
+    MSRE = "msre",
+    MSNIR = "msnir",
     Unknown = "unknown"
 }
 export declare enum CameraMode {
@@ -178,16 +216,22 @@ export declare enum CameraPhotoAspectRatio {
     _4_3 = "4:3",
     _16_9 = "16:9",
     _3_2 = "3:2",
+    _18_9 = "18:9",
+    _5_4 = "5:4",
+    _1_1 = "1:1",
     Unknown = "unknown"
 }
 export declare enum CameraPhotoFileFormat {
     RAW = "raw",
     JPEG = "jpeg",
     RAWAndJPEG = "raw+jpeg",
+    TIFF8Bit = "tiff8bit",
     TIFF14Bit = "tiff14bit",
-    RadiometricJPEG = "radiometricJpeg",
     TIFF14BitLinearLowTempResolution = "tiff14bitLinearLowTempResolution",
     TIFF14BitLinearHighTempResolution = "tiff14bitLinearHighTempResolution",
+    RadiometricJPEG = "radiometricJpeg",
+    RadiometricJPEGLow = "radiometricJpegLow",
+    RadiometricJPEGHigh = "radiometricJpegHigh",
     Unknown = "unknown"
 }
 export declare enum CameraPhotoMode {
@@ -200,15 +244,24 @@ export declare enum CameraPhotoMode {
     RAWBurst = "rawBurst",
     ShallowFocus = "shallowFocus",
     Panorama = "panorama",
+    Countdown = "countdown",
     HyperLight = "hyperLight",
     TimeLapse = "timeLapse",
+    HyperLapse = "hyperLapse",
     HighResolution = "highResolution",
+    SuperResolution = "superResolution",
+    RegionalSR = "regionalSR",
     Smart = "smart",
     InternalAISpotChecking = "internalAISpotChecking",
+    VR = "vr",
     Unknown = "unknown"
 }
 export declare enum CameraShutterSpeed {
     Auto = "auto",
+    _1_20000 = "1/20000",
+    _1_16000 = "1/16000",
+    _1_12800 = "1/12800",
+    _1_10000 = "1/10000",
     _1_8000 = "1/8000",
     _1_6400 = "1/6400",
     _1_6000 = "1/6000",
@@ -285,16 +338,24 @@ export declare enum CameraShutterSpeed {
     _23 = "23",
     _25 = "25",
     _30 = "30",
+    _40 = "40",
+    _50 = "50",
+    _60 = "60",
+    _80 = "80",
+    _100 = "100",
+    _120 = "120",
     Unknown = "unknown"
 }
 export declare enum CameraStorageLocation {
     SDCard = "sdCard",
     Internal = "internal",
+    InternalSSD = "internalSSD",
     Unknown = "unknown"
 }
 export declare enum CameraVideoFileCompressionStandard {
     H264 = "h264",
     H265 = "h265",
+    ProRes = "proRes",
     Unknown = "unknown"
 }
 export declare enum CameraVideoFileFormat {
@@ -302,6 +363,8 @@ export declare enum CameraVideoFileFormat {
     MP4 = "mp4",
     TIFFSequence = "tiffSequence",
     SEQ = "seq",
+    CDNG = "cdng",
+    MXF = "mxf",
     Unknown = "unknown"
 }
 export declare enum CameraVideoFieldOfView {
@@ -333,32 +396,56 @@ export declare enum CameraVideoMode {
     Normal = "normal",
     HDR = "hdr",
     SlowMotion = "slowMotion",
+    FastMotion = "fastMotion",
+    TimeLapse = "timeLapse",
+    HyperLapse = "hyperLapse",
+    QuickShot = "quickShot",
     Unknown = "unknown"
 }
 export declare enum CameraVideoResolution {
     _336x256 = "336x256",
+    _640x340 = "640x340",
     _640x360 = "640x360",
     _640x480 = "640x480",
     _640x512 = "640x512",
+    _720x576 = "720x576",
+    _864x480 = "864x480",
+    _1080x1920 = "1080x1920",
     _1280x720 = "1280x720",
+    _1280x1024 = "1280x1024",
+    _1512x2688 = "1512x2688",
+    _1920x960 = "1920x960",
     _1920x1080 = "1920x1080",
     _2048x1080 = "2048x1080",
     _2688x1512 = "2688x1512",
+    _2688x2016 = "2688x2016",
     _2704x1520 = "2704x1520",
     _2720x1530 = "2720x1530",
+    _2720x2040 = "2720x2040",
+    _2880x1620 = "2880x1620",
     _3712x2088 = "3712x2088",
     _3840x1572 = "3840x1572",
     _3840x2160 = "3840x2160",
     _3944x2088 = "3944x2088",
+    _4000x3000 = "4000x3000",
     _4096x2160 = "4096x2160",
+    _4096x2728 = "4096x2728",
+    _4096x3072 = "4096x3072",
     _4608x2160 = "4608x2160",
     _4608x2592 = "4608x2592",
+    _5120x2700 = "5120x2700",
+    _5120x2880 = "5120x2880",
+    _5248x2952 = "5248x2952",
     _5280x2160 = "5280x2160",
     _5280x2972 = "5280x2972",
     _5472x3078 = "5472x3078",
+    _5472x3648 = "5472x3648",
+    _5576x2952 = "5576x2952",
     _5760x3240 = "5760x3240",
     _6016x3200 = "6016x3200",
     _7680x4320 = "7680x4320",
+    _8192x3424 = "8192x3424",
+    _8192x4320 = "8192x4320",
     Max = "max",
     NoSSDVideo = "noSSDVideo",
     Unknown = "unknown"
@@ -369,9 +456,16 @@ export declare enum CameraVideoStandard {
     Unknown = "unknown"
 }
 export declare enum CameraVideoStreamSource {
-    Zoom = "zoom",
+    Default = "default",
     Wide = "wide",
+    Zoom = "zoom",
     Thermal = "thermal",
+    NDVI = "ndvi",
+    Visible = "visible",
+    MSG = "msg",
+    MSR = "msr",
+    MSRE = "msre",
+    MSNIR = "msnir",
     Unknown = "unknown"
 }
 export declare enum CameraWhiteBalancePreset {
@@ -383,6 +477,7 @@ export declare enum CameraWhiteBalancePreset {
     IndoorFluorescent = "indoorFluorescent",
     Custom = "custom",
     Neutral = "neutral",
+    Underwater = "underwater",
     Unknown = "unknown"
 }
 export declare enum CapturePriority {
@@ -470,6 +565,8 @@ export declare enum DroneOcuSyncChannelSelectionMode {
 export declare enum DroneOcuSyncFrequencyBand {
     _2dot4ghz = "2dot4ghz",
     _5dot8ghz = "5dot8ghz",
+    _5dot7ghz = "5dot7ghz",
+    _1dot4ghz = "1dot4ghz",
     Dual = "dual",
     Unknown = "unknown"
 }

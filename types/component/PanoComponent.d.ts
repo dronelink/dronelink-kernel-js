@@ -25,6 +25,7 @@ export declare class PanoComponent extends ApproachableComponent implements Seri
     get droneRotationModeReadonly(): boolean;
     headingResolved(context: ComponentContext): number;
     estimate(context: ComponentEstimateContext, start: GeoSpatial): ComponentEstimate;
+    createSetupCommandComponents(): CommandComponent[];
     frames(context: ComponentContext): PanoFrame[];
     cachedData(context: ComponentExecuteContext): PanoData | null;
     execute(context: ComponentExecuteContext): ComponentExecutionState;
