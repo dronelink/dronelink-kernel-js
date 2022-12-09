@@ -8,4 +8,5 @@ export declare class Altitude implements Serializable {
     constructor(value?: number, system?: AltitudeSystem);
     interpolate(altitude: Altitude, interpolate: (start: number, finish: number) => number): Altitude;
     toString(): string;
+    deltaToString(toAltitude: Altitude | null): string;
 }

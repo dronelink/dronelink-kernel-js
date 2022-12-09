@@ -75,6 +75,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             approachComponent: string;
         };
         messages: {
+            approaching: {
+                title: string;
+            };
             aligning: {
                 title: string;
             };
@@ -1779,6 +1782,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         multiple: string;
     };
+    DewarpingCameraCommand: {
+        name: string;
+        values: {
+            enabled: string;
+        };
+    };
     Disengagement: {
         name: string;
     };
@@ -2185,7 +2194,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         multiple: string;
         description: string;
-        subtitle: string;
         values: {
             spacing: string;
             approachAltitude: string;
@@ -2342,6 +2350,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            init: string;
             common: string;
             dynamicInputs: string;
             mapOverlays: string;
@@ -2620,6 +2629,14 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             setup: {
                 title: string;
             };
+            segment: {
+                title: string;
+            };
+            segmentTraverse: {
+                title: string;
+                details: string;
+                detailsRestricted: string;
+            };
         };
     };
     MapComponentBoundaryPoint: {
@@ -2734,6 +2751,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 complete: string;
             };
             simulationEngineInvalid: string;
+            executingMessageGroups: {
+                pending: string;
+            };
         };
         values: {
             reengagement: string;
@@ -2937,6 +2957,14 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             droneOrientation: string;
             gimbalOrientations: string;
         };
+        messages: {
+            rotations: {
+                title: string;
+            };
+            distance: {
+                title: string;
+            };
+        };
     };
     OrbitDirection: {
         name: string;
@@ -3045,6 +3073,11 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             cornerRadius: string;
             waypoints: string;
             markers: string;
+        };
+        messages: {
+            waypoint: {
+                title: string;
+            };
         };
     };
     PathComponentMarker: {
@@ -3548,6 +3581,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             reticleImageUrl: string;
             droneOffsetsVisible: string;
+            missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
         };

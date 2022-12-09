@@ -4,6 +4,7 @@ export declare class UserInterfaceSettings implements Serializable {
     readonly type = TypeName.UserInterfaceSettings;
     reticleImageUrl: string | null;
     droneOffsetsVisible: Boolean | null;
+    missionSummaryExtended: Boolean | null;
     missionDetailsExpanded: Boolean | null;
     mapTracking: UserInterfaceMapTracking;
     dashboardFlavor: UserInterfaceDashboardFlavor;

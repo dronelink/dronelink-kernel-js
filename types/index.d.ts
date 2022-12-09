@@ -207,6 +207,7 @@ export { AutoExposureLockCameraCommand } from "./command/camera/AutoExposureLock
 export { AutoLockGimbalCameraCommand } from "./command/camera/AutoLockGimbalCameraCommand";
 export { ColorCameraCommand } from "./command/camera/ColorCameraCommand";
 export { ContrastCameraCommand } from "./command/camera/ContrastCameraCommand";
+export { DewarpingCameraCommand } from "./command/camera/DewarpingCameraCommand";
 export { DisplayModeCameraCommand } from "./command/camera/DisplayModeCameraCommand";
 export { ExposureCompensationCameraCommand } from "./command/camera/ExposureCompensationCameraCommand";
 export { ExposureCompensationStepCameraCommand } from "./command/camera/ExposureCompensationStepCameraCommand";

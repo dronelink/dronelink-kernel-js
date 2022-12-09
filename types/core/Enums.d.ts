@@ -733,6 +733,7 @@ export declare enum TypeName {
     DestinationComponent = "DestinationComponent",
     DistanceTolerance = "DistanceTolerance",
     Device = "Device",
+    DewarpingCameraCommand = "DewarpingCameraCommand",
     DisengageComponent = "DisengageComponent",
     DisplayModeCameraCommand = "DisplayModeCameraCommand",
     DJIExecutionState = "DJIExecutionState",

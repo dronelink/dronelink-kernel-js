@@ -15,6 +15,7 @@ import { GeoLocation } from "../core/GeoLocation";
 import { ComponentContext } from "./ComponentContext";
 import { PlanRestrictionZone } from "..";
 import { PathComponentWaypoint } from "./PathComponentWaypoint";
+import { Message } from "../core/Message";
 export declare class PathComponentModel extends DroneMotionComponentModel<PathComponentModelSample> {
     parameters: PathComponentModelParameters;
     constructor(sample: LinkedValue<PathComponentModelSample>, parameters: PathComponentModelParameters);
@@ -23,9 +24,10 @@ export declare class PathComponentModel extends DroneMotionComponentModel<PathCo
 }
 export declare class PathComponentModelSample extends DroneMotionComponentModelSample implements Serializable {
     readonly type = TypeName.PathComponentModelSample;
+    segment: number;
     pathDistance: number;
     applyJSON(json: any): void;
-    constructor(pathDistance?: number, droneSpatial?: GeoSpatial, droneMotionLimits?: MotionLimits6, gimbalOrientations?: Dictionary<Orientation3Optional>, gimbalVelocities?: Dictionary<Velocity3>);
+    constructor(segment?: number, pathDistance?: number, droneSpatial?: GeoSpatial, droneMotionLimits?: MotionLimits6, gimbalOrientations?: Dictionary<Orientation3Optional>, gimbalVelocities?: Dictionary<Velocity3>, message?: Message | null);
     interpolate(next: PathComponentModelSample, percent: number, referenceSources: OrientationReferenceSources): PathComponentModelSample;
 }
 export declare class PathComponentModelParameter<V> {

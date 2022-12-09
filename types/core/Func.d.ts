@@ -22,6 +22,7 @@ export declare class Func extends Identifiable implements Serializable {
     introImageUrl: string | null;
     components: SubComponent[];
     inputs: FuncInput[];
+    init: string | null;
     common: string | null;
     dynamicInputs: string | null;
     mapOverlays: string | null;

@@ -25,6 +25,7 @@ import { Orientation3Optional } from "../core/Orientation3Optional";
 import { Altitude } from "../core/Altitude";
 import { MotionLimits6Optional } from "../core/MotionLimits6Optional";
 import { ComponentContext } from "./ComponentContext";
+import { Message } from "../core/Message";
 export declare class MapComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.MapComponent;
     spacing: MapSpacing;
@@ -127,6 +128,6 @@ export declare class MapComponentModel extends DroneMotionComponentModel<MapComp
 }
 export declare class MapComponentModelSample extends DroneMotionComponentModelSample {
     commandType: TypeName | null;
-    constructor(droneSpatial: GeoSpatial, droneMotionLimits: MotionLimits6, gimbalOrientations: Dictionary<Orientation3Optional>);
+    constructor(droneSpatial: GeoSpatial, droneMotionLimits: MotionLimits6, gimbalOrientations: Dictionary<Orientation3Optional>, message?: Message | null);
 }
 export {};
