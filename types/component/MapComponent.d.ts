@@ -1,4 +1,4 @@
-import { TypeName, CapturePriority, MapPattern, CameraMode, CameraPhotoMode, ExecutionEngine, MapDroneOrientationStrategy, MapSpacing } from "../core/Enums";
+import { TypeName, CapturePriority, MapPattern, CameraMode, CameraPhotoMode, ExecutionEngine, MapDroneOrientationStrategy, MapSpacing, CameraFocusMode } from "../core/Enums";
 import { ApproachableAlignment, ApproachableComponent } from "./ApproachableComponent";
 import { Serializable } from "../core/Serializable";
 import { Component } from "./Component";
@@ -26,6 +26,8 @@ import { Altitude } from "../core/Altitude";
 import { MotionLimits6Optional } from "../core/MotionLimits6Optional";
 import { ComponentContext } from "./ComponentContext";
 import { Message } from "../core/Message";
+import { FocusCameraCommand, FocusDistanceCameraCommand, FocusRingCameraCommand } from "..";
+import { CameraFocusCalibration } from "../core/CameraFocusCalibration";
 export declare class MapComponent extends ApproachableComponent implements Serializable {
     readonly type = TypeName.MapComponent;
     spacing: MapSpacing;
@@ -37,6 +39,10 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     direction: number;
     cameraMode: CameraMode;
     cameraPhotoMode: CameraPhotoMode;
+    cameraFocusMode: CameraFocusMode;
+    cameraFocusCommand: FocusCameraCommand | null;
+    cameraFocusDistanceCommand: FocusDistanceCameraCommand | null;
+    cameraFocusRingCommand: FocusRingCameraCommand | null;
     captureVerifyFileCreated: boolean;
     capturePriority: CapturePriority;
     captureDroneMotionLimits: MotionLimits6Optional;
@@ -61,6 +67,7 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     area(): number;
     verification(context: ComponentContext): Component | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
+    get cameraFocusCalibrationsRequired(): CameraFocusCalibration[];
     alignment(context: ComponentContext): ApproachableAlignment | null;
     get referenceOffsets(): Vector2[];
     referenceOffsetsHandleCoordinate(context: ComponentContext): GeoCoordinate;
@@ -116,6 +123,7 @@ declare class MapComponentSegmentPoint {
 }
 export declare class MapComponentModelData extends DroneMotionComponentModelData<MapComponentModelSample> {
     setupComponents: CommandComponent[];
+    addedInitialFocus: boolean;
     commandComponents: CommandComponent[];
     captureInterval: number;
     constructor(modelSample: LinkedValue<MapComponentModelSample>, captureInterval: number);

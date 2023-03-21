@@ -5,13 +5,13 @@ import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 import { MotionLimitsOptional } from "./MotionLimitsOptional";
 export declare class Constants {
-    static readonly Version = "4.3.0";
+    static readonly Version = "4.3.1";
     static readonly ExecuteFrequencyTargetDefault = 10;
     static readonly ExecuteFrequencyMinDefault = 5;
     static readonly ExecuteDelayStrikesMaxDefault = 5;
     static readonly ExecuteFrequencyTargetAutel = 5;
     static readonly ExecuteFrequencyMinAutel = 4;
-    static readonly SimulationUpdateInterval: number;
+    static readonly SimulationExecuteIntervalTarget: number;
     static readonly DroneConnectionLatency: number;
     static DroneMotionLimits: {
         Generic: () => MotionLimits6;
@@ -90,6 +90,7 @@ export declare class Constants {
     static readonly InspectionComponentOrientationGimbalThreshold: number;
     static readonly InspectionComponentAltitudeRange: number;
     static readonly MapComponentMaxHorizontalVelocity: number;
+    static readonly MapComponentMinHorizontalVelocity = 0.1;
     static readonly MapComponentMinCaptureInterval = 2;
     static readonly MapComponentFrontOverlap = 0.75;
     static readonly MapComponentSideOverlap = 0.7;

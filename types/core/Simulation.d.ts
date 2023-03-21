@@ -12,7 +12,6 @@ import { PlanComponent } from "../component/PlanComponent";
 import { Engagement } from "./Engagement";
 import { GeoSpatial } from "./GeoSpatial";
 export declare class Simulation {
-    updateInterval: number;
     executeIntervalTarget: number;
     preventThreadStarvation: boolean;
     context: Context;

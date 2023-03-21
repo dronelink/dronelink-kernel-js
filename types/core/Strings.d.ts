@@ -2612,6 +2612,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             pattern: string;
             direction: string;
             cameraMode: string;
+            cameraFocusMode: string;
             boundaryPoints: string;
             frontOverlap: string;
             sideOverlap: string;

@@ -68,6 +68,6 @@ export declare class Mission extends Executable implements Serializable {
     reengagementSpatial(drone: Drone): GeoSpatial | null;
     reengagement(drone: Drone): Mission | null;
     get assetManifest(): AssetManifest;
-    simulate(drone: Drone | null | undefined, metadata: any, wind: Vector2 | null | undefined, progress: (mission: Mission, timeline: Timeline) => boolean): Simulation;
+    simulate(drone: Drone | null | undefined, metadata: any, executeIntervalTarget: number | null | undefined, wind: Vector2 | null | undefined, progress: (mission: Mission, timeline: Timeline) => boolean): Simulation;
     toJSONForExecutionEngine(executionEngine: ExecutionEngine): any;
 }
