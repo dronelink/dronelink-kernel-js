@@ -61,6 +61,7 @@ declare class DestinationData {
     model: DroneMotionComponentModelData<DestinationComponentModelSample> | null;
     modelExecuted: boolean;
     gimbalOrientationComponents: CommandComponent[];
+    distanceFilter: any;
     constructor(startCoordinate: GeoCoordinate, totalDistance: number);
     progress(remainingDistance: number): number;
 }

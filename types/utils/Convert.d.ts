@@ -4,6 +4,7 @@ export declare class Convert {
     static feetToMeters(value: number): number;
     static metersToFeet(value: number): number;
     static metersToInches(value: number): number;
+    static milesToMeters(value: number): number;
     static milesPerHourToMetersPerSecond(value: number): number;
     static metersPerSecondToMilesPerHour(value: number): number;
     static metersPerSecondToKilometersPerHour(value: number): number;

@@ -5,6 +5,10 @@ export declare class Geometry {
     static angleDifferenceSigned(angle1: number, angle2: number): number;
     static roundedCorners(points: Point2[], radii: number[] | number | null, close?: boolean): Point2[][];
     static cardinalSplinePoint2(points: Point2[], close?: boolean, tension?: number, pointsPerSegment?: number): Point2[][];
+    static linearMapOffsets(boundaryPointOffsets: Vector2[], minimumSegmentLenth: number | null, minimumSegmentsAngle: number | null, clockwise: boolean, offsetDistance?: number): {
+        pathPoints: Vector2[];
+        mergedBoundaryPoints: Vector2[];
+    };
     static linearPathOffsets(boundarySegments: Line2[], orientation?: number, offsetDistance?: number, boundaryClosed?: boolean): Vector2[];
     static cardinalSpline(points: number[], tension?: number, pointsPerSegment?: number, close?: boolean): Float32Array;
     static polygonSegments(points: Point2[]): Line2[];
@@ -20,7 +24,7 @@ export declare class Geometry {
         segmentIndex: number;
     };
     static linesFromPoints(points: Point2[]): Line2[] | null;
-    static lineIntersectionLine(line1: Line2, line2: Line2): Point2 | null;
+    static lineIntersectionLine(line1: Line2, line2: Line2, extendInfinite?: boolean): Point2 | null;
     static lineIntersectionsCircle(line: Line2, circle: {
         center: Point2;
         radius: number;

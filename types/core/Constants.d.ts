@@ -5,12 +5,14 @@ import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 import { MotionLimitsOptional } from "./MotionLimitsOptional";
 export declare class Constants {
-    static readonly Version = "4.4.0";
+    static readonly Version = "4.4.1";
     static readonly ExecuteFrequencyTargetDefault = 10;
     static readonly ExecuteFrequencyMinDefault = 5;
     static readonly ExecuteDelayStrikesMaxDefault = 5;
     static readonly ExecuteFrequencyTargetAutel = 5;
     static readonly ExecuteFrequencyMinAutel = 4;
+    static readonly ExecuteFrequencyTargetDJIv5 = 20;
+    static readonly ExecuteFrequencyMinDJIv5 = 5;
     static readonly SimulationExecuteIntervalTarget: number;
     static readonly DroneConnectionLatency: number;
     static DroneMotionLimits: {
@@ -92,7 +94,6 @@ export declare class Constants {
     static readonly MapComponentMaxHorizontalVelocity: number;
     static readonly MapComponentMinHorizontalVelocity = 0.1;
     static readonly MapComponentMinCaptureInterval = 2;
-    static readonly MapComponentMinBoundarySegmentLength = 0.02;
     static readonly MapComponentFrontOverlap = 0.75;
     static readonly MapComponentSideOverlap = 0.7;
     static readonly MapComponentFrontDistance: number;
@@ -105,6 +106,9 @@ export declare class Constants {
     static readonly MapComponentTraverseFinalHeadingTime = 1;
     static readonly MapComponentTerrainFollowGranularity = 30;
     static readonly MapComponentLinearPatternDefaultPassCount = 2;
+    static readonly MapComponentLargeMapAreaMax: number;
+    static readonly MapComponentLinearPatternLargeMapSegmentsLengthMax: number;
+    static readonly MapComponentLinearPatternMinBoundarySegmentsAngle: number;
     static readonly MapComponentLinearPatternPathCornerRadius: number;
     static readonly MapComponentLinearPatternWidth: number;
     static readonly MapCameraSpecification: CameraSpecification;

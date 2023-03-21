@@ -13,6 +13,8 @@ export declare class Vector2 implements Serializable {
     toPoint2(): Point2;
     inverse(): Vector2;
     add(vector: Vector2): Vector2;
+    crossProduct(vector: Vector2): number;
+    dotProduct(vector: Vector2): number;
     addToSelf(vector: Vector2): void;
     subtract(vector: Vector2): Vector2;
     subtractFromSelf(vector: Vector2): void;

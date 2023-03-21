@@ -71,6 +71,7 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     get terrainFollow(): boolean;
     toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     area(): number;
+    mapPatternLinearSegmentsLengthApproximation(): number | null;
     verification(context: ComponentContext): Component | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
     get cameraFocusCalibrationsRequired(): CameraFocusCalibration[];
