@@ -60,6 +60,7 @@ export { GimbalMode } from "./core/Enums";
 export { InterpolationFunction } from "./core/Enums";
 export { MapDroneOrientationStrategy } from "./core/Enums";
 export { MapPattern } from "./core/Enums";
+export { MapPatternLinearStrategy } from "./core/Enums";
 export { MapSpacing } from "./core/Enums";
 export { MeasurementType } from "./core/Enums";
 export { MessageLevel } from "./core/Enums";
@@ -193,6 +194,7 @@ export { RemoteControllerSticksDroneCommand } from "./command/drone/RemoteContro
 export { ReturnHomeAltitudeDroneCommand } from "./command/drone/ReturnHomeAltitudeDroneCommand";
 export { SpotlightDroneCommand } from "./command/drone/SpotlightDroneCommand";
 export { SpotlightBrightnessDroneCommand } from "./command/drone/SpotlightBrightnessDroneCommand";
+export { DownwardAvoidanceDroneCommand } from "./command/drone/DownwardAvoidanceDroneCommand";
 export { ReturnHomeObstacleAvoidanceDroneCommand } from "./command/drone/ReturnHomeObstacleAvoidanceDroneCommand";
 export { ReturnHomeRemoteObstacleAvoidanceDroneCommand } from "./command/drone/ReturnHomeRemoteObstacleAvoidanceDroneCommand";
 export { SeriousLowBatteryWarningThresholdDroneCommand } from "./command/drone/SeriousLowBatteryWarningThresholdDroneCommand";

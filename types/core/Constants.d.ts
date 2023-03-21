@@ -5,7 +5,7 @@ import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 import { MotionLimitsOptional } from "./MotionLimitsOptional";
 export declare class Constants {
-    static readonly Version = "4.3.1";
+    static readonly Version = "4.4.0";
     static readonly ExecuteFrequencyTargetDefault = 10;
     static readonly ExecuteFrequencyMinDefault = 5;
     static readonly ExecuteDelayStrikesMaxDefault = 5;
@@ -92,6 +92,7 @@ export declare class Constants {
     static readonly MapComponentMaxHorizontalVelocity: number;
     static readonly MapComponentMinHorizontalVelocity = 0.1;
     static readonly MapComponentMinCaptureInterval = 2;
+    static readonly MapComponentMinBoundarySegmentLength = 0.02;
     static readonly MapComponentFrontOverlap = 0.75;
     static readonly MapComponentSideOverlap = 0.7;
     static readonly MapComponentFrontDistance: number;
@@ -103,6 +104,9 @@ export declare class Constants {
     static readonly MapComponentMinTargetDistance: number;
     static readonly MapComponentTraverseFinalHeadingTime = 1;
     static readonly MapComponentTerrainFollowGranularity = 30;
+    static readonly MapComponentLinearPatternDefaultPassCount = 2;
+    static readonly MapComponentLinearPatternPathCornerRadius: number;
+    static readonly MapComponentLinearPatternWidth: number;
     static readonly MapCameraSpecification: CameraSpecification;
     static readonly MapGimbalPitchLimits: Limits;
     static readonly OrbitComponentEstimateSampleDistance = 1;

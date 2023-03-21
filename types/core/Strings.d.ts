@@ -1952,6 +1952,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             };
         };
     };
+    DownwardAvoidanceDroneCommand: {
+        name: string;
+        values: {
+            enabled: string;
+        };
+    };
     Drone: {
         name: string;
         multiple: string;
@@ -2583,6 +2589,17 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     Line2: {
         name: string;
     };
+    MapPatternLinearStrategy: {
+        name: string;
+        values: {
+            passCount: {
+                name: string;
+            };
+            width: {
+                name: string;
+            };
+        };
+    };
     ListComponent: {
         name: string;
         multiple: string;
@@ -2613,7 +2630,10 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             direction: string;
             cameraMode: string;
             cameraFocusMode: string;
+            cornering: string;
+            cornerRadius: string;
             boundaryPoints: string;
+            boundaryLengthSubtitleSuffix: string;
             frontOverlap: string;
             sideOverlap: string;
             frontDistance: string;
@@ -2668,6 +2688,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             grid: {
+                name: string;
+            };
+            linear: {
                 name: string;
             };
         };

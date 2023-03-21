@@ -17,6 +17,7 @@ export declare class ComponentGenerator {
     static photo(context?: ComponentContext | null, coordinate?: GeoCoordinate | null, altitude?: number | null, heading?: number | null, pitch?: number | null): PhotoComponent;
     static pano(context?: ComponentContext | null, coordinate?: GeoCoordinate | null, altitude?: number | null, heading?: number | null): PanoComponent;
     static map(context?: ComponentContext | null, cameraSpecification?: CameraSpecification, coordinate?: GeoCoordinate | null): MapComponent;
+    static mapLinear(context: ComponentContext, cameraSpecification?: CameraSpecification, coordinate?: GeoCoordinate | null): MapComponent;
     static facade(context?: ComponentContext | null, cameraSpecification?: CameraSpecification, coordinate?: GeoCoordinate | null): FacadeComponent;
     static djiWaypointMission(context?: ComponentContext | null, coordinate?: GeoCoordinate | null, fromCoordinate?: GeoCoordinate | null): DJIWaypointMissionComponent;
     static solar(context?: ComponentContext | null, cameraSpecification?: CameraSpecification): MapComponent;

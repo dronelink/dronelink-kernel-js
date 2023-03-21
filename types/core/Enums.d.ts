@@ -625,6 +625,10 @@ export declare enum InterpolationFunction {
     Linear = "linear",
     Sigmoid = "sigmoid"
 }
+export declare enum MapPatternLinearStrategy {
+    PassCount = "passCount",
+    Width = "width"
+}
 export declare enum MeasurementType {
     Distance = "distance",
     VelocityHorizontal = "velocityHorizontal",
@@ -651,7 +655,8 @@ export declare enum MapDroneOrientationStrategy {
 }
 export declare enum MapPattern {
     Normal = "normal",
-    Grid = "grid"
+    Grid = "grid",
+    Linear = "linear"
 }
 export declare enum MapSpacing {
     CameraOverlaps = "cameraOverlaps",
@@ -741,6 +746,7 @@ export declare enum TypeName {
     DJIWaypointMissionComponentWaypoint = "DJIWaypointMissionComponentWaypoint",
     DJIWaypointMissionComponentWaypointAction = "DJIWaypointMissionComponentWaypointAction",
     DJIWaypointMissionComponentWaypointActionType = "DJIWaypointMissionComponentWaypointActionType",
+    DownwardAvoidanceDroneCommand = "DownwardAvoidanceDroneCommand",
     Drone = "Drone",
     DroneCommand = "DroneCommand",
     DroneMotionComponent = "DroneMotionComponent",

@@ -78,6 +78,7 @@ export declare class FacadeComponent extends ApproachableComponent implements Se
     addBoundaryPoint(boundaryPoint: FacadeComponentBoundaryPoint, context?: ComponentContext | null, index?: number | null): FacadeComponentBoundaryPoint;
     get boundaryClosed(): boolean;
     updateBoundaryPointCoordinate(index: number, coordinate: GeoCoordinate, context: ComponentContext): void;
+    get boundarySegmentsIntersect(): boolean;
     removeBoundaryPoint(boundaryPoint: FacadeComponentBoundaryPoint, context: ComponentContext): FacadeComponentBoundaryPoint;
     get boundaryPointsResolved(): FacadeComponentBoundaryPoint[];
     get boundaryPointOffsets(): Vector2[];
