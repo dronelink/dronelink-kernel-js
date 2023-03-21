@@ -101,8 +101,8 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     get boundarySegments(): Line2[];
     get boundaryLength(): number;
     private linearPatternPassCount;
-    private sideDistanceResolved;
-    linearPatternBoundaryWidth(context: ComponentContext): number | null;
+    sideDistanceResolved(context: ComponentContext): number;
+    private linearPatternBoundaryWidth;
     boundaryBoundingBox(rotation?: number): BoundingBox2;
     boundaryPointCoordinates(context: ComponentContext): GeoCoordinate[];
     boundaryPointCoordinate(context: ComponentContext, index: number): GeoCoordinate;
@@ -120,6 +120,7 @@ export declare class MapComponent extends ApproachableComponent implements Seria
     };
     startAltitude(context: ComponentContext): Altitude;
     model(context: ComponentContext, altitudeRequired?: boolean, timeRequired?: boolean): MapComponentModel | null;
+    private linearPathsOffsets;
     private segments;
     private applyElevationData;
 }

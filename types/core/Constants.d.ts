@@ -5,7 +5,7 @@ import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 import { MotionLimitsOptional } from "./MotionLimitsOptional";
 export declare class Constants {
-    static readonly Version = "4.4.1";
+    static readonly Version = "4.4.2";
     static readonly ExecuteFrequencyTargetDefault = 10;
     static readonly ExecuteFrequencyMinDefault = 5;
     static readonly ExecuteDelayStrikesMaxDefault = 5;
@@ -109,6 +109,7 @@ export declare class Constants {
     static readonly MapComponentLargeMapAreaMax: number;
     static readonly MapComponentLinearPatternLargeMapSegmentsLengthMax: number;
     static readonly MapComponentLinearPatternMinBoundarySegmentsAngle: number;
+    static readonly MapComponentLinearPatternMinSegmentLengthMultiplier = 0.5;
     static readonly MapComponentLinearPatternPathCornerRadius: number;
     static readonly MapComponentLinearPatternWidth: number;
     static readonly MapCameraSpecification: CameraSpecification;
