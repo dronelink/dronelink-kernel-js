@@ -5,14 +5,14 @@ import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 import { MotionLimitsOptional } from "./MotionLimitsOptional";
 export declare class Constants {
-    static readonly Version = "4.4.2";
+    static readonly Version = "4.5.0";
     static readonly ExecuteFrequencyTargetDefault = 10;
     static readonly ExecuteFrequencyMinDefault = 5;
     static readonly ExecuteDelayStrikesMaxDefault = 5;
     static readonly ExecuteFrequencyTargetAutel = 5;
     static readonly ExecuteFrequencyMinAutel = 4;
-    static readonly ExecuteFrequencyTargetDJIv5 = 20;
-    static readonly ExecuteFrequencyMinDJIv5 = 5;
+    static readonly ExecuteFrequencyTargetDJI2 = 20;
+    static readonly ExecuteFrequencyMinDJI2 = 5;
     static readonly SimulationExecuteIntervalTarget: number;
     static readonly DroneConnectionLatency: number;
     static DroneMotionLimits: {

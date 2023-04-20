@@ -924,6 +924,10 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             mavic3EnterpriseWide: string;
             mavic3EnterpriseZoomMin: string;
             mavic3EnterpriseThermal: string;
+            mavicMini3Pro: string;
+            mavicMini3Pro48MP: string;
+            mavicMini3: string;
+            mavicMini348MP: string;
             mavicMini2: string;
             mavicMiniSE: string;
             mavicMini: string;
@@ -1739,6 +1743,22 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         subtitle: string;
     };
+    CustomNetworkSettingsRTKCommand: {
+        name: string;
+        values: {
+            serverAddress: string;
+            port: string;
+            username: string;
+            password: string;
+            mountPoint: string;
+        };
+    };
+    CustomNetworkTransmittingRTKCommand: {
+        name: string;
+        values: {
+            enabled: string;
+        };
+    };
     Datetime: {
         name: string;
     };
@@ -2061,16 +2081,19 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
     DroneOcuSyncFrequencyBand: {
         name: string;
         values: {
+            "1dot4ghz": {
+                name: string;
+            };
             "2dot4ghz": {
                 name: string;
             };
-            "5dot8ghz": {
+            "5dot2ghz": {
                 name: string;
             };
             "5dot7ghz": {
                 name: string;
             };
-            "1dot4ghz": {
+            "5dot8ghz": {
                 name: string;
             };
             dual: {
@@ -2620,6 +2643,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             lowBatteryWarningThreshold: string;
         };
     };
+    MaintainAccuracyRTKCommand: {
+        name: string;
+        values: {
+            enabled: string;
+        };
+    };
     MapComponent: {
         name: string;
         multiple: string;
@@ -2900,6 +2929,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         values: {
             meteringMode: string;
+        };
+    };
+    ModuleRTKCommand: {
+        name: string;
+        values: {
+            enabled: string;
         };
     };
     Mode: {
@@ -3237,6 +3272,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             enabled: string;
         };
     };
+    ReferenceStationSourceRTKCommand: {
+        name: string;
+        values: {
+            referenceStationSource: string;
+        };
+    };
     RemoteController: {
         name: string;
         abbreviation: string;
@@ -3300,6 +3341,138 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                 name: string;
             };
             counterclockwise: {
+                name: string;
+            };
+        };
+    };
+    RTK: {
+        name: string;
+        abbreviation: string;
+    };
+    RTKCommand: {
+        name: string;
+        description: string;
+    };
+    RTKReferenceStationSource: {
+        name: string;
+        values: {
+            none: {
+                name: string;
+            };
+            qxNetworkService: {
+                name: string;
+            };
+            baseStation: {
+                name: string;
+            };
+            dps: {
+                name: string;
+            };
+            customNetworkService: {
+                name: string;
+            };
+            ntripNetworkService: {
+                name: string;
+            };
+            dockBase: {
+                name: string;
+            };
+            rsvRTKService2: {
+                name: string;
+            };
+            rsvRTKService3: {
+                name: string;
+            };
+            unknown: {
+                name: string;
+            };
+        };
+    };
+    RTKServiceState: {
+        name: string;
+        values: {
+            rtcmConnected: {
+                name: string;
+            };
+            rtcmNormal: {
+                name: string;
+            };
+            rtcmUserHasActivate: {
+                name: string;
+            };
+            rtmcUserAccountExpiresSoon: {
+                name: string;
+            };
+            rtcmUserDefaultMountPoint: {
+                name: string;
+            };
+            rtcmAuthFailed: {
+                name: string;
+            };
+            rtcmUserNotBounded: {
+                name: string;
+            };
+            rtcmUserNotActivated: {
+                name: string;
+            };
+            accountExpired: {
+                name: string;
+            };
+            rtcmIllegalUtcTime: {
+                name: string;
+            };
+            rtcmSetCoordinateFailure: {
+                name: string;
+            };
+            rtcmConnecting: {
+                name: string;
+            };
+            rtcmActivatedFailed: {
+                name: string;
+            };
+            disabled: {
+                name: string;
+            };
+            aircraftDisconnected: {
+                name: string;
+            };
+            connecting: {
+                name: string;
+            };
+            transmitting: {
+                name: string;
+            };
+            loginFailure: {
+                name: string;
+            };
+            invalidRequest: {
+                name: string;
+            };
+            accountError: {
+                name: string;
+            };
+            networkNotReachable: {
+                name: string;
+            };
+            serverNotReachable: {
+                name: string;
+            };
+            serviceSuspension: {
+                name: string;
+            };
+            disconnected: {
+                name: string;
+            };
+            ready: {
+                name: string;
+            };
+            sendGgaNoValidBase: {
+                name: string;
+            };
+            rtkStartProcessing: {
+                name: string;
+            };
+            unknown: {
                 name: string;
             };
         };

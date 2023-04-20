@@ -564,8 +564,9 @@ export declare enum DroneOcuSyncChannelSelectionMode {
 }
 export declare enum DroneOcuSyncFrequencyBand {
     _2dot4ghz = "2dot4ghz",
-    _5dot8ghz = "5dot8ghz",
+    _5dot2ghz = "5dot2ghz",
     _5dot7ghz = "5dot7ghz",
+    _5dot8ghz = "5dot8ghz",
     _1dot4ghz = "1dot4ghz",
     Dual = "dual",
     Unknown = "unknown"
@@ -574,6 +575,48 @@ export declare enum DroneRotationMode {
     None = "none",
     Heading = "heading",
     Velocity = "velocity"
+}
+export declare enum RTKReferenceStationSource {
+    None = "none",
+    QXNetworkService = "qxNetworkService",
+    BaseStation = "baseStation",
+    DPS = "dps",
+    CustomNetworkService = "customNetworkService",
+    NTRIPNetworkService = "ntripNetworkService",
+    DockBase = "dockBase",
+    RSVRTKService2 = "rsvRTKService2",
+    RSVRTKService3 = "rsvRTKService3",
+    Unknown = "unknown"
+}
+export declare enum RTKServiceState {
+    RTCMConnected = "rtcmConnected",
+    RTCMNormal = "rtcmNormal",
+    RTCMUserHasActivate = "rtcmUserHasActivate",
+    RTCMUserAccountExpiresSoon = "rtcmUserAccountExpiresSoon",
+    RTCMUseDefaultMountPoint = "rtcmUseDefaultMountPoint",
+    RTCMAuthFailed = "rtcmAuthFailed",
+    RTCMUserNotBounded = "rtcmUserNotBounded",
+    RTCMUserNotActivated = "rtcmUserNotActivated",
+    AccountExpired = "accountExpired",
+    RTCMIllegalUtcTime = "rtcmIllegalUtcTime",
+    RTCMSetCoordinateFailure = "rtcmSetCoordinateFailure",
+    RTCMConnecting = "rtcmConnecting",
+    RTCMActivatedFailed = "rtcmActivatedFailed",
+    Disabled = "disabled",
+    AircraftDisconnected = "aircraftDisconnected",
+    Connecting = "connecting",
+    Transmitting = "transmitting",
+    LoginFailure = "loginFailure",
+    InvalidRequest = "invalidRequest",
+    AccountError = "accountError",
+    NetworkNotReachable = "networkNotReachable",
+    ServerNotReachable = "serverNotReachable",
+    ServiceSuspension = "serviceSuspension",
+    Disconnected = "disconnected",
+    Ready = "ready",
+    SendGgaNoValidBase = "sendGgaNoValidBase",
+    RtkStartProcessing = "rtkStartProcessing",
+    Unknown = "unknown"
 }
 export declare enum ExecutionEngine {
     DronelinkKernel = "dronelinkKernel",
@@ -732,6 +775,8 @@ export declare enum TypeName {
     ConnectionFailSafeBehaviorDroneCommand = "ConnectionFailSafeBehaviorDroneCommand",
     ContrastCameraCommand = "ContrastCameraCommand",
     CourseComponent = "CourseComponent",
+    CustomNetworkSettingsRTKCommand = "CustomNetworkSettingsRTKCommand",
+    CustomNetworkTransmittingRTKCommand = "CustomNetworkTransmittingRTKCommand",
     Datetime = "Datetime",
     Descriptors = "Descriptors",
     Disengagement = "Disengagement",
@@ -795,6 +840,7 @@ export declare enum TypeName {
     Line2 = "Line2",
     ListComponent = "ListComponent",
     LowBatteryWarningThresholdDroneCommand = "LowBatteryWarningThresholdDroneCommand",
+    MaintainAccuracyRTKCommand = "MaintainAccuracyRTKCommand",
     MapComponent = "MapComponent",
     MapComponentBoundaryPoint = "MapComponentBoundaryPoint",
     MaxAltitudeDroneCommand = "MaxAltitudeDroneCommand",
@@ -810,6 +856,7 @@ export declare enum TypeName {
     ModeSession = "ModeSession",
     ModeCameraCommand = "ModeCameraCommand",
     ModeGimbalCommand = "ModeGimbalCommand",
+    ModuleRTKCommand = "ModuleRTKCommand",
     MotionLimits = "MotionLimits",
     MotionLimitsOptional = "MotionLimitsOptional",
     MotionLimits3 = "MotionLimits3",
@@ -841,6 +888,7 @@ export declare enum TypeName {
     PointOfInterest = "PointOfInterest",
     Position3 = "Position3",
     PrecisionLandingDroneCommand = "PrecisionLandingDroneCommand",
+    ReferenceStationSourceRTKCommand = "ReferenceStationSourceRTKCommand",
     RemoteController = "RemoteController",
     RemoteControllerButton = "RemoteControllerButton",
     RemoteControllerStick = "RemoteControllerStick",

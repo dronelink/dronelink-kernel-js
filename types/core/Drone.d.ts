@@ -18,6 +18,7 @@ import { CameraSpecification } from "..";
 export declare class Drone extends Identifiable implements Serializable {
     readonly type = TypeName.Drone;
     model: string | null;
+    adapterName: string | null;
     manufacturer: string | null;
     serialNumber: string | null;
     takeoffCoordinate: GeoCoordinate;
