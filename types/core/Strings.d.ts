@@ -108,6 +108,13 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             enabled: string;
         };
     };
+    AuxiliaryLightModeDroneCommand: {
+        name: string;
+        values: {
+            auxiliaryLightPosition: string;
+            auxiliaryLightMode: string;
+        };
+    };
     Battery: {
         name: string;
         multiple: string;
@@ -1982,6 +1989,40 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         name: string;
         multiple: string;
     };
+    DroneAuxiliaryLightMode: {
+        name: string;
+        values: {
+            auto: {
+                name: string;
+            };
+            on: {
+                name: string;
+            };
+            off: {
+                name: string;
+            };
+            beacon: {
+                name: string;
+            };
+            unknown: {
+                name: string;
+            };
+        };
+    };
+    DroneAuxiliaryLightPosition: {
+        name: string;
+        values: {
+            bottom: {
+                name: string;
+            };
+            top: {
+                name: string;
+            };
+            unknown: {
+                name: string;
+            };
+        };
+    };
     DroneCommand: {
         name: string;
         description: string;
@@ -2931,6 +2972,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             meteringMode: string;
         };
     };
+    ModuleLiveStreamingCommand: {
+        name: string;
+        values: {
+            enabled: string;
+        };
+    };
     ModuleRTKCommand: {
         name: string;
         values: {
@@ -3475,6 +3522,12 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             unknown: {
                 name: string;
             };
+        };
+    };
+    RTMPSettingsLiveStreamingCommand: {
+        name: string;
+        values: {
+            url: string;
         };
     };
     SaturationCameraCommand: {

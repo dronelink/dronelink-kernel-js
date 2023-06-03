@@ -43,6 +43,8 @@ export { DJIWaypointMissionGotoWaypointMode } from "./core/Enums";
 export { DJIWaypointMissionHeadingMode } from "./core/Enums";
 export { DJIWaypointMissionFinishedAction } from "./core/Enums";
 export { DJIWaypointTurnMode } from "./core/Enums";
+export { DroneAuxiliaryLightMode } from "./core/Enums";
+export { DroneAuxiliaryLightPosition } from "./core/Enums";
 export { DroneConnectionFailSafeBehavior } from "./core/Enums";
 export { DroneLightbridgeChannelSelectionMode } from "./core/Enums";
 export { DroneLightbridgeFrequencyBand } from "./core/Enums";
@@ -173,6 +175,7 @@ export { RemoteControllerCommand } from "./command/remotecontroller/RemoteContro
 export { RTKCommand } from "./command/rtk/RTKCommand";
 export { CameraCommand } from "./command/camera/CameraCommand";
 export { GimbalCommand } from "./command/gimbal/GimbalCommand";
+export { AuxiliaryLightModeDroneCommand } from "./command/drone/AuxiliaryLightModeDroneCommand";
 export { BeaconDroneCommand } from "./command/drone/BeaconDroneCommand";
 export { CollisionAvoidanceDroneCommand } from "./command/drone/CollisionAvoidanceDroneCommand";
 export { ConnectionFailSafeBehaviorDroneCommand } from "./command/drone/ConnectionFailSafeBehaviorDroneCommand";
@@ -211,6 +214,8 @@ export { CustomNetworkTransmittingRTKCommand } from "./command/rtk/CustomNetwork
 export { MaintainAccuracyRTKCommand } from "./command/rtk/MaintainAccuracyRTKCommand";
 export { ModuleRTKCommand } from "./command/rtk/ModuleRTKCommand";
 export { ReferenceStationSourceRTKCommand } from "./command/rtk/ReferenceStationSourceRTKCommand";
+export { ModuleLiveStreamingCommand } from "./command/livestreaming/ModuleLiveStreamingCommand";
+export { RTMPSettingsLiveStreamingCommand } from "./command/livestreaming/RTMPSettingsLiveStreamingCommand";
 export { AEBCountCameraCommand } from "./command/camera/AEBCountCameraCommand";
 export { ApertureCameraCommand } from "./command/camera/ApertureCameraCommand";
 export { AutoExposureLockCameraCommand } from "./command/camera/AutoExposureLockCameraCommand";

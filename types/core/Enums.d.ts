@@ -540,6 +540,18 @@ export declare enum DJIWaypointTurnMode {
     Clockwise = "clockwise",
     DJIWaypointTurnCounterClockwise = "counterClockwise"
 }
+export declare enum DroneAuxiliaryLightMode {
+    Auto = "auto",
+    On = "on",
+    Off = "off",
+    Beacon = "beacon",
+    Unknown = "unknown"
+}
+export declare enum DroneAuxiliaryLightPosition {
+    Bottom = "bottom",
+    Top = "top",
+    Unknown = "unknown"
+}
 export declare enum DroneConnectionFailSafeBehavior {
     Hover = "hover",
     ReturnHome = "returnHome",
@@ -755,6 +767,7 @@ export declare enum TypeName {
     AssetSource = "AssetSource",
     AutoExposureLockCameraCommand = "AutoExposureLockCameraCommand",
     AutoLockGimbalCameraCommand = "AutoLockGimbalCameraCommand",
+    AuxiliaryLightModeDroneCommand = "AuxiliaryLightModeDroneCommand",
     BeaconDroneCommand = "BeaconDroneCommand",
     Camera = "Camera",
     CameraFile = "CameraFile",
@@ -856,6 +869,7 @@ export declare enum TypeName {
     ModeSession = "ModeSession",
     ModeCameraCommand = "ModeCameraCommand",
     ModeGimbalCommand = "ModeGimbalCommand",
+    ModuleLiveStreamingCommand = "ModuleLiveStreamingCommand",
     ModuleRTKCommand = "ModuleRTKCommand",
     MotionLimits = "MotionLimits",
     MotionLimitsOptional = "MotionLimitsOptional",
@@ -898,6 +912,7 @@ export declare enum TypeName {
     ReturnHomeObstacleAvoidanceDroneCommand = "ReturnHomeObstacleAvoidanceDroneCommand",
     ReturnHomeRemoteObstacleAvoidanceDroneCommand = "ReturnHomeRemoteObstacleAvoidanceDroneCommand",
     RotationComponent = "RotationComponent",
+    RTMPSettingsLiveStreamingCommand = "RTMPSettingsLiveStreamingCommand",
     SaturationCameraCommand = "SaturationCameraCommand",
     SeriousLowBatteryWarningThresholdDroneCommand = "SeriousLowBatteryWarningThresholdDroneCommand",
     SharpnessCameraCommand = "SharpnessCameraCommand",

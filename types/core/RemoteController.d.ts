@@ -9,9 +9,25 @@ export declare class RemoteController extends Identifiable implements Serializab
     leftStick: RemoteControllerStick;
     leftWheel: RemoteControllerWheel;
     rightStick: RemoteControllerStick;
+    captureButton: RemoteControllerButton;
+    videoButton: RemoteControllerButton;
+    photoButton: RemoteControllerButton;
     pauseButton: RemoteControllerButton;
+    returnHomeButton: RemoteControllerButton;
+    functionButton: RemoteControllerButton;
     c1Button: RemoteControllerButton;
     c2Button: RemoteControllerButton;
+    c3Button: RemoteControllerButton;
+    upButton: RemoteControllerButton;
+    downButton: RemoteControllerButton;
+    leftButton: RemoteControllerButton;
+    rightButton: RemoteControllerButton;
+    l1Button: RemoteControllerButton;
+    l2Button: RemoteControllerButton;
+    l3Button: RemoteControllerButton;
+    r1Button: RemoteControllerButton;
+    r2Button: RemoteControllerButton;
+    r3Button: RemoteControllerButton;
     applyJSON(json: any): void;
     constructor(channel?: number);
 }
