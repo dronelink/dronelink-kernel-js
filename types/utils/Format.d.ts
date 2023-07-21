@@ -1,7 +1,8 @@
-import { UnitSystem } from "../core/Enums";
+import { Locale, UnitSystem } from "../core/Enums";
 import { GeoCoordinate } from "../core/GeoCoordinate";
 import { GroundSampleDistance } from "../core/CameraSpecification";
 export declare class Format {
+    static Locale: Locale;
     static UnitSystem: UnitSystem;
     static string(key: string): string;
     static velocityHorizontal(value?: number, precise?: boolean): FormattedValue;

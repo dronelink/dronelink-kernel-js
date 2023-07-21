@@ -953,7 +953,25 @@ export declare enum TypeName {
     WhiteBalanceCustomCameraCommand = "WhiteBalanceCustomCameraCommand",
     YawSimultaneousFollowGimbalCommand = "YawSimultaneousFollowGimbalCommand",
     Zone = "Zone",
-    ZoneBoundaryPoint = "ZoneBoundaryPoint"
+    ZoneBoundaryPoint = "ZoneBoundaryPoint",
+    ZoomPercentCameraCommand = "ZoomPercentCameraCommand",
+    ZoomRatioCameraCommand = "ZoomRatioCameraCommand"
+}
+export declare enum Locale {
+    System = "",
+    English = "en",
+    French = "fr",
+    German = "de",
+    Italian = "it",
+    Portuguese = "pt",
+    Spanish = "es",
+    Urdu = "ur",
+    Hindi = "hi",
+    Indonesian = "id",
+    Polish = "pl",
+    Romanian = "ro",
+    Russian = "ru",
+    Swedish = "sv"
 }
 export declare enum UnitSystem {
     Metric = "metric",
