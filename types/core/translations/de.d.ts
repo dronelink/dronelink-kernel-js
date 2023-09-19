@@ -2427,6 +2427,7 @@ declare const _default: {
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -3841,20 +3842,6 @@ declare const _default: {
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {

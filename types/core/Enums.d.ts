@@ -973,14 +973,10 @@ export declare enum Locale {
     Russian = "ru",
     Swedish = "sv"
 }
+export declare var AllLocales: Locale[];
 export declare enum UnitSystem {
     Metric = "metric",
     Imperial = "imperial"
-}
-export declare enum UserInterfaceDashboardFlavor {
-    Any = "any",
-    Dronelink1 = "dronelink1",
-    Dronelink2 = "dronelink2"
 }
 export declare enum UserInterfaceMapTracking {
     NoChange = "noChange",

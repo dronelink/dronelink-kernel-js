@@ -15,6 +15,14 @@ export declare class FuncMapOverlay {
     color: string;
     constructor(coordinates: GeoCoordinate[], color?: string);
 }
+declare type NameDictionary = {
+    [name: string]: string;
+};
+declare type TranslationsDict = {
+    [locale: string]: {
+        [variable: string]: string;
+    };
+};
 export declare class Func extends Identifiable implements Serializable {
     readonly type = TypeName.Func;
     coordinate: GeoCoordinate;
@@ -22,6 +30,7 @@ export declare class Func extends Identifiable implements Serializable {
     introImageUrl: string | null;
     components: SubComponent[];
     inputs: FuncInput[];
+    localizations: string | null;
     init: string | null;
     common: string | null;
     dynamicInputs: string | null;
@@ -35,7 +44,12 @@ export declare class Func extends Identifiable implements Serializable {
     get subtitle(): string;
     get urls(): string[];
     private get inputsVariableValuesNamed();
+    private findLocalization;
     private evaluate;
+    localizeStringsMany(toLocalize: NameDictionary): TranslationsDict;
+    localizeStringOne(str: string, locale?: string | null): string;
+    localizeCloneInput(input: any, locale?: string | null): any;
+    parseAndLocalize(str: string, locale: string | null): string;
     validateSyntax(drone?: Drone | null): void;
     private nextDynamicInput;
     addNextDynamicInput(drone?: Drone | null, device?: Device | null, metadata?: any, syntaxValidation?: boolean): FuncInput | null;
@@ -57,3 +71,4 @@ export declare class FuncInputExtensions implements Serializable {
     gimbalControlsVisible: boolean;
     applyJSON(json: any): void;
 }
+export {};

@@ -1,4 +1,4 @@
-import { TypeName, UserInterfaceDashboardFlavor, UserInterfaceMapTracking } from "./Enums";
+import { TypeName, UserInterfaceMapTracking } from "./Enums";
 import { Serializable } from "./Serializable";
 export declare class UserInterfaceSettings implements Serializable {
     readonly type = TypeName.UserInterfaceSettings;
@@ -7,7 +7,6 @@ export declare class UserInterfaceSettings implements Serializable {
     missionSummaryExtended: Boolean | null;
     missionDetailsExpanded: Boolean | null;
     mapTracking: UserInterfaceMapTracking;
-    dashboardFlavor: UserInterfaceDashboardFlavor;
     gimbalOrientationVisible: Boolean | null;
     applyJSON(json: any): void;
     get reticalImageUrl(): string | null;

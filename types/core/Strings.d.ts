@@ -2428,6 +2428,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -3842,20 +3843,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {
@@ -6549,6 +6536,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -7963,20 +7951,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {
@@ -10670,6 +10644,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -12084,20 +12059,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {
@@ -14791,6 +14752,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -16205,20 +16167,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {
@@ -18912,6 +18860,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -20326,20 +20275,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {
@@ -23033,6 +22968,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -24447,20 +24383,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {
@@ -27154,6 +27076,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -28568,20 +28491,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {
@@ -31275,6 +31184,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -32689,20 +32599,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {
@@ -35396,6 +35292,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -36810,20 +36707,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {
@@ -39517,6 +39400,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -40931,20 +40815,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {
@@ -43638,6 +43508,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -45052,20 +44923,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {
@@ -47759,6 +47616,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -49173,20 +49031,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {
@@ -51880,6 +51724,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             introImageUrl: string;
             components: string;
             inputs: string;
+            localizations: string;
             init: string;
             common: string;
             dynamicInputs: string;
@@ -53294,20 +53139,6 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             missionSummaryExtended: string;
             missionDetailsExpanded: string;
             gimbalOrientationVisible: string;
-        };
-    };
-    UserInterfaceDashboardFlavor: {
-        name: string;
-        values: {
-            any: {
-                name: string;
-            };
-            dronelink1: {
-                name: string;
-            };
-            dronelink2: {
-                name: string;
-            };
         };
     };
     UserInterfaceMapTracking: {
