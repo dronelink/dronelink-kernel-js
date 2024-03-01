@@ -569,6 +569,16 @@ export declare enum DroneLightbridgeFrequencyBand {
     _5dot8ghz = "5dot8ghz",
     Unknown = "unknown"
 }
+export declare enum DroneObstacleAvoidanceDirection {
+    Horizontal = "horizontal",
+    Upward = "upward",
+    Downward = "downward"
+}
+export declare enum DroneObstacleAvoidanceMode {
+    Brake = "brake",
+    Avoid = "avoid",
+    Off = "off"
+}
 export declare enum DroneOcuSyncChannelSelectionMode {
     Auto = "auto",
     Manual = "manual",
@@ -877,6 +887,9 @@ export declare enum TypeName {
     MotionLimits3Optional = "MotionLimits3Optional",
     MotionLimits6 = "MotionLimits6",
     MotionLimits6Optional = "MotionLimits6Optional",
+    ObstacleAvoidanceBrakingDistanceDroneCommand = "ObstacleAvoidanceBrakingDistanceDroneCommand",
+    ObstacleAvoidanceModeDroneCommand = "ObstacleAvoidanceModeDroneCommand",
+    ObstacleAvoidanceWarningDistanceDroneCommand = "ObstacleAvoidanceWarningDistanceDroneCommand",
     OcuSyncChannelDroneCommand = "OcuSyncChannelDroneCommand",
     OcuSyncChannelSelectionModeDroneCommand = "OcuSyncChannelSelectionModeDroneCommand",
     OcuSyncFrequencyBandDroneCommand = "OcuSyncFrequencyBandDroneCommand",
@@ -909,6 +922,7 @@ export declare enum TypeName {
     RemoteControllerSticksDroneCommand = "RemoteControllerSticksDroneCommand",
     RemoteControllerWheel = "RemoteControllerWheel",
     ReturnHomeAltitudeDroneCommand = "ReturnHomeAltitudeDroneCommand",
+    ReturnHomeDroneCommand = "ReturnHomeDroneCommand",
     ReturnHomeObstacleAvoidanceDroneCommand = "ReturnHomeObstacleAvoidanceDroneCommand",
     ReturnHomeRemoteObstacleAvoidanceDroneCommand = "ReturnHomeRemoteObstacleAvoidanceDroneCommand",
     RotationComponent = "RotationComponent",

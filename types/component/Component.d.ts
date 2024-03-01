@@ -44,9 +44,11 @@ export declare abstract class Component extends Identifiable implements Serializ
     get singleton(): boolean;
     get exclusiveReadonly(): boolean;
     get exclusiveExecution(): boolean;
+    get splittable(): boolean;
     get executionEngines(): ExecutionEngine[];
     executionEngineSupported(executionEngine: ExecutionEngine): boolean;
     toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
+    split(context: ComponentContext, params?: any | null): Component[] | null;
     cameraCaptureConfigurationsEnabled(context?: ComponentExecuteContext | null): boolean;
     get cameraFocusCalibrationsRequired(): CameraFocusCalibration[];
     get referenceOffsets(): Vector2[];

@@ -31,7 +31,9 @@ export declare class InspectionComponent extends ApproachableComponent implement
     inspectionPoints: InspectionComponentInspectionPoint[];
     applyJSON(json: any): void;
     get subtitle(): string;
+    get splittable(): boolean;
     toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
+    split(context: ComponentContext, params?: any | null): SubComponent[] | null;
     verification(context: ComponentContext): Component | null;
     get inspectionPointOffsets(): Vector2[];
     inspectionPointSpatials(context: ComponentContext): GeoSpatial[];

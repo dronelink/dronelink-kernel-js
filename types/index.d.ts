@@ -48,6 +48,8 @@ export { DroneAuxiliaryLightPosition } from "./core/Enums";
 export { DroneConnectionFailSafeBehavior } from "./core/Enums";
 export { DroneLightbridgeChannelSelectionMode } from "./core/Enums";
 export { DroneLightbridgeFrequencyBand } from "./core/Enums";
+export { DroneObstacleAvoidanceDirection } from "./core/Enums";
+export { DroneObstacleAvoidanceMode } from "./core/Enums";
 export { DroneOcuSyncChannelSelectionMode } from "./core/Enums";
 export { DroneOcuSyncFrequencyBand } from "./core/Enums";
 export { DroneRotationMode } from "./core/Enums";
@@ -193,6 +195,9 @@ export { LowBatteryWarningThresholdDroneCommand } from "./command/drone/LowBatte
 export { MaxAltitudeDroneCommand } from "./command/drone/MaxAltitudeDroneCommand";
 export { MaxDistanceDroneCommand } from "./command/drone/MaxDistanceDroneCommand";
 export { MaxDistanceLimitationDroneCommand } from "./command/drone/MaxDistanceLimitationDroneCommand";
+export { ObstacleAvoidanceBrakingDistanceDroneCommand } from "./command/drone/ObstacleAvoidanceBrakingDistanceDroneCommand";
+export { ObstacleAvoidanceModeDroneCommand } from "./command/drone/ObstacleAvoidanceModeDroneCommand";
+export { ObstacleAvoidanceWarningDistanceDroneCommand } from "./command/drone/ObstacleAvoidanceWarningDistanceDroneCommand";
 export { OcuSyncChannelDroneCommand } from "./command/drone/OcuSyncChannelDroneCommand";
 export { OcuSyncChannelSelectionModeDroneCommand } from "./command/drone/OcuSyncChannelSelectionModeDroneCommand";
 export { OcuSyncFrequencyBandDroneCommand } from "./command/drone/OcuSyncFrequencyBandDroneCommand";
@@ -200,6 +205,7 @@ export { OcuSyncVideoFeedSourcesDroneCommand } from "./command/drone/OcuSyncVide
 export { PrecisionLandingDroneCommand } from "./command/drone/PrecisionLandingDroneCommand";
 export { RemoteControllerSticksDroneCommand } from "./command/drone/RemoteControllerSticksDroneCommand";
 export { ReturnHomeAltitudeDroneCommand } from "./command/drone/ReturnHomeAltitudeDroneCommand";
+export { ReturnHomeDroneCommand } from "./command/drone/ReturnHomeDroneCommand";
 export { SpotlightDroneCommand } from "./command/drone/SpotlightDroneCommand";
 export { SpotlightBrightnessDroneCommand } from "./command/drone/SpotlightBrightnessDroneCommand";
 export { DownwardAvoidanceDroneCommand } from "./command/drone/DownwardAvoidanceDroneCommand";

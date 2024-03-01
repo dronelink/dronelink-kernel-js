@@ -21,6 +21,7 @@ export declare class GeoSpatial implements Serializable {
     applyVelocity(time: number): void;
     interpolate(spatial: GeoSpatial, referenceSources: OrientationReferenceSources, referenceTargets: OrientationReferenceTargets, interpolate: (start: number, finish: number) => number): GeoSpatial;
     projectCoordinate(time: number): GeoCoordinate;
+    projectPossibleCoordinates(time: number, velocityMax?: number | null, heuristic?: string | null): GeoCoordinate[];
     projectAltitude(time: number): Altitude;
     projectOrientation(time: number): Orientation3;
     offset(to: GeoSpatial): Vector2;

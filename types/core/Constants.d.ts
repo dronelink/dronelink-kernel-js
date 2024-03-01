@@ -5,7 +5,7 @@ import { MotionLimits3 } from "./MotionLimits3";
 import { Orientation3Optional } from "./Orientation3Optional";
 import { MotionLimitsOptional } from "./MotionLimitsOptional";
 export declare class Constants {
-    static readonly Version = "4.8.0";
+    static readonly Version = "4.9.0";
     static readonly ExecuteFrequencyTargetDefault = 10;
     static readonly ExecuteFrequencyMinDefault = 5;
     static readonly ExecuteDelayStrikesMaxDefault = 5;
@@ -135,6 +135,8 @@ export declare class Constants {
     static readonly ReturnHomeAltitudeDroneCommandValue: number;
     static readonly MaxAltitudeDroneCommandValue: number;
     static readonly MaxDistanceDroneCommandValue: number;
+    static readonly ObstacleAvoidanceBrakingDistanceDroneCommandValue = 1;
+    static readonly ObstacleAvoidanceWarningDistanceDroneCommandValue = 1.1;
     static readonly PhotoIntervalCommandValue = 2;
     static readonly ZoneMaxAltitude: number;
     static readonly ZoneEdgeBufferDistance = 0.1;

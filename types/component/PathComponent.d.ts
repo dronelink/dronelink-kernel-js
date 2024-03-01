@@ -17,6 +17,7 @@ import { GeoSpatial } from "../core/GeoSpatial";
 import { DroneMotionComponentModelData } from "./DroneMotionComponent";
 import { ComponentEstimateContext } from "./ComponentEstimateContext";
 import { Component } from "./Component";
+import { SubComponent } from "./SubComponent";
 import { ComponentContext } from "./ComponentContext";
 import { LinkedValue } from "../core/LinkedValue";
 export declare class PathComponent extends ApproachableComponent implements Serializable {
@@ -27,6 +28,7 @@ export declare class PathComponent extends ApproachableComponent implements Seri
     markers: PathComponentMarker[];
     applyJSON(json: any): void;
     get subtitle(): string;
+    get splittable(): boolean;
     toComponentForExecutionEngine(executionEngine: ExecutionEngine, context: ComponentContext): Component | null;
     verification(context: ComponentContext): Component | null;
     get pointsOfInterestEnabled(): boolean;
@@ -40,10 +42,8 @@ export declare class PathComponent extends ApproachableComponent implements Seri
     centerCoordinate(context: ComponentContext): GeoCoordinate;
     waypointCoordinate(context: ComponentContext, index: number): GeoCoordinate;
     waypointCoordinates(context: ComponentContext): GeoCoordinate[];
-    divide(context: ComponentContext, element: PathComponentWaypoint | PathComponentMarker): {
-        a: PathComponent | null;
-        b: PathComponent | null;
-    };
+    private splitResults;
+    split(context: ComponentContext, params?: any | null): SubComponent[] | null;
     get firstWaypointApproachMismatched(): boolean;
     insertValidFirstWaypoint(): void;
     approachDestinationOffsetUpdated(context: ComponentContext): void;

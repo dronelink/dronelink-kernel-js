@@ -1791,6 +1791,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         values: {
             destinationOffset: string;
+            destinationTakeoffCoordinate: string;
             achievement: string;
             achievementTime: string;
             achievementDistance: string;
@@ -2110,6 +2111,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     distance: string;
                     altitude: string;
                 };
+            };
+        };
+    };
+    DroneObstacleAvoidanceDirection: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            upward: {
+                name: string;
+            };
+            downward: {
+                name: string;
+            };
+        };
+    };
+    DroneObstacleAvoidanceMode: {
+        name: string;
+        values: {
+            brake: {
+                name: string;
+            };
+            avoid: {
+                name: string;
+            };
+            off: {
+                name: string;
             };
         };
     };
@@ -3032,6 +3061,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             rotational: string;
         };
     };
+    ObstacleAvoidanceBrakingDistanceDroneCommand: {
+        name: string;
+        values: {
+            brakingDistance: string;
+        };
+    };
+    ObstacleAvoidanceModeDroneCommand: {
+        name: string;
+        values: {
+            avoidanceMode: string;
+        };
+    };
+    ObstacleAvoidanceWarningDistanceDroneCommand: {
+        name: string;
+        values: {
+            warningDistance: string;
+        };
+    };
     OcuSyncChannelDroneCommand: {
         name: string;
         values: {
@@ -3366,6 +3413,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             returnHomeAltitude: string;
         };
+    };
+    ReturnHomeDroneCommand: {
+        name: string;
     };
     ReturnHomeObstacleAvoidanceDroneCommand: {
         name: string;
@@ -5899,6 +5949,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         values: {
             destinationOffset: string;
+            destinationTakeoffCoordinate: string;
             achievement: string;
             achievementTime: string;
             achievementDistance: string;
@@ -6218,6 +6269,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     distance: string;
                     altitude: string;
                 };
+            };
+        };
+    };
+    DroneObstacleAvoidanceDirection: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            upward: {
+                name: string;
+            };
+            downward: {
+                name: string;
+            };
+        };
+    };
+    DroneObstacleAvoidanceMode: {
+        name: string;
+        values: {
+            brake: {
+                name: string;
+            };
+            avoid: {
+                name: string;
+            };
+            off: {
+                name: string;
             };
         };
     };
@@ -7140,6 +7219,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             rotational: string;
         };
     };
+    ObstacleAvoidanceBrakingDistanceDroneCommand: {
+        name: string;
+        values: {
+            brakingDistance: string;
+        };
+    };
+    ObstacleAvoidanceModeDroneCommand: {
+        name: string;
+        values: {
+            avoidanceMode: string;
+        };
+    };
+    ObstacleAvoidanceWarningDistanceDroneCommand: {
+        name: string;
+        values: {
+            warningDistance: string;
+        };
+    };
     OcuSyncChannelDroneCommand: {
         name: string;
         values: {
@@ -7474,6 +7571,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             returnHomeAltitude: string;
         };
+    };
+    ReturnHomeDroneCommand: {
+        name: string;
     };
     ReturnHomeObstacleAvoidanceDroneCommand: {
         name: string;
@@ -10007,6 +10107,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         values: {
             destinationOffset: string;
+            destinationTakeoffCoordinate: string;
             achievement: string;
             achievementTime: string;
             achievementDistance: string;
@@ -10326,6 +10427,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     distance: string;
                     altitude: string;
                 };
+            };
+        };
+    };
+    DroneObstacleAvoidanceDirection: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            upward: {
+                name: string;
+            };
+            downward: {
+                name: string;
+            };
+        };
+    };
+    DroneObstacleAvoidanceMode: {
+        name: string;
+        values: {
+            brake: {
+                name: string;
+            };
+            avoid: {
+                name: string;
+            };
+            off: {
+                name: string;
             };
         };
     };
@@ -11248,6 +11377,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             rotational: string;
         };
     };
+    ObstacleAvoidanceBrakingDistanceDroneCommand: {
+        name: string;
+        values: {
+            brakingDistance: string;
+        };
+    };
+    ObstacleAvoidanceModeDroneCommand: {
+        name: string;
+        values: {
+            avoidanceMode: string;
+        };
+    };
+    ObstacleAvoidanceWarningDistanceDroneCommand: {
+        name: string;
+        values: {
+            warningDistance: string;
+        };
+    };
     OcuSyncChannelDroneCommand: {
         name: string;
         values: {
@@ -11582,6 +11729,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             returnHomeAltitude: string;
         };
+    };
+    ReturnHomeDroneCommand: {
+        name: string;
     };
     ReturnHomeObstacleAvoidanceDroneCommand: {
         name: string;
@@ -14115,6 +14265,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         values: {
             destinationOffset: string;
+            destinationTakeoffCoordinate: string;
             achievement: string;
             achievementTime: string;
             achievementDistance: string;
@@ -14434,6 +14585,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     distance: string;
                     altitude: string;
                 };
+            };
+        };
+    };
+    DroneObstacleAvoidanceDirection: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            upward: {
+                name: string;
+            };
+            downward: {
+                name: string;
+            };
+        };
+    };
+    DroneObstacleAvoidanceMode: {
+        name: string;
+        values: {
+            brake: {
+                name: string;
+            };
+            avoid: {
+                name: string;
+            };
+            off: {
+                name: string;
             };
         };
     };
@@ -15356,6 +15535,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             rotational: string;
         };
     };
+    ObstacleAvoidanceBrakingDistanceDroneCommand: {
+        name: string;
+        values: {
+            brakingDistance: string;
+        };
+    };
+    ObstacleAvoidanceModeDroneCommand: {
+        name: string;
+        values: {
+            avoidanceMode: string;
+        };
+    };
+    ObstacleAvoidanceWarningDistanceDroneCommand: {
+        name: string;
+        values: {
+            warningDistance: string;
+        };
+    };
     OcuSyncChannelDroneCommand: {
         name: string;
         values: {
@@ -15690,6 +15887,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             returnHomeAltitude: string;
         };
+    };
+    ReturnHomeDroneCommand: {
+        name: string;
     };
     ReturnHomeObstacleAvoidanceDroneCommand: {
         name: string;
@@ -18223,6 +18423,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         values: {
             destinationOffset: string;
+            destinationTakeoffCoordinate: string;
             achievement: string;
             achievementTime: string;
             achievementDistance: string;
@@ -18542,6 +18743,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     distance: string;
                     altitude: string;
                 };
+            };
+        };
+    };
+    DroneObstacleAvoidanceDirection: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            upward: {
+                name: string;
+            };
+            downward: {
+                name: string;
+            };
+        };
+    };
+    DroneObstacleAvoidanceMode: {
+        name: string;
+        values: {
+            brake: {
+                name: string;
+            };
+            avoid: {
+                name: string;
+            };
+            off: {
+                name: string;
             };
         };
     };
@@ -19464,6 +19693,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             rotational: string;
         };
     };
+    ObstacleAvoidanceBrakingDistanceDroneCommand: {
+        name: string;
+        values: {
+            brakingDistance: string;
+        };
+    };
+    ObstacleAvoidanceModeDroneCommand: {
+        name: string;
+        values: {
+            avoidanceMode: string;
+        };
+    };
+    ObstacleAvoidanceWarningDistanceDroneCommand: {
+        name: string;
+        values: {
+            warningDistance: string;
+        };
+    };
     OcuSyncChannelDroneCommand: {
         name: string;
         values: {
@@ -19798,6 +20045,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             returnHomeAltitude: string;
         };
+    };
+    ReturnHomeDroneCommand: {
+        name: string;
     };
     ReturnHomeObstacleAvoidanceDroneCommand: {
         name: string;
@@ -22331,6 +22581,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         values: {
             destinationOffset: string;
+            destinationTakeoffCoordinate: string;
             achievement: string;
             achievementTime: string;
             achievementDistance: string;
@@ -22650,6 +22901,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     distance: string;
                     altitude: string;
                 };
+            };
+        };
+    };
+    DroneObstacleAvoidanceDirection: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            upward: {
+                name: string;
+            };
+            downward: {
+                name: string;
+            };
+        };
+    };
+    DroneObstacleAvoidanceMode: {
+        name: string;
+        values: {
+            brake: {
+                name: string;
+            };
+            avoid: {
+                name: string;
+            };
+            off: {
+                name: string;
             };
         };
     };
@@ -23572,6 +23851,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             rotational: string;
         };
     };
+    ObstacleAvoidanceBrakingDistanceDroneCommand: {
+        name: string;
+        values: {
+            brakingDistance: string;
+        };
+    };
+    ObstacleAvoidanceModeDroneCommand: {
+        name: string;
+        values: {
+            avoidanceMode: string;
+        };
+    };
+    ObstacleAvoidanceWarningDistanceDroneCommand: {
+        name: string;
+        values: {
+            warningDistance: string;
+        };
+    };
     OcuSyncChannelDroneCommand: {
         name: string;
         values: {
@@ -23906,6 +24203,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             returnHomeAltitude: string;
         };
+    };
+    ReturnHomeDroneCommand: {
+        name: string;
     };
     ReturnHomeObstacleAvoidanceDroneCommand: {
         name: string;
@@ -26439,6 +26739,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         values: {
             destinationOffset: string;
+            destinationTakeoffCoordinate: string;
             achievement: string;
             achievementTime: string;
             achievementDistance: string;
@@ -26758,6 +27059,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     distance: string;
                     altitude: string;
                 };
+            };
+        };
+    };
+    DroneObstacleAvoidanceDirection: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            upward: {
+                name: string;
+            };
+            downward: {
+                name: string;
+            };
+        };
+    };
+    DroneObstacleAvoidanceMode: {
+        name: string;
+        values: {
+            brake: {
+                name: string;
+            };
+            avoid: {
+                name: string;
+            };
+            off: {
+                name: string;
             };
         };
     };
@@ -27680,6 +28009,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             rotational: string;
         };
     };
+    ObstacleAvoidanceBrakingDistanceDroneCommand: {
+        name: string;
+        values: {
+            brakingDistance: string;
+        };
+    };
+    ObstacleAvoidanceModeDroneCommand: {
+        name: string;
+        values: {
+            avoidanceMode: string;
+        };
+    };
+    ObstacleAvoidanceWarningDistanceDroneCommand: {
+        name: string;
+        values: {
+            warningDistance: string;
+        };
+    };
     OcuSyncChannelDroneCommand: {
         name: string;
         values: {
@@ -28014,6 +28361,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             returnHomeAltitude: string;
         };
+    };
+    ReturnHomeDroneCommand: {
+        name: string;
     };
     ReturnHomeObstacleAvoidanceDroneCommand: {
         name: string;
@@ -30547,6 +30897,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         values: {
             destinationOffset: string;
+            destinationTakeoffCoordinate: string;
             achievement: string;
             achievementTime: string;
             achievementDistance: string;
@@ -30866,6 +31217,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     distance: string;
                     altitude: string;
                 };
+            };
+        };
+    };
+    DroneObstacleAvoidanceDirection: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            upward: {
+                name: string;
+            };
+            downward: {
+                name: string;
+            };
+        };
+    };
+    DroneObstacleAvoidanceMode: {
+        name: string;
+        values: {
+            brake: {
+                name: string;
+            };
+            avoid: {
+                name: string;
+            };
+            off: {
+                name: string;
             };
         };
     };
@@ -31788,6 +32167,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             rotational: string;
         };
     };
+    ObstacleAvoidanceBrakingDistanceDroneCommand: {
+        name: string;
+        values: {
+            brakingDistance: string;
+        };
+    };
+    ObstacleAvoidanceModeDroneCommand: {
+        name: string;
+        values: {
+            avoidanceMode: string;
+        };
+    };
+    ObstacleAvoidanceWarningDistanceDroneCommand: {
+        name: string;
+        values: {
+            warningDistance: string;
+        };
+    };
     OcuSyncChannelDroneCommand: {
         name: string;
         values: {
@@ -32122,6 +32519,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             returnHomeAltitude: string;
         };
+    };
+    ReturnHomeDroneCommand: {
+        name: string;
     };
     ReturnHomeObstacleAvoidanceDroneCommand: {
         name: string;
@@ -34655,6 +35055,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         values: {
             destinationOffset: string;
+            destinationTakeoffCoordinate: string;
             achievement: string;
             achievementTime: string;
             achievementDistance: string;
@@ -34974,6 +35375,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     distance: string;
                     altitude: string;
                 };
+            };
+        };
+    };
+    DroneObstacleAvoidanceDirection: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            upward: {
+                name: string;
+            };
+            downward: {
+                name: string;
+            };
+        };
+    };
+    DroneObstacleAvoidanceMode: {
+        name: string;
+        values: {
+            brake: {
+                name: string;
+            };
+            avoid: {
+                name: string;
+            };
+            off: {
+                name: string;
             };
         };
     };
@@ -35896,6 +36325,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             rotational: string;
         };
     };
+    ObstacleAvoidanceBrakingDistanceDroneCommand: {
+        name: string;
+        values: {
+            brakingDistance: string;
+        };
+    };
+    ObstacleAvoidanceModeDroneCommand: {
+        name: string;
+        values: {
+            avoidanceMode: string;
+        };
+    };
+    ObstacleAvoidanceWarningDistanceDroneCommand: {
+        name: string;
+        values: {
+            warningDistance: string;
+        };
+    };
     OcuSyncChannelDroneCommand: {
         name: string;
         values: {
@@ -36230,6 +36677,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             returnHomeAltitude: string;
         };
+    };
+    ReturnHomeDroneCommand: {
+        name: string;
     };
     ReturnHomeObstacleAvoidanceDroneCommand: {
         name: string;
@@ -38763,6 +39213,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         values: {
             destinationOffset: string;
+            destinationTakeoffCoordinate: string;
             achievement: string;
             achievementTime: string;
             achievementDistance: string;
@@ -39082,6 +39533,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     distance: string;
                     altitude: string;
                 };
+            };
+        };
+    };
+    DroneObstacleAvoidanceDirection: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            upward: {
+                name: string;
+            };
+            downward: {
+                name: string;
+            };
+        };
+    };
+    DroneObstacleAvoidanceMode: {
+        name: string;
+        values: {
+            brake: {
+                name: string;
+            };
+            avoid: {
+                name: string;
+            };
+            off: {
+                name: string;
             };
         };
     };
@@ -40004,6 +40483,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             rotational: string;
         };
     };
+    ObstacleAvoidanceBrakingDistanceDroneCommand: {
+        name: string;
+        values: {
+            brakingDistance: string;
+        };
+    };
+    ObstacleAvoidanceModeDroneCommand: {
+        name: string;
+        values: {
+            avoidanceMode: string;
+        };
+    };
+    ObstacleAvoidanceWarningDistanceDroneCommand: {
+        name: string;
+        values: {
+            warningDistance: string;
+        };
+    };
     OcuSyncChannelDroneCommand: {
         name: string;
         values: {
@@ -40338,6 +40835,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             returnHomeAltitude: string;
         };
+    };
+    ReturnHomeDroneCommand: {
+        name: string;
     };
     ReturnHomeObstacleAvoidanceDroneCommand: {
         name: string;
@@ -42871,6 +43371,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         values: {
             destinationOffset: string;
+            destinationTakeoffCoordinate: string;
             achievement: string;
             achievementTime: string;
             achievementDistance: string;
@@ -43190,6 +43691,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     distance: string;
                     altitude: string;
                 };
+            };
+        };
+    };
+    DroneObstacleAvoidanceDirection: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            upward: {
+                name: string;
+            };
+            downward: {
+                name: string;
+            };
+        };
+    };
+    DroneObstacleAvoidanceMode: {
+        name: string;
+        values: {
+            brake: {
+                name: string;
+            };
+            avoid: {
+                name: string;
+            };
+            off: {
+                name: string;
             };
         };
     };
@@ -44112,6 +44641,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             rotational: string;
         };
     };
+    ObstacleAvoidanceBrakingDistanceDroneCommand: {
+        name: string;
+        values: {
+            brakingDistance: string;
+        };
+    };
+    ObstacleAvoidanceModeDroneCommand: {
+        name: string;
+        values: {
+            avoidanceMode: string;
+        };
+    };
+    ObstacleAvoidanceWarningDistanceDroneCommand: {
+        name: string;
+        values: {
+            warningDistance: string;
+        };
+    };
     OcuSyncChannelDroneCommand: {
         name: string;
         values: {
@@ -44446,6 +44993,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             returnHomeAltitude: string;
         };
+    };
+    ReturnHomeDroneCommand: {
+        name: string;
     };
     ReturnHomeObstacleAvoidanceDroneCommand: {
         name: string;
@@ -46979,6 +47529,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         values: {
             destinationOffset: string;
+            destinationTakeoffCoordinate: string;
             achievement: string;
             achievementTime: string;
             achievementDistance: string;
@@ -47298,6 +47849,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     distance: string;
                     altitude: string;
                 };
+            };
+        };
+    };
+    DroneObstacleAvoidanceDirection: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            upward: {
+                name: string;
+            };
+            downward: {
+                name: string;
+            };
+        };
+    };
+    DroneObstacleAvoidanceMode: {
+        name: string;
+        values: {
+            brake: {
+                name: string;
+            };
+            avoid: {
+                name: string;
+            };
+            off: {
+                name: string;
             };
         };
     };
@@ -48220,6 +48799,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             rotational: string;
         };
     };
+    ObstacleAvoidanceBrakingDistanceDroneCommand: {
+        name: string;
+        values: {
+            brakingDistance: string;
+        };
+    };
+    ObstacleAvoidanceModeDroneCommand: {
+        name: string;
+        values: {
+            avoidanceMode: string;
+        };
+    };
+    ObstacleAvoidanceWarningDistanceDroneCommand: {
+        name: string;
+        values: {
+            warningDistance: string;
+        };
+    };
     OcuSyncChannelDroneCommand: {
         name: string;
         values: {
@@ -48554,6 +49151,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             returnHomeAltitude: string;
         };
+    };
+    ReturnHomeDroneCommand: {
+        name: string;
     };
     ReturnHomeObstacleAvoidanceDroneCommand: {
         name: string;
@@ -51087,6 +51687,7 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         description: string;
         values: {
             destinationOffset: string;
+            destinationTakeoffCoordinate: string;
             achievement: string;
             achievementTime: string;
             achievementDistance: string;
@@ -51406,6 +52007,34 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
                     distance: string;
                     altitude: string;
                 };
+            };
+        };
+    };
+    DroneObstacleAvoidanceDirection: {
+        name: string;
+        values: {
+            horizontal: {
+                name: string;
+            };
+            upward: {
+                name: string;
+            };
+            downward: {
+                name: string;
+            };
+        };
+    };
+    DroneObstacleAvoidanceMode: {
+        name: string;
+        values: {
+            brake: {
+                name: string;
+            };
+            avoid: {
+                name: string;
+            };
+            off: {
+                name: string;
             };
         };
     };
@@ -52328,6 +52957,24 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
             rotational: string;
         };
     };
+    ObstacleAvoidanceBrakingDistanceDroneCommand: {
+        name: string;
+        values: {
+            brakingDistance: string;
+        };
+    };
+    ObstacleAvoidanceModeDroneCommand: {
+        name: string;
+        values: {
+            avoidanceMode: string;
+        };
+    };
+    ObstacleAvoidanceWarningDistanceDroneCommand: {
+        name: string;
+        values: {
+            warningDistance: string;
+        };
+    };
     OcuSyncChannelDroneCommand: {
         name: string;
         values: {
@@ -52662,6 +53309,9 @@ export declare const Strings: import("localized-strings").LocalizedStrings<{
         values: {
             returnHomeAltitude: string;
         };
+    };
+    ReturnHomeDroneCommand: {
+        name: string;
     };
     ReturnHomeObstacleAvoidanceDroneCommand: {
         name: string;

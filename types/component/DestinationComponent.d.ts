@@ -25,6 +25,7 @@ import { CommandComponent } from "./CommandComponent";
 export declare class DestinationComponent extends AchievableDroneMotionComponent implements Serializable {
     readonly type = TypeName.DestinationComponent;
     destinationOffset: Vector2;
+    destinationTakeoffCoordinate: boolean;
     altitudeRange: AltitudeRange;
     achievementTime: number;
     achievementDistance: DistanceTolerance;
